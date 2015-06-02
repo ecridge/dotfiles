@@ -18,6 +18,9 @@ colorscheme solarized
 set guifont=Consolas:h14
 set hlsearch
 
+" Turn off annoying bell
+set visualbell t_vb=
+
 " Useful metrics
 set number
 set showcmd

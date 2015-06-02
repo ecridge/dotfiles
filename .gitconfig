@@ -1,0 +1,28 @@
+[user]
+	name = Joe Cridge
+	email = joe.cridge@me.com
+	signingkey = DD659648
+[core]
+	editor = mvim -f
+	autocrlf = input
+	excludesfile = ~/.globalgitignore
+[color]
+	ui = true
+[format]
+	pretty = medium
+[alias]
+	lng = log --pretty=format:'%C(yellow)%h %Creset%s%C(bold red)%d%Creset %Cblue(%an, %ar)' --abbrev-commit --graph
+	lg = log --pretty=format:'%C(yellow)%h %Creset%s' --abbrev-commit --graph
+	st = status
+	co = checkout
+	br = branch
+	ci = commit
+	ad = add
+[credential]
+	helper = osxkeychain
+[diff]
+	external = git-diff-wrapper
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true

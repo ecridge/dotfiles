@@ -23,6 +23,7 @@ custom_prompt() {
 ##
 
 alias clr='clear'
+alias bundel='bundle'
 alias grep="grep -nP --color=auto"
 alias ls="ls --color=auto"
 alias la="ls -A"

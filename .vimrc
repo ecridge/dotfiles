@@ -45,7 +45,7 @@ set nojoinspaces
 " Wrapping options
 set textwidth=78
 " set formatoptions=tcroqanlBj
-set formatoptions=tcrqnlBj
+set formatoptions=tcqnlBj
 set colorcolumn=+1
 
 " Swap h and l
@@ -61,7 +61,6 @@ noremap <up> <c-w>k
 noremap <right> <c-w>l
 
 " LEARN VIMSCRIPT THE HARD WAY
-echom ">^.^<"
 inoremap <c-u> <esc>viwUea
 inoremap <c-space> <insert>
 nnoremap <silent> - :m .+<cr>

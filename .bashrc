@@ -31,6 +31,7 @@ alias ll="ls -AhFl --time-style='+%Y-%m-%d %H:%M
 %a %d %b %H:%M'"
 alias sudoa='sudo ' # Create an alias of sudo that expands aliases
 alias q='logout'
+alias vd='vimdiff'
 
 ##
 # Run login items

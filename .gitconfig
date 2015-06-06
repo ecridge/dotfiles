@@ -3,7 +3,7 @@
 	email = joe.cridge@me.com
 	signingkey = DD659648
 [core]
-	editor = mvim -f
+	editor = vim
 	autocrlf = input
 	excludesfile = ~/.globalgitignore
 [color]

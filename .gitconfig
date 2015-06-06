@@ -18,13 +18,16 @@
 	br = branch
 	ci = commit
 	ad = add
+	dt = difftool
 [credential]
 	helper = osxkeychain
 [diff]
-	external = git-diff-wrapper
+	tool = vimdiff
 [filter "lfs"]
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f
 	required = true
 [push]
 	default = simple
+[difftool]
+	prompt = false

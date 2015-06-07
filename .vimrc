@@ -82,11 +82,12 @@ noremap <leader>bg :<c-u>set background=dark<cr>
 onoremap <silent> ae :<c-u>normal! ggVG<cr>
 vnoremap <silent> ae <esc>ggVG<cr>
 
-iabbrev thne then
-iabbrev j Joe
-iabbrev jc Joe Cridge
 iabbrev @@ joe.cridge@me.com
 iabbrev @@k ***REMOVED***
-iabbrev mmobile ***REMOVED***
-iabbrev wweb www.joecridge.me
 iabbrev ccopy Copyright (C) 2015 Joe Cridge. All rights reserved.
+iabbrev envv #!/usr/bin/env
+iabbrev j Joe
+iabbrev jc Joe Cridge
+iabbrev mmobile ***REMOVED***
+iabbrev thne then
+iabbrev wweb www.joecridge.me

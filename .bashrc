@@ -29,7 +29,7 @@ alias ls="ls --color=auto"
 alias la="ls -A"
 alias ll="ls -AhFl --time-style='+%Y-%m-%d %H:%M
 %a %d %b %H:%M'"
-alias printenv="printenv | grep -Pe '^[A-Z][A-Z_]*(?==)'"
+alias printenv="printenv | sort | grep -Pe '^[A-Z][A-Z_]*(?==)'"
 alias sudoa="sudo " # Create an alias of sudo that expands aliases
 alias q="logout"
 alias vd="vimdiff"

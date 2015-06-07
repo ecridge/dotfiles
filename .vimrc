@@ -11,8 +11,10 @@ filetype plugin indent on
 syntax enable
 if has('gui_running')
   "
+  set background=light
 else
-  let g:solarized_termcolors=256
+  " let g:solarized_termcolors=256
+  set background=dark
 endif
 colorscheme solarized
 set guifont=Consolas:h14

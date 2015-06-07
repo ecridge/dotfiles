@@ -22,16 +22,17 @@ custom_prompt() {
 # Set aliases
 ##
 
-alias clr='clear'
-alias bundel='bundle'
-alias grep="grep -nP --color=auto"
+alias clr="clear"
+alias bundel="bundle"
+alias grep="grep --color=auto"
 alias ls="ls --color=auto"
 alias la="ls -A"
 alias ll="ls -AhFl --time-style='+%Y-%m-%d %H:%M
 %a %d %b %H:%M'"
-alias sudoa='sudo ' # Create an alias of sudo that expands aliases
-alias q='logout'
-alias vd='vimdiff'
+alias printenv="printenv | grep -Pe '^[A-Z][A-Z_]*(?==)'"
+alias sudoa="sudo " # Create an alias of sudo that expands aliases
+alias q="logout"
+alias vd="vimdiff"
 
 ##
 # Run login items

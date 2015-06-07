@@ -1,5 +1,7 @@
-export TZ="Europe/London"
 export EDITOR="vim"
+export RI="--format ansi --width 78"
+export RI_PAGER="less -r"
+export TZ="Europe/London"
 
 ##
 # Add user binaries to PATH

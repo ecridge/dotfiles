@@ -6,6 +6,7 @@
 	editor = vim
 	autocrlf = input
 	excludesfile = ~/.globalgitignore
+	pager = less -r
 [color]
 	ui = true
 [format]

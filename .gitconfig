@@ -19,6 +19,7 @@
 	ci = commit
 	ad = add
 	dt = difftool
+	df = diff
 [credential]
 	helper = osxkeychain
 [diff]

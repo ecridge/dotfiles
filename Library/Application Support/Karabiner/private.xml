@@ -39,14 +39,6 @@
       <autogen>__KeyToKey__ KeyCode::EQUAL, KeyCode::VK_OPEN_URL_APP_MacVim</autogen>
     </item>
     <item>
-      <name>Use custom function keys</name>
-      <identifier>private.myFunctionKeys</identifier>
-      <autogen>__KeyToKey__ KeyCode::HELP, KeyCode::VK_OPEN_URL_APP_SysPrefs</autogen>
-      <autogen>__KeyToKey__ KeyCode::F13, KeyCode::VK_OPEN_URL_SHELL_eject_disc</autogen>
-      <autogen>__KeyToKey__ KeyCode::F14, KeyCode::VK_OPEN_URL_SHELL_lock_screen</autogen>
-      <autogen>__KeyToKey__ KeyCode::F15, KeyCode::VK_OPEN_URL_SHELL_sleep</autogen>
-    </item>
-    <item>
       <name>Cmd-Pulse for screenshot</name>
       <identifier>private.cmdPulseScreenshot</identifier>
       <autogen>
@@ -64,6 +56,44 @@
         KeyCode::FORWARD_DELETE,
         KeyCode::DELETE, ModifierFlag::COMMAND_L
       </autogen>
+    </item>
+    <item>
+      <name>Easy quit Activity Monitor</name>
+      <identifier>private.quitAct</identifier>
+      <only>Activity_Monitor</only>
+      <autogen>
+        __KeyToKey__
+        KeyCode::BACKQUOTE,
+        KeyCode::Q, ModifierFlag::COMMAND_L
+      </autogen>
+    </item>
+    <item>
+      <name>Easy quit System Preferences</name>
+      <identifier>private.quitPrefs</identifier>
+      <only>SYSTEM_PREFERENCES</only>
+      <autogen>
+        __KeyToKey__
+        KeyCode::HELP,
+        KeyCode::Q, ModifierFlag::COMMAND_L
+      </autogen>
+    </item>
+    <item>
+      <name>Disable easy save in Terminal</name>
+      <identifier>private.termSave</identifier>
+      <only>TERMINAL</only>
+      <autogen>
+        __KeyToKey__
+        KeyCode::BACKSLASH,
+        KeyCode::DELETE, ModifierFlag::CONTROL_L
+      </autogen>
+    </item>
+    <item>
+      <name>Use custom function keys</name>
+      <identifier>private.myFunctionKeys</identifier>
+      <autogen>__KeyToKey__ KeyCode::HELP, KeyCode::VK_OPEN_URL_APP_SysPrefs</autogen>
+      <autogen>__KeyToKey__ KeyCode::F13, KeyCode::VK_OPEN_URL_SHELL_eject_disc</autogen>
+      <autogen>__KeyToKey__ KeyCode::F14, KeyCode::VK_OPEN_URL_SHELL_lock_screen</autogen>
+      <autogen>__KeyToKey__ KeyCode::F15, KeyCode::VK_OPEN_URL_SHELL_sleep</autogen>
     </item>
   </item>
   <item>

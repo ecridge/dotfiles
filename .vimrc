@@ -46,9 +46,8 @@ set nojoinspaces
 
 " Wrapping options
 set textwidth=78
-" set formatoptions=tcroqanlBj
-set formatoptions=tcqnlBj
 set colorcolumn=+1
+set formatoptions=tcqnlBj " FIXME: Something is doing +=ro
 
 " Swap h and l
 noremap h l

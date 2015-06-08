@@ -9,16 +9,18 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 syntax enable
-if has('gui_running')
-  "
-  set background=light
-else
-  " let g:solarized_termcolors=256
-  set background=dark
-endif
 colorscheme solarized
 set guifont=Consolas:h14
 set hlsearch
+
+" Set background colour dependent on context
+if has('gui_running')
+  set background=light
+  noremap <leader>bg :<c-u>set background=dark<cr>
+else
+  set background=dark
+  noremap <leader>bg :<c-u>set background=light<cr>
+endif
 
 " Turn off annoying bell
 set visualbell t_vb=
@@ -73,9 +75,6 @@ noremap <leader>sv :<c-u>source $MYVIMRC<cr>
 nnoremap <leader>u viwU
 noremap <leader>. :<c-u>cd %:h<cr>:<c-u>pwd<cr>
 noremap <leader><leader> :<c-u>cd<cr>:<c-u>pwd<cr>
-
-" FIXME: Make this toggle between dark and light
-noremap <leader>bg :<c-u>set background=dark<cr>
 
 " HACK: Create "an entire" object
 onoremap <silent> ae :<c-u>normal! ggVG<cr>

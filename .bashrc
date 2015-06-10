@@ -4,7 +4,7 @@
 # Customise command prompt
 ##
 
-source "$HOME/.git-prompt.sh"
+[[ -f "$HOME/.git-prompt.sh" ]] && source "$HOME/.git-prompt.sh"
 
 PROMPT_COMMAND="custom_prompt"
 
@@ -51,7 +51,8 @@ mkcd() {
 binsync > /dev/null
 
 ##
-# Load RVM
+# Load RVM and friends
 ##
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+[[ -f "$HOME/.git-completion.bash" ]] && source "$HOME/.git-completion.bash"

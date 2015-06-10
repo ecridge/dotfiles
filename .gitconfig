@@ -38,3 +38,9 @@
 	conflictstyle = diff3
 [mergetool]
 	prompt = false
+[sendemail]
+	smtpencryption = tls
+	smtpserver = smtp.mail.me.com
+	smtpuser = joe.cridge@me.com
+	smtpserverport = 587
+	confirm = auto

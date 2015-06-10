@@ -37,6 +37,14 @@ alias q="logout"
 alias vd="vimdiff"
 
 ##
+# Define custom functions
+##
+
+mkcd() {
+  mkdir "$@" && cd "$_";
+}
+
+##
 # Run login items
 ##
 

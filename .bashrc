@@ -4,6 +4,8 @@
 # Customise command prompt
 ##
 
+source "$HOME/.git-prompt.sh"
+
 PROMPT_COMMAND="custom_prompt"
 
 custom_prompt() {
@@ -14,7 +16,7 @@ custom_prompt() {
   if [ $exit_code -ne 0 ] ; then
     message_string="\[\e[31m\]exit $exit_code\[\e[0m\]\n"
   fi
-  PS1="$message_string\u@\h:\w\$ "
+  PS1="$message_string\u@\h:\w\[\e[32m\]\$(__git_ps1 "[%s]")\[\e[0m\]\$ "
   echo -n -e "\033]0;$window_title\007"
 }
 

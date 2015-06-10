@@ -1,4 +1,5 @@
 export EDITOR="vim"
+export GIT_PS1_HIDE_IF_PWD_IGNORED="true"
 export RI="--format ansi --width 78"
 export RI_PAGER="less -r"
 export TZ="Europe/London"

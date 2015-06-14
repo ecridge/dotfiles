@@ -11,7 +11,7 @@ filetype plugin indent on
 syntax enable
 colorscheme solarized
 set guifont=Consolas:h14
-set hlsearch
+set hlsearch list
 
 " Set background colour dependent on context
 if has('gui_running')

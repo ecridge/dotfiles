@@ -34,7 +34,7 @@ printf "started = Time.now\n\n" >> $PADNUM.rb
 printf "# CODE HERE\n\n" >> $PADNUM.rb
 printf "stopped = Time.now\n" >> $PADNUM.rb
 printf 'puts "Answer: #{answer}"\n' >> $PADNUM.rb
-printf 'puts "Time taken: #{(started - stopped) * 1000}ms"\n' >> $PADNUM.rb
+printf 'puts "Time taken: #{(stopped - started) * 1000}ms"\n' >> $PADNUM.rb
 
 # Tidy up and make executable.
 chmod +x $PADNUM.rb

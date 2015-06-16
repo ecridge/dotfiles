@@ -37,5 +37,6 @@ printf 'puts "Answer: #{answer}"\n' >> $PADNUM.rb
 printf 'puts "Time taken: #{(stopped - started) * 1000}ms"\n' >> $PADNUM.rb
 
 # Tidy up and make executable.
+sed -i 's/\(# Difficulty: \)0\.100/\11.00/' $PADNUM.rb
 chmod +x $PADNUM.rb
 rm $PADNUM.{txt,html}

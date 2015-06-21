@@ -13,6 +13,10 @@ colorscheme solarized
 set guifont=Consolas:h14
 set hlsearch list
 
+" Vim-LaTeX requirements
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor='latex'
+
 " Set background colour dependent on context
 if has('gui_running')
   set background=light

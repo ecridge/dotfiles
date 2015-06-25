@@ -12,7 +12,7 @@
 [format]
 	pretty = medium
 [alias]
-	lng = log --pretty=format:'%C(yellow)%h %Creset%s%C(bold red)%d%Creset %Cblue(%an, %ar)' --abbrev-commit --graph
+	lng = log --pretty=format:'%C(yellow)%h %Creset%s%C(bold red)%d%Creset %Cblue(%an, %ar)%Creset' --abbrev-commit --graph
 	lg = log --pretty=format:'%C(yellow)%h %Creset%s' --abbrev-commit --graph
 	st = status
 	co = checkout

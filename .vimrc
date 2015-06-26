@@ -88,7 +88,7 @@ iabbrev @@ joe.cridge@me.com
 iabbrev @@k ***REMOVED***
 iabbrev ccopy Copyright (C) 2015 Joe Cridge. All rights reserved.
 iabbrev envv #!/usr/bin/env
-iabbrev j Joe
+iabbrev j- Joe
 iabbrev jc Joe Cridge
 iabbrev mmobile ***REMOVED***
 iabbrev thne then

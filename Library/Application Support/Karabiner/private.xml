@@ -10,6 +10,10 @@
     <url type="file">/Applications/System Preferences.app</url>
   </vkopenurldef>
   <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_Calendar</name>
+    <url type="file">/Applications/Calendar.app</url>
+  </vkopenurldef>
+  <vkopenurldef>
     <name>KeyCode::VK_OPEN_URL_SHELL_lock_screen</name>
     <url type="shell">
       <![CDATA[    /System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend    ]]>
@@ -91,6 +95,8 @@
       <name>Use custom function keys</name>
       <identifier>private.myFunctionKeys</identifier>
       <autogen>__KeyToKey__ KeyCode::HELP, KeyCode::VK_OPEN_URL_APP_SysPrefs</autogen>
+      <autogen>__KeyToKey__ KeyCode::F5, KeyCode::VK_OPEN_URL_APP_Mail</autogen>
+      <autogen>__KeyToKey__ KeyCode::F6, KeyCode::VK_OPEN_URL_APP_Calendar</autogen>
       <autogen>__KeyToKey__ KeyCode::F13, KeyCode::VK_OPEN_URL_SHELL_eject_disc</autogen>
       <autogen>__KeyToKey__ KeyCode::F14, KeyCode::VK_OPEN_URL_SHELL_lock_screen</autogen>
       <autogen>__KeyToKey__ KeyCode::F15, KeyCode::VK_OPEN_URL_SHELL_sleep</autogen>

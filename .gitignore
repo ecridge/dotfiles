@@ -1,0 +1,20 @@
+# This is the .gitignore for my dotfiles repo
+# For global .gitignore settings see ~/.globalgitignore
+*
+!\.bash_profile
+!\.bashrc
+!\.git-prompt.sh
+!\.gitconfig
+!\.gitignore
+!\.globalgitignore
+!\.hidden
+!\.inputrc
+!\.nanorc
+!\.profile
+!\.vimrc
+!\resources
+!\resources/*
+\resources/*.swp
+!\src
+!\src/*
+\src/*.swp

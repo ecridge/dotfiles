@@ -1,0 +1,46 @@
+[user]
+	name = Joe Cridge
+	email = joe.cridge@me.com
+	signingkey = DD659648
+[core]
+	editor = vim
+	autocrlf = input
+	excludesfile = ~/.globalgitignore
+	pager = less -r
+[color]
+	ui = true
+[format]
+	pretty = medium
+[alias]
+	lng = log --pretty=format:'%C(yellow)%h %Creset%s%C(bold red)%d%Creset %Cblue(%an, %ar)%Creset' --abbrev-commit --graph
+	lg = log --pretty=format:'%C(yellow)%h %Creset%s' --abbrev-commit --graph
+	st = status
+	co = checkout
+	br = branch
+	ci = commit
+	ad = add
+	dt = difftool
+	df = diff
+[credential]
+	helper = osxkeychain
+[diff]
+	tool = vimdiff
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
+[push]
+	default = simple
+[difftool]
+	prompt = false
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+[mergetool]
+	prompt = false
+[sendemail]
+	smtpencryption = tls
+	smtpserver = smtp.mail.me.com
+	smtpuser = joe.cridge@me.com
+	smtpserverport = 587
+	confirm = auto

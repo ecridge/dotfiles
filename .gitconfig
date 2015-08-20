@@ -21,6 +21,8 @@
 	ad = add
 	dt = difftool
 	df = diff
+[credential]
+	helper = osxkeychain
 [diff]
 	tool = vimdiff
 [filter "lfs"]

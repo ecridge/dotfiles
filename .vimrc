@@ -73,6 +73,7 @@ inoremap <c-space> <insert>
 nnoremap <silent> - :m .+<cr>
 nnoremap <silent> _ :m .-2<cr>
 noremap Y y$
+noremap <silent> <leader>co :e!<cr>
 noremap <leader>ev :<c-u>vsplit $MYVIMRC<cr>G
 noremap <silent> <leader>h :<c-u>nohlsearch<cr>
 noremap <leader>sv :<c-u>source $MYVIMRC<cr>

@@ -3,3 +3,7 @@
 
 # Vim Swap Files
 *.swp
+
+# Automatic backups
+*~
+*.bak

@@ -35,6 +35,14 @@
     <productname>SCULPT_ERGONOMIC_MOUSE</productname>
     <productid>0x07a5</productid>
   </deviceproductdef>
+  <devicevendordef>
+    <vendorname>RAZER</vendorname>
+    <vendorid>0x1532</vendorid>
+  </devicevendordef>
+  <deviceproductdef>
+    <productname>MAMBA_TOURNAMENT_EDITION</productname>
+    <productid>0x0046</productid>
+  </deviceproductdef>
   <item>
     <name>My keyboard shortcuts</name>
     <item>
@@ -103,7 +111,7 @@
     </item>
   </item>
   <item>
-    <name>Configure Windows Mouse</name>
+    <name>Configure Mouse</name>
     <item>
       <name>Use Windows button to Show Desktop</name>
       <identifier>private.mouseWin2showDesktop</identifier>
@@ -115,9 +123,38 @@
       </autogen>
     </item>
     <item>
+      <name>Use Forward/Back for navigation in Chrome</name>
+      <identifier>private.mouseNavInChrome</identifier>
+      <only>GOOGLE_CHROME</only>
+      <device_only>DeviceVendor::RAZER, DeviceProduct::MAMBA_TOURNAMENT_EDITION</device_only>
+      <autogen>
+        __KeyToKey__
+        PointingButton::BUTTON4,
+        KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_L
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        PointingButton::BUTTON5,
+        KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L
+      </autogen>
+    </item>
+    <item>
+      <name>Use Forward button to Show Desktop</name>
+      <identifier>private.mouseFwd2showDesktop</identifier>
+      <device_only>DeviceVendor::RAZER, DeviceProduct::MAMBA_TOURNAMENT_EDITION</device_only>
+      <autogen>
+        __KeyToKey__
+        PointingButton::BUTTON5,
+        KeyCode::MISSION_CONTROL, ModifierFlag::COMMAND_L
+      </autogen>
+    </item>
+    <item>
       <name>Use Back button for Mission Control</name>
       <identifier>private.mouseBack2missionControl</identifier>
-      <device_only>DeviceVendor::MICROSOFT, DeviceProduct::SCULPT_ERGONOMIC_MOUSE</device_only>
+      <device_only>
+        DeviceVendor::MICROSOFT, DeviceProduct::SCULPT_ERGONOMIC_MOUSE,
+        DeviceVendor::RAZER, DeviceProduct::MAMBA_TOURNAMENT_EDITION
+      </device_only>
       <autogen>
         __KeyToKey__
         PointingButton::BUTTON4,
@@ -127,7 +164,7 @@
     <item>
       <name>Rock Scroll Wheel to Change Spaces</name>
       <identifier>private.scroll2changeSpace</identifier>
-      <device_only>DeviceVendor::MICROSOFT, DeviceProduct::SCULPT_ERGONOMIC_MOUSE</device_only>
+      <device_only> DeviceVendor::MICROSOFT, DeviceProduct::SCULPT_ERGONOMIC_MOUSE </device_only>
       <autogen>
         __ScrollWheelToKey__
         ScrollWheel::RIGHT,
@@ -141,7 +178,7 @@
     </item>
   </item>
   <item>
-    <name>Crappy chiclet keyboard hack</name>
+    <name>Chiclet keyboard hack</name>
     <identifier>private.chicletHack</identifier>
     <device_only>DeviceVendor::XENTA, DeviceProduct::CRAPPY_CHICLET_KEYBOARD</device_only>
     <autogen>__KeyToKey__ KeyCode::DANISH_DOLLAR, KeyCode::SHIFT_L</autogen>

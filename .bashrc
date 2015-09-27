@@ -24,6 +24,7 @@ custom_prompt() {
 # Set aliases
 ##
 
+alias ascii="grep -ne '[^ -~]'" # Highlight non-ascii characters in a file
 alias clr="clear"
 alias bundel="bundle"
 alias grep="grep --color=auto"

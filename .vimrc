@@ -88,6 +88,9 @@ vnoremap <silent> ae <esc>ggVG<cr>
 iabbrev @@ joe.cridge@me.com
 iabbrev @@k ***REMOVED***
 iabbrev ccopy Copyright (C) 2015 Joe Cridge. All rights reserved.
+iabbrev stdio #include <stdio.h>
+iabbrev stdbool #include <stdbool.h>
+iabbrev ddef #define  
 iabbrev envv #!/usr/bin/env
 iabbrev j- Joe
 iabbrev jc Joe Cridge

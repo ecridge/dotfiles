@@ -26,6 +26,7 @@ custom_prompt() {
 
 alias ascii="grep -ne '[^ -~]'" # Highlight non-ascii characters in a file
 alias clr="clear"
+alias chrome="open -a /Applications/Google\ Chrome.app/"
 alias bundel="bundle"
 alias grep="grep --color=auto"
 alias ls="ls --color=auto"

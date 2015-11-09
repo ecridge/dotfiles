@@ -47,7 +47,7 @@ mkcd() {
 }
 
 temp() {
-  SRC="$HOME/Coding/Resources/wordlists"
+  SRC="$HOME/Code/Resources/wordlists"
   if [[ -f "$SRC/adjectives" && -f "$SRC/animals" ]] ; then
     iAdj=$RANDOM
     nAdj=`grep -c "." $SRC/adjectives`

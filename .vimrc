@@ -85,6 +85,16 @@ noremap <leader><leader> :<c-u>cd<cr>:<c-u>pwd<cr>
 onoremap <silent> ae :<c-u>normal! ggVG<cr>
 vnoremap <silent> ae <esc>ggVG<cr>
 
+" Syntastic syntax checking
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" Abbreviations
 iabbrev @@ joe.cridge@me.com
 iabbrev @@k ***REMOVED***
 iabbrev ccopy Copyright (C) 2015 Joe Cridge. All rights reserved.

@@ -11,7 +11,8 @@ filetype plugin indent on
 syntax enable
 colorscheme solarized
 set guifont=Consolas:h14
-set hlsearch list
+set hlsearch
+set list listchars=tab:>\ ,trail:-,extends:$,precedes:$,nbsp:+
 
 " Vim-LaTeX requirements
 set grepprg=grep\ -nH\ $*
@@ -50,8 +51,12 @@ set wildmode=longest,list
 " Only insert one space after sentence end on joining
 set nojoinspaces
 
+" Spell checking
+set spell spelllang=en_gb
+
 " Wrapping options
-set textwidth=78
+set nowrap
+set textwidth=79
 set colorcolumn=+1
 set formatoptions=tcqnlBj " FIXME: Something is doing +=ro
 
@@ -107,3 +112,6 @@ iabbrev jc Joe Cridge
 iabbrev mmobile ***REMOVED***
 iabbrev thne then
 iabbrev wweb www.joecridge.me
+
+" File-specific autocommands
+autocmd FileType changelog setlocal ts=8 sw=8 noexpandtab

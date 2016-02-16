@@ -9,7 +9,7 @@
 # ~/.bashrc; this includes the command prompt, EDITOR variable and personal
 # aliases. ~/.bashrc should not generate any output.
 #
-# The file ~/.bash_login shoud not exist.
+# The file ~/.bash_login should not exist.
 ##
 
 if [ -f "$HOME/.profile" ]; then

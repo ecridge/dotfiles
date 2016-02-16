@@ -103,8 +103,6 @@ let g:syntastic_check_on_wq = 0
 iabbrev @@ joe.cridge@me.com
 iabbrev @@k ***REMOVED***
 iabbrev ccopy Copyright (C) 2015 Joe Cridge. All rights reserved.
-iabbrev stdio #include <stdio.h>
-iabbrev stdbool #include <stdbool.h>
 iabbrev ddef #define  
 iabbrev envv #!/usr/bin/env
 iabbrev j- Joe
@@ -115,3 +113,4 @@ iabbrev wweb www.joecridge.me
 
 " File-specific autocommands
 autocmd FileType changelog setlocal ts=8 sw=8 noexpandtab
+autocmd FileType c setlocal ts=8 sw=8

@@ -28,7 +28,7 @@ alias ascii="grep -ne '[^ -~]'" # Highlight non-ascii characters in a file
 alias clr="clear"
 alias chrome="open -a /Applications/Google\ Chrome.app/"
 alias bundel="bundle"
-alias grep="grep --color=auto"
+alias grep="grep --color=auto --exclude-dir=.git"
 alias ls="ls --color=auto"
 alias la="ls -A"
 alias ll="ls -AhFl --time-style='+%Y-%m-%d %H:%M
@@ -62,6 +62,15 @@ temp() {
   else
     mktemp -dp . temp-XXXX
   fi
+}
+
+trepo() {
+  echo "<pre>"
+  tree -FH https://gitlab.com/PiONEERS/latest/blob/master -I \
+    "build|dist|MANIFEST|*__init__*|*.py[cod]|*.o|*.so" "$@" | tail -n+31 | \
+    head -n-16 | sed -e "s/^\t/  /" | sed -e "s/<br>$//" | sed -e \
+    "s|>https://gitlab.com/PiONEERS/latest/blob/master</a>|>latest</a>/|"
+  echo "</pre>"
 }
 
 ##

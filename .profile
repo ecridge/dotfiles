@@ -12,9 +12,13 @@ export TZ="Europe/London"
 
 # Use the GNU toolchain
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+MANPATH="/usr/local/opt/findutils/libexec/gnuman:$MANPATH"
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # Add user binaries to PATH
 if [ -d "$HOME/bin" ] ; then
   PATH="$HOME/bin:$PATH"
 fi
+
+export PATH
+export MANPATH

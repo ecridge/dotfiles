@@ -11,7 +11,7 @@ filetype plugin indent on
 syntax enable
 colorscheme solarized
 set showtabline=1
-set guifont=Consolas:h14
+set guifont=Droid\ Sans\ Mono:h14
 set hlsearch
 set list listchars=tab:>\ ,trail:-,extends:$,precedes:$,nbsp:+
 

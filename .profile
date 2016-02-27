@@ -10,16 +10,11 @@ export RI="--format ansi --width 78"
 export RI_PAGER="less -r"
 export TZ="Europe/London"
 
-##
-# Add user binaries to PATH
-##
+# Use the GNU toolchain
+PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
+# Add user binaries to PATH
 if [ -d "$HOME/bin" ] ; then
   PATH="$HOME/bin:$PATH"
 fi
-
-##
-# Add RVM to PATH
-##
-
-export PATH="$PATH:$HOME/.rvm/bin"

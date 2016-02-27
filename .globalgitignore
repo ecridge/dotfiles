@@ -2,7 +2,7 @@
 *.DS_Store
 
 # Vim Swap Files
-*.swp
+*.sw[a-p]
 
 # Automatic backups
 *~

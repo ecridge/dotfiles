@@ -6,7 +6,6 @@
 !\.config
 !\.config/git
 !\.config/git/ignore
-!\.duti
 !\.git-prompt.sh
 !\.gitconfig
 !\.gitignore
@@ -17,4 +16,4 @@
 !\.vimrc
 !\src
 !\src/*
-\src/*.swp
+\src/*.sw[a-p]

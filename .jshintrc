@@ -1,0 +1,78 @@
+{
+    // JSHint Configuration File
+    // See http://jshint.com/docs/ for more details
+
+    // Abort after too many errors
+    "maxerr"        : 50,
+
+    // Enforcing -- setting true generates more warnings
+    "bitwise"       : true,
+    "curly"         : true,
+    "eqeqeq"        : true,
+    "forin"         : true,
+    "freeze"        : true,
+    "futurehostile" : true,
+    "latedef"       : true,      // Set to "nofunc" to enforce for vars only
+    "maxcomplexity" : false,
+    "maxdepth"      : false,
+    "maxparams"     : false,
+    "maxstatements" : false,
+    "noarg"         : true,
+    "nocomma"       : true,
+    "nonbsp"        : true,
+    "nonew"         : true,
+    "plusplus"      : true,
+    "singleGroups"  : true,
+    "strict"        : true,
+    "undef"         : true,
+    "unused"        : true,
+    "varstmt"       : false,     // Requires ES6
+
+    // Relaxing -- setting true generates less warnings
+    "asi"           : false,
+    "boss"          : false,
+    "debug"         : false,
+    "elision"       : false,
+    "eqnull"        : false,
+    "moz"           : false,
+    "evil"          : false,
+    "expr"          : false,
+    "funcscope"     : false,
+    "iterator"      : false,
+    "lastsemic"     : false,
+    "loopfunc"      : false,
+    "noyield"       : false,
+    "notypeof"      : false,
+    "proto"         : false,
+    "scripturl"     : false,
+    "shadow"        : false,
+    "supernew"      : false,
+    "validthis"     : false,
+
+    // Environment globals
+    "browser"       : true,   // Permit document, navigator, FileReader, etc.
+    "browserify"    : false,  // Permit Browserify globals
+    "couch"         : false,  // Permit CouchDB globals
+    "devel"         : true,   // Permit alert, confirm, console, etc.
+    "dojo"          : false,  // Permit Dojo Toolkit globals
+    "jasmine"       : false,  // Permit Jasmine test framework globals
+    "jquery"        : false,  // Permit jQuery globals
+    "mocha"         : false,  // Permit Mocha test globals
+    "module"        : false,  // Interpret as an ECMAScript 6 module
+    "mootools"      : false,  // Permit MooTools globals
+    "node"          : false,  // Permit Node.js globals, skip browser warnings
+    "nonstandard"   : false,  // Permit widely adopted globals (escape, etc.)
+    "phantom"       : false,  // Permit PhantomJS runtime globals
+    "prototypejs"   : false,  // Permit Prototype globals
+    "qunit"         : false,  // Permit QUnit test framework globals
+    "rhino"         : false,  // Permit Rhino runtime globals
+    "shelljs"       : false,  // Permit ShellJS globals
+    "typed"         : false,  // Permit globals for typed array constructions
+    "worker"        : false,  // Permit globals used in Web Workers
+    "wsh"           : false,  // Permit Windows Scripting Host globals
+    "yui"           : false,  // Permit Yahoo User Interface globals
+
+    // Custom globals
+    "globals"       : {},
+    "predef"        : {}
+}

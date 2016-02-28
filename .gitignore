@@ -11,6 +11,8 @@
 !\.gitignore
 !\.globalgitignore
 !\.inputrc
+!\.jscsrc
+!\.jshintrc
 !\.nanorc
 !\.profile
 !\.vimrc

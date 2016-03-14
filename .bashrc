@@ -30,6 +30,10 @@ alias printenv="printenv | sort | grep -Pe '^[A-Z][A-Z0-9_]*(?==)'"
 alias py="clear && python"
 alias sudoa="sudo "  # Create an alias of sudo that expands aliases
 alias q="logout"
+alias tree="tree -I '.DS_Store|.AppleDouble|.LSOverride|._*|.DocumentRevisions\
+-V100|.fseventd|.Spotlight-V100|.TemporaryItems|.Trashes|.VolumeIcon.icns|.App\
+leDB|.AppleDesktop|Network Trash Folder|Temporary Items|.apdisk|.localized|[._\
+]*.?s[a-w][a-z]|Session.vim.netrwhist|*~|tags|node_modules|.git'"
 alias vd="vimdiff"
 
 # Function to make a new directory and change into it

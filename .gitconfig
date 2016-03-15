@@ -21,6 +21,7 @@
 	ad = add
 	dt = difftool
 	df = diff
+	cp = cherry-pick
 [credential]
 	helper = osxkeychain
 [diff]

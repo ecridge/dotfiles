@@ -38,13 +38,13 @@ alias vd="vimdiff"
 
 # Function to make a new directory and change into it
 mkcd() {
-  mkdir "$@" && cd "$_";
+  mkdir "$@" && cd "$_"
 }
 
 # Function to make a new directory with a memorable name
 temp() {
-  SRC="$HOME/Code/Resources/wordlists"
-  if [[ -f "$SRC/adjectives" && -f "$SRC/animals" ]] ; then
+  SRC="$HOME/resources"
+  if [[ -f "$SRC/adjectives" && -f "$SRC/animals" ]]; then
     iAdj=$RANDOM
     nAdj=`grep -c "." $SRC/adjectives`
     let "iAdj %= $nAdj"

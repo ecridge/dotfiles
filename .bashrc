@@ -7,11 +7,12 @@ custom_prompt() {
   exit_code=$?
   message_string=""
   bash_version=$(echo $BASH_VERSION | sed -e 's/\([0-9.]*\)(.*/\1/')
+  swd=$(pwd | sed -e "s|^${HOME}|~|" -re 's|([^/]{0,2})[^/]*/|\1/|g')
   window_title="Bash $bash_version"
   if [ $exit_code -ne 0 ] ; then
     message_string="\[\e[31m\]exit $exit_code\[\e[0m\]\n"
   fi
-  PS1="$message_string\u@\h:\w\[\e[32m\]\$(__git_ps1 "[%s]")\[\e[0m\]\$ "
+  PS1="$message_string\u@\h:${swd}\[\e[32m\]\$(__git_ps1 "[%s]")\[\e[0m\]\$ "
   echo -n -e "\033]0;$window_title\007"
 }
 

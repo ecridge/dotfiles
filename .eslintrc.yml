@@ -1,354 +1,466 @@
 ---
-  # Parser Configuration
-  parserOptions:
-    ecmaVersion: 6
-    sourceType: module
-    ecmaFeatures:
-      globalReturn: true
-      impliedStrict: true
-      experimentalObjectRestSpread: true
-  parser: babel-eslint
-  plugins: [babel]
+# Look no further than this configuration file.
+root: true
 
-  # Global Variable Provision
-  env:
-    browser:              true
-    node:                 true
-    commonjs:             true
-    shared-node-browser:  false
-    es6:                  true
-    worker:               false
-    amd:                  false
-    mocha:                false
-    jasmine:              false
-    jest:                 false
-    phantomjs:            false
-    protractor:           false
-    qunit:                false
-    jquery:               false
-    prototypejs:          false
-    shelljs:              false
-    meteor:               false
-    mongo:                false
-    applescript:          false
-    nashorn:              false
-    serviceworker:        false
-    atomtest:             false
-    embertest:            false
-    webextensions:        false
-    greasemonkey:         false
 
-  # Linting Rules
-  rules:
-    # Possible Errors
-    #
-    # The following rules point out areas where you might have made mistakes.
-    comma-dangle:              [error, always-multiline]
-    no-cond-assign:            [error, except-parens]
-    no-console:                warn   # Useful when debugging.
-    no-constant-condition:     warn   # Likewise.
-    no-control-regex:          error
-    no-debugger:               error
-    no-dupe-args:              error
-    no-dupe-keys:              error
-    no-duplicate-case:         error
-    no-empty:                  error
-    no-empty-character-class:  error
-    no-ex-assign:              error
-    no-extra-boolean-cast:     error
-    no-extra-parens:           [warn, all, { conditionalAssign: true }]
-    no-extra-semi:             error
-    no-func-assign:            error
-    no-inner-declarations:     error
-    no-invalid-regexp:         error
-    no-irregular-whitespace:   error
-    no-negated-in-lhs:         error
-    no-obj-calls:              error
-    no-regex-spaces:           error
-    no-sparse-arrays:          error
-    no-unexpected-multiline:   error
-    no-unreachable:            error
-    use-isnan:                 error
-    valid-jsdoc:               error
-    valid-typeof:              error
+# Parser configuration.
+parser: babel-eslint
+parserOptions:
+  ecmaFeatures:
+    experimentalObjectRestSpread: true
+    globalReturn: false
+    impliedStrict: true
+    jsx: false
+  ecmaVersion: 6
+  sourceType: module
+plugins:
+  - babel
 
-    # Best Practices
-    #
-    # These are rules designed to prevent you from making mistakes. They either
-    # prescribe a better way of doing something or help you avoid pitfalls.
-    accessor-pairs:                error
-    array-callback-return:         error
-    block-scoped-var:              error
-    complexity:                    [warn, 20]  # May need to revisit.
-    consistent-return:             error
-    curly:                         [error, all]
-    default-case:                  error
-    dot-location:                  [error, property]
-    dot-notation:                  error
-    eqeqeq:                        error
-    guard-for-in:                  error
-    no-alert:                      warn   # Useful when debugging.
-    no-caller:                     error
-    no-case-declarations:          error
-    no-div-regex:                  'off'  # Rule more confusing than problem!
-    no-else-return:                error
-    no-empty-function:             error
-    no-empty-pattern:              error
-    no-eq-null:                    error
-    no-eval:                       error
-    no-extend-native:              error
-    no-extra-bind:                 error
-    no-extra-label:                error
-    no-fallthrough:                error
-    no-floating-decimal:           error
-    no-implicit-coercion:          error
-    no-implicit-globals:           error
-    no-implied-eval:               error
-    no-invalid-this:               error
-    no-iterator:                   error
-    no-labels:                     error
-    no-lone-blocks:                error
-    no-loop-func:                  error
-    no-magic-numbers:              [warn, { ignore: [0, 1] }]  # Debugging.
-    no-multi-spaces:               error
-    no-multi-str:                  error
-    no-native-reassign:            error
-    no-new:                        error
-    no-new-func:                   error
-    no-new-wrappers:               error
-    no-octal:                      error
-    no-octal-escape:               error
-    no-param-reassign:             error
-    no-proto:                      error
-    no-redeclare:                  error
-    no-return-assign:              [error, except-parens]
-    no-script-url:                 error
-    no-self-assign:                error
-    no-self-compare:               error
-    no-sequences:                  error
-    no-throw-literal:              error
-    no-unmodified-loop-condition:  error
-    no-unused-expressions:         error
-    no-unused-labels:              error
-    no-useless-call:               error
-    no-useless-concat:             error
-    no-useless-escape:             error
-    no-void:                       error
-    no-with:                       error
-    radix:                         error
-    vars-on-top:                   error
-    wrap-iife:                     error
-    yoda:                          [error, never]
-    no-warning-comments:
-      - warn
-      - terms: [todo, fixme, hack]
-        location: anywhere
 
-    # Strict Mode
-    #
-    # These rules relate to using strict mode and strict mode directives.
-    strict: [error, safe]  # In ES6 mode, will flag up unnecessary directives.
+# Global variable provision.
+env:
+  amd: false
+  applescript: false
+  atomtest: false
+  browser: true
+  commonjs: true
+  embertest: false
+  es6: true
+  greasemonkey: false
+  jasmine: false
+  jest: false
+  jquery: false
+  meteor: false
+  mocha: false
+  mongo: false
+  nashorn: false
+  node: true
+  phantomjs: false
+  prototypejs: false
+  protractor: false
+  qunit: false
+  serviceworker: false
+  shared-node-browser: false
+  shelljs: false
+  webextensions: false
+  worker: false
+globals:  # Custom globals go here.
 
-    # Variables
-    #
-    # These rules have to do with variable declarations.
-    init-declarations:           'off'
-    no-catch-shadow:             error
-    no-delete-var:               error
-    no-label-var:                error
-    no-restricted-globals:       'off'
-    no-shadow:                   'off'
-    no-shadow-restricted-names:  error
-    no-undef:                    error
-    no-undef-init:               error
-    no-undefined:                error
-    no-unused-vars:              error
-    no-use-before-define:        error
 
-    # Node.js and CommonJS
-    #
-    # These rules are specific to JavaScript running on Node.js or using
-    # CommonJS in the browser.
-    callback-return:        warn         # Not always accurate.
-    global-require:         error
-    handle-callback-err:    [error, '^.*(e|E)rr']
-    no-mixed-requires:      error
-    no-new-require:         error
-    no-path-concat:         error
-    no-process-env:         error
-    no-process-exit:        warn         # Context-dependent.
-    no-restricted-modules:  [error, os]  # Prevent OS-specific code.
-    no-sync:                warn         # Context-dependent.
+# Linting rules.
+rules:
+  # Possible errors.
+  comma-dangle:
+    - error
+    - always-multiline
+  no-cond-assign:
+    - error
+    - except-parens
+  no-console: warn  # Useful when debugging.
+  no-constant-condition: warn  # Likewise.
+  no-control-regex: error
+  no-debugger: error
+  no-dupe-args: error
+  no-dupe-keys: error
+  no-duplicate-case: error
+  no-empty: error
+  no-empty-character-class: error
+  no-ex-assign: error
+  no-extra-boolean-cast: error
+  no-extra-parens:
+    - warn  # Not exactly critical.
+    - all
+    - conditionalAssign: true
+  no-extra-semi: error
+  no-func-assign: error
+  no-inner-declarations: error
+  no-invalid-regexp: error
+  no-irregular-whitespace: error
+  no-negated-in-lhs: error
+  no-obj-calls: error
+  no-regex-spaces: error
+  no-sparse-arrays: error
+  no-unexpected-multiline: error
+  no-unreachable: error
+  use-isnan: error
+  valid-jsdoc: error
+  valid-typeof: error
 
-    # Stylistic Issues
-    #
-    # These rules are purely matters of style and are quite subjective.
-    array-bracket-spacing:          'off'  # Use plugin instead.
-    block-spacing:                  [error, always]
-    brace-style:                    [error, 1tbs, { allowSingleLine: false }]
-    camelcase:                      [error, { properties: always }]
-    comma-spacing:                  [error, { before: false, after: true }]
-    comma-style:
-      - error
-      - first
-      - exceptions:
-          ArrayExpression:   true
-          ObjectExpression:  true
-    computed-property-spacing:      [error, never]
-    consistent-this:                [error, self]
-    eol-last:                       [error, unix]
-    func-names:                     error  # More useful stack traces.
-    func-style:                     'off'
-    id-blacklist:                   'off'
-    id-length:                      'off'
-    id-match:                       'off'
-    indent:
-      - error
-      - 2
-      - SwitchCase: 0
-        VariableDeclarator:
-          var:    1
-          let:    1
-          const:  2
-    jsx-quotes:                     [warn, prefer-double]
-    key-spacing:
-      - error
-      - { beforeColon: false, afterColon: true }
-    keyword-spacing:                [error, { before: true, after: true }]
-    linebreak-style:                [error, unix]
-    lines-around-comment:
-      - error
-      - beforeBlockComment:  true
-        afterBlockComment:   false
-        beforeLineComment:   true
-        afterLineComment:    false
-        allowBlockStart:     true
-        allowBlockEnd:       false
-        allowObjectStart:    true
-        allowObjectEnd:      false
-        allowArrayStart:     true
-        allowArrayEnd:       false
+  # Best practices.
+  accessor-pairs: error
+  array-callback-return: error
+  block-scoped-var: error
+  complexity:
+    - warn
+    - 20  # May need to revisit.
+  consistent-return: error
+  curly:
+    - error
+    - all
+  default-case: error
+  dot-location:
+    - error
+    - property
+  dot-notation: error
+  eqeqeq: error
+  guard-for-in: error
+  no-alert: warn  # Useful when debugging.
+  no-caller: error
+  no-case-declarations: error
+  no-div-regex: 'off'  # Rule is more confusing than the problem it prevents!
+  no-else-return: error
+  no-empty-function: error
+  no-empty-pattern: error
+  no-eq-null: error
+  no-eval: error
+  no-extend-native: error
+  no-extra-bind: error
+  no-extra-label: error
+  no-fallthrough: error
+  no-floating-decimal: error
+  no-implicit-coercion: error
+  no-implicit-globals: error
+  no-implied-eval: error
+  no-invalid-this: error
+  no-iterator: error
+  no-labels: error
+  no-lone-blocks: error
+  no-loop-func: error
+  no-magic-numbers:
+    - warn  # Useful when debugging.
+    - ignore:
+        - 0
+        - 1
+  no-multi-spaces: error
+  no-multi-str: error
+  no-native-reassign: error
+  no-new: error
+  no-new-func: error
+  no-new-wrappers: error
+  no-octal: error
+  no-octal-escape: error
+  no-param-reassign: error
+  no-proto: error
+  no-redeclare: error
+  no-return-assign:
+    - error
+    - except-parens
+  no-script-url: error
+  no-self-assign: error
+  no-self-compare: error
+  no-sequences: error
+  no-throw-literal: error
+  no-unmodified-loop-condition: error
+  no-unused-expressions: error
+  no-unused-labels: error
+  no-useless-call: error
+  no-useless-concat: error
+  no-useless-escape: error
+  no-void: error
+  no-warning-comments:
+    - warn
+    - terms:
+        - fixme
+        - hack
+        - todo
+        - xxx
+      location: anywhere
+  no-with: error
+  radix: error
+  vars-on-top: error
+  wrap-iife: error
+  yoda:
+    - error
+    - never
 
-    max-depth:                      [warn, 4]  # May need to revisit.
-    max-len:
-      - error
-      - code:                    79
-        comments:                79
-        tabWidth:                2
-        ignoreComments:          false
-        ignoreTrailingComments:  true
-        ignoreUrls:              true
-    max-nested-callbacks:           [warn, 3]  # May need to revisit.
-    max-params:                     [warn, 3]  # Likewise.
-    max-statements:                 # Likewise.
-      - warn
-      - 10
-      - ignoreTopLevelFunctions: true
-    max-statements-per-line:        [error, { max: 1 }]
-    new-cap:                        'off'   # Use plugin instead.
-    new-parens:                     error
-    newline-after-var:              [error, always]
-    newline-before-return:          error
-    newline-per-chained-call:       [error, { ignoreChainWithDepth: 2}]
-    no-array-constructor:           error
-    no-bitwise:                     warn  # Usually a logical typo...
-    no-continue:                    error
-    no-inline-comments:             'off'
-    no-lonely-if:                   error
-    no-mixed-spaces-and-tabs:       error
-    no-multiple-empty-lines:        [error, { max: 2, maxBOF: 0, maxEOF: 0 }]
-    no-negated-condition:           error
-    no-nested-ternary:              error
-    no-new-object:                  error
-    no-plusplus:                    [error, { allowForLoopAfterthoughts: true }]
-    no-restricted-syntax:           'off'
-    no-spaced-func:                 'off'
-    no-ternary:                     'off'
-    no-trailing-spaces:             [error, { skipBlankLines: false }]
-    no-underscore-dangle:           'off'
-    no-unneeded-ternary:            [error, { defaultAssignment: false }]
-    no-whitespace-before-property:  error
-    object-curly-spacing:           'off'  # Use plugin instead.
-    one-var:                        [error, always]
-    one-var-declaration-per-line:   [error, always]
-    operator-assignment:            [error, always]
-    operator-linebreak:
-      - error
-      - after
-      - overrides:
-          '?': none
-          ':': none
-    padded-blocks:
-      - error
-      - blocks: never
-        switches: never
-        classes: never
-    quote-props:                    [error, as-needed]
-    quotes:                         [error, single, avoid-escape]
-    require-jsdoc:
-      - error
-      - require:
-          FunctionDeclaration:  true
-          ClassDeclaration:     true
-          MethodDefinition:     false
-    semi:                           [error, never]
-    semi-spacing:                   [error, { before: false, after: true }]
-    sort-imports:                   error
-    sort-vars:                      error
-    space-before-blocks:            [error, always]
-    space-before-function-paren:
-      - error
-      - anonymous: always
-        named: never
-    space-in-parens:                [error, never]
-    space-infix-ops:                error
-    space-unary-ops:
-      - error
-      - words:     true
-        nonwords:  false
-    spaced-comment:                 [error, always]
-    wrap-regex:                     'off'
+  # Strict mode.
+  strict:
+    - error
+    - safe  # Will flag up unnecessary directives in ES2015 mode.
 
-    # ECMAScript 6
-    #
-    # These rules are only relevant to ES6 environments.
-    arrow-body-style:        [error, as-needed]
-    arrow-parens:            'off'   # Use plugin instead.
-    arrow-spacing:           [error, { before: true, after: true }]
-    constructor-super:       error
-    generator-star-spacing:  'off'   # Use plugin instead.
-    no-class-assign:         error
-    no-confusing-arrow:      [error, { allowParens: false }]
-    no-const-assign:         error
-    no-dupe-class-members:   error
-    no-duplicate-imports:    [error, { includeExports: true }]
-    no-new-symbol:           error
-    no-restricted-imports:   'off'
-    no-this-before-super:    error
-    no-useless-constructor:  error
-    no-var:                  error
-    object-shorthand:        'off'   # Use plugin instead.
-    prefer-arrow-callback:   error
-    prefer-const:            warn
-    prefer-reflect:          warn
-    prefer-rest-params:      error
-    prefer-spread:           error
-    prefer-template:         error
-    require-yield:           error
-    template-curly-spacing:  [error, never]
-    yield-star-spacing:      [error, before]
+  # Variables.
+  init-declarations: 'off'
+  no-catch-shadow: error
+  no-delete-var: error
+  no-label-var: error
+  no-restricted-globals: 'off'
+  no-shadow: 'off'
+  no-shadow-restricted-names: error
+  no-undef: error
+  no-undef-init: error
+  no-undefined: error
+  no-unused-vars: error
+  no-use-before-define: error
 
-    # Babel Plugin
-    #
-    # These rules are designed to replace core eslint rules.
-    babel/generator-star-spacing:  [error, after]
-    babel/new-cap:                 error
-    babel/array-bracket-spacing:   [error, never]
-    babel/object-curly-spacing:
-      - error
-      - always
-      - objectsInObjects: true
-        arraysInObjects:  true
-    babel/object-shorthand:        [error, always]
-    babel/arrow-parens:            [error, always]
-    babel/no-await-in-loop:        warn
+  # Node.js and CommonJS.
+  callback-return: warn  # Not always accurate.
+  global-require: error
+  handle-callback-err:
+    - error
+    - '^.*(e|E)rr'
+  no-mixed-requires: error
+  no-new-require: error
+  no-path-concat: error
+  no-process-env: error
+  no-process-exit: warn  # Context-dependent.
+  no-restricted-modules:
+    - error
+    - os  # Prevent OS-specific code.
+  no-sync: warn  # Context-dependent.
+
+  # Stylistic issues.
+  array-bracket-spacing: 'off'  # Use plugin instead.
+  block-spacing:
+    - error
+    - always
+  brace-style:
+    - error
+    - 1tbs
+    - allowSingleLine: false
+  camelcase:
+    - error
+    - properties: always
+  comma-spacing:
+    - error
+    - before: false
+      after: true
+  comma-style:
+    - error
+    - first
+    - exceptions:
+        ArrayExpression: true
+        ObjectExpression: true
+  computed-property-spacing:
+    - error
+    - never
+  consistent-this:
+    - error
+    - self
+  eol-last:
+    - error
+    - unix
+  func-names: error  # Leads to more useful stack traces.
+  func-style: 'off'
+  id-blacklist: 'off'
+  id-length: 'off'
+  id-match: 'off'
+  indent:
+    - error
+    - 2
+    - SwitchCase: 0
+      VariableDeclarator:
+        var: 1
+        let: 1
+        const: 2
+  jsx-quotes:
+    - warn  # Don't plan on using JSX.
+    - prefer-double
+  key-spacing:
+    - error
+    - beforeColon: false
+      afterColon: true
+  keyword-spacing:
+    - error
+    - before: true
+      after: true
+  linebreak-style:
+    - error
+    - unix
+  lines-around-comment:
+    - error
+    - beforeBlockComment: true
+      afterBlockComment: false
+      beforeLineComment: true
+      afterLineComment: false
+      allowBlockStart: true
+      allowBlockEnd: false
+      allowObjectStart: true
+      allowObjectEnd: false
+      allowArrayStart: true
+      allowArrayEnd: false
+
+  max-depth:
+    - warn
+    - 4  # May need to revisit.
+  max-len:
+    - error
+    - code: 79
+      comments: 79
+      tabWidth: 2
+      ignoreComments: false
+      ignoreTrailingComments: true
+      ignoreUrls: true
+  max-nested-callbacks:
+    - warn
+    - 3  # May need to revisit.
+  max-params:
+    - warn
+    - 3  # Likewise.
+  max-statements:
+    - warn
+    - 10  # Likwise.
+    - ignoreTopLevelFunctions: true
+  max-statements-per-line:
+    - error
+    - max: 1
+  new-cap: 'off'  # Use plugin instead.
+  new-parens: error
+  newline-after-var:
+    - error
+    - always
+  newline-before-return: error
+  newline-per-chained-call:
+    - error
+    - ignoreChainWithDepth: 2
+  no-array-constructor: error
+  no-bitwise: warn  # Usually a logical typo...
+  no-continue: error
+  no-inline-comments: 'off'
+  no-lonely-if: error
+  no-mixed-spaces-and-tabs: error
+  no-multiple-empty-lines:
+    - error
+    - max: 2
+      maxBOF: 0
+      maxEOF: 0
+  no-negated-condition: error
+  no-nested-ternary: error
+  no-new-object: error
+  no-plusplus:
+    - error
+    - allowForLoopAfterthoughts: true
+  no-restricted-syntax: 'off'
+  no-spaced-func: 'off'
+  no-ternary: 'off'
+  no-trailing-spaces:
+    - error
+    - skipBlankLines: false
+  no-underscore-dangle: 'off'
+  no-unneeded-ternary:
+    - error
+    - defaultAssignment: false
+  no-whitespace-before-property: error
+  object-curly-spacing: 'off'  # Use plugin instead.
+  one-var:
+    - error
+    - always
+  one-var-declaration-per-line:
+    - error
+    - always
+  operator-assignment:
+    - error
+    - always
+  operator-linebreak:
+    - error
+    - after
+    - overrides:
+        '?': none
+        ':': none
+  padded-blocks:
+    - error
+    - blocks: never
+      switches: never
+      classes: never
+  quote-props:
+    - error
+    - as-needed
+  quotes:
+    - error
+    - single
+    - avoid-escape
+  require-jsdoc:
+    - error
+    - require:
+        FunctionDeclaration: true
+        ClassDeclaration: true
+        MethodDefinition: false
+  semi:
+    - error
+    - never
+  semi-spacing:
+    - error
+    - before: false
+      after: true
+  sort-imports: error
+  sort-vars: error
+  space-before-blocks:
+    - error
+    - always
+  space-before-function-paren:
+    - error
+    - anonymous: always
+      named: never
+  space-in-parens:
+    - error
+    - never
+  space-infix-ops: error
+  space-unary-ops:
+    - error
+    - words: true
+      nonwords: false
+  spaced-comment:
+    - error
+    - always
+  wrap-regex: 'off'
+
+  # ES2015.
+  arrow-body-style:
+    - error
+    - as-needed
+  arrow-parens: 'off'  # Use plugin instead.
+  arrow-spacing:
+    - error
+    - before: true
+      after: true
+  constructor-super: error
+  generator-star-spacing: 'off'  # Use plugin instead.
+  no-class-assign: error
+  no-confusing-arrow:
+    - error
+    - allowParens: false
+  no-const-assign: error
+  no-dupe-class-members: error
+  no-duplicate-imports:
+    - error
+    - includeExports: true
+  no-new-symbol: error
+  no-restricted-imports: 'off'
+  no-this-before-super: error
+  no-useless-constructor: error
+  no-var: error
+  object-shorthand: 'off'  # Use plugin instead.
+  prefer-arrow-callback: error
+  prefer-const: warn  # Subjective.
+  prefer-reflect: warn
+  prefer-rest-params: error
+  prefer-spread: error
+  prefer-template: error
+  require-yield: error
+  template-curly-spacing:
+    - error
+    - never
+  yield-star-spacing:
+    - error
+    - before
+
+  # Babel plugin.
+  babel/generator-star-spacing:
+    - error
+    - after
+  babel/new-cap: error
+  babel/array-bracket-spacing:
+    - error
+    - never
+  babel/object-curly-spacing:
+    - error
+    - always
+    - objectsInObjects: true
+      arraysInObjects: true
+  babel/object-shorthand:
+    - error
+    - always
+  babel/arrow-parens:
+    - error
+    - always
+  babel/no-await-in-loop: warn  # Rule not documented.
+...

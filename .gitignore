@@ -11,6 +11,7 @@
 !\.gitconfig
 !\.gitignore
 !\.globalgitignore
+!\.hhighlight\.sh
 !\.inputrc
 !\.mdstyle
 !\.nanorc

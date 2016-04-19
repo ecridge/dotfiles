@@ -20,5 +20,8 @@ if [ -d "$HOME/bin" ] ; then
   PATH="$HOME/bin:$PATH"
 fi
 
+# Add Go packages to PATH
+PATH="$PATH:/usr/local/opt/go/libexec/bin"
+
 export PATH
 export MANPATH

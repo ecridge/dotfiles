@@ -13,7 +13,7 @@ custom_prompt() {
     swd=$(pwd | sed -e "s|^${HOME}|~|" -re 's|([^/]{0,2})[^/]*/|\1/|g')
     window_title="Bash $bash_version"
 
-    if [ $exit_code -ne 0 ] ; then
+    if [ $exit_code -ne 0 ]; then
         message_string="\[\e[31m\]exit $exit_code\[\e[0m\]\n"
     fi
 

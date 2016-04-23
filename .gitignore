@@ -14,7 +14,6 @@
 !\.globalgitignore
 !\.inputrc
 !\.mdstyle
-!\.nanorc
 !\.profile
 !\.vimrc
 !\.yamllint

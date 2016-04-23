@@ -1,11 +1,8 @@
-# This is the .gitignore for my dotfiles repo
-# For global .gitignore settings see ~/.globalgitignore
+# This is the .gitignore for my dotfiles repo.
+# For global .gitignore settings see ~/.globalgitignore.
 *
 !\.bash_profile
 !\.bashrc
-!\.config
-!\.config/git
-!\.config/git/ignore
 !\.eslintrc\.yml
 !\.git-prompt\.sh
 !\.gitconfig

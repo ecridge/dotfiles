@@ -19,6 +19,7 @@
 !\.vimrc
 !\.yamllint
 
+
 # Track Bash and Ruby scripts under src.
 #
 # Both the directory and its contents have to be specified in order for the
@@ -28,3 +29,15 @@
 !src/
 !src/*.rb
 !src/*.sh
+
+
+# Track everything from the resources folder.
+!resources/
+!resources/**
+
+
+# Track Karabiner settings.
+!Library/
+!Library/Application Support
+!Library/Application Support/Karabiner/
+!Library/Application Support/Karabiner/private.xml

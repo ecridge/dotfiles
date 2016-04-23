@@ -1,42 +1,50 @@
+##
+# General Settings
+##
+
+# Enable Vi mode.
 set editing-mode vi
+
+# Set command line completion options.
 set show-all-if-ambiguous on
 set completion-ignore-case on
 set menu-complete-display-prefix on
 
+
 ##
-# Command mode keymaps
+# Normal Mode
 ##
 
 set keymap vi-command
 
-# Swap h and l
+# Swap h and l.
 "l": "\e[D"
 "h": "\e[C"
 
-# Make up and down arrows recall commands with the same beginning.
+# Make up and down arrows recall commands that have the same beginning.
 "\e[A": history-search-backward
 "\e[B": history-search-forward
 
+
 ##
-# Insert mode keymaps
+# Insert Mode
 ##
 
 set keymap vi-insert
 
-# Restore emacs chords in insert mode
+# Restore emacs chords.
 "\C-a": "\eI"
 "\C-e": "\eA"
 "\C-k": "\eC"
 
-# Use `…' to insert the arguments from the last command.
+# Use ‘…’ to enter the arguments from the previous command.
 "…": " !!*\r"
 
-# Enable history search in insert mode too.
+# Make up and down arrows recall commands that have the same beginning.
 "\e[A": history-search-backward
 "\e[B": history-search-forward
 
-# Pressing tab will list all completions and select the first one; pressing it
-# again will cycle through available completions. Cycle backwards by holding
-# shift as well.
+# Press tab once to list all completions and select the first one; press tab
+# again to cycle through available completions. Cycle backwards with shift-tab.
 TAB: menu-complete
 "\e[Z": menu-complete-backward

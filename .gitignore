@@ -1,23 +1,43 @@
-# This is the .gitignore for my dotfiles repo
-# For global .gitignore settings see ~/.globalgitignore
+# This is the .gitignore for my dotfiles repo. For global .gitignore settings,
+# see ~/.globalgitignore.
+
+# Default to ignoring everything.
 *
+
+# Explicitly track these files.
+!README.md
 !\.bash_profile
 !\.bashrc
-!\.config
-!\.config/git
-!\.config/git/ignore
 !\.eslintrc\.yml
 !\.git-prompt\.sh
 !\.gitconfig
 !\.gitignore
 !\.globalgitignore
-!\.hhighlight\.sh
 !\.inputrc
 !\.mdstyle
-!\.nanorc
 !\.profile
 !\.vimrc
 !\.yamllint
-!\src
-!\src/*
-\src/*\.sw[a-p]
+
+
+# Track Bash and Ruby scripts under src.
+#
+# Both the directory and its contents have to be specified in order for the
+# default ignore above to be overridden. Note that this overrides anything an
+# .globalgitignore, so that (for instance) adding the pattern !src/* will cause
+# Git to track src/.blah.sh.swp, src/.DS_Store and the like.
+!src/
+!src/*.rb
+!src/*.sh
+
+
+# Track everything from the resources folder.
+!resources/
+!resources/**
+
+
+# Track Karabiner settings.
+!Library/
+!Library/Application Support
+!Library/Application Support/Karabiner/
+!Library/Application Support/Karabiner/private.xml

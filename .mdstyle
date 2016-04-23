@@ -1,8 +1,7 @@
 all
 
-exclude_rule 'MD004'
-exclude_rule 'MD012'
-exclude_rule 'MD041'
+exclude_rule 'MD004'  # Allow multiple bullet markers.
+exclude_rule 'MD012'  # Allow consecutive blank lines.
 
 rule 'MD007', indent: 4
 rule 'MD009', br_spaces: 2

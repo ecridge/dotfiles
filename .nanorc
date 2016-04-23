@@ -1,6 +1,0 @@
-# Automatically wrap to 79 columns
-set fill 79
-unset nowrap
-
-# Remove tabs
-set tabstospaces

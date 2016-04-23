@@ -5,6 +5,7 @@
 *
 
 # Explicitly track these files.
+!README.md
 !\.bash_profile
 !\.bashrc
 !\.eslintrc\.yml

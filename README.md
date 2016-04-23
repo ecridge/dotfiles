@@ -1,11 +1,28 @@
-Home Dotfiles
-=============
+# Welcome $HOME (OS X)
 
-The configuration files from my `$HOME` directory that I can’t live without.
+These configuration files are for the GNU toolchain, rather than the default
+BSD toolchain that comes with OS X. These are easily replaced using
+[Homebrew][] – see [this Gist][gist] from <https://www.topbug.net/>.
 
-These files are for a GNU toolchain,  rather than the default BSD binaries that
-come with OS X (you can easily replace them with `brew`).
+## Install
 
-Don’t  forget  to **remove  any  personal  information** (eg  abbreviations  of
-contact details  in `~/.vimrc`) before  making the contents of  this repository
-public!
+1.  Clone and unpack:
+
+    ```bash
+    cd && git clone -n git@github.com:joecridge/dotfiles.git
+    mv dotfiles/.git . && rmdir dotfiles
+    git reset --hard HEAD  # Caution: existing dotfiles will be overwritten!
+    ```
+
+2.  Install the dependencies listed on the [wiki][].
+
+3.  Hide this file and the user binaries from Finder:
+
+    ```bash
+    chflags hidden README.md bin resources
+    ```
+
+[Homebrew]: http://brew.sh/
+[gist]: https://gist.github.com/xuhdev/8b1b16fb802f6870729038ce3789568f
+[wiki]: https://github.com/joecridge/dotfiles/wiki
+[xuhdev]: https://github.com/xuhdev

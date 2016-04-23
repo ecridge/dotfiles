@@ -104,6 +104,7 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_markdown_mdl_args = "--style ~/.mdstyle"
 let g:syntastic_scss_checkers = ['scss_lint']
 let g:syntastic_yaml_checkers = ['yamllint']
+let g:syntastic_sh_checkers = ['bashate']
 
 " Abbreviations
 iabbrev @@ joe.cridge@me.com
@@ -118,5 +119,6 @@ iabbrev thne then
 iabbrev wweb www.joecridge.me
 
 " File-specific autocommands
-autocmd FileType changelog setlocal ts=8 sw=8 noexpandtab
-autocmd FileType c setlocal ts=8 sw=8
+autocmd FileType c setlocal tabstop=8 shiftwidth=8
+autocmd FileType changelog setlocal tabstop=8 shiftwidth=8 noexpandtab
+autocmd FileType sh,zsh setlocal tabstop=4 shiftwidth=4

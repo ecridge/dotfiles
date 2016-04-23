@@ -59,11 +59,11 @@ temp() {
     if [[ -f "$SRC/adjectives" && -f "$SRC/animals" ]]; then
         iAdj=$RANDOM
         nAdj=`grep -c "." $SRC/adjectives`
-        let "iAdj %= $nAdj"
+        (( iAdj %= nAdj ))
         iAml=$RANDOM
         nAml=`grep -c "." $SRC/animals`
-        let "iAml %= $nAml"
-        (( iAdj++, iAml++ ))  # Arithmetic compound is safe here.
+        (( iAml %= nAml ))
+        (( iAdj++, iAml++ ))
         NAME=`sed -n "$iAdj p" $SRC/adjectives`-`sed -n "$iAml p" $SRC/animals`
         mkdir -vm 700 $NAME
     else

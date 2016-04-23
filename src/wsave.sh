@@ -4,11 +4,11 @@
 # Usage: $ wsave example.com www.example.com/part/tosave/
 
 wget \
-  --recursive \
-  --no-clobber \
-  --page-requisites \
-  --adjust-extension \
-  --convert-links \
-  --domains $1 \
-  --no-parent \
-  $2
+    --recursive \
+    --no-clobber \
+    --page-requisites \
+    --adjust-extension \
+    --convert-links \
+    --domains $1 \
+    --no-parent \
+    $2

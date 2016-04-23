@@ -1,9 +1,9 @@
-" Set leaders
+" Set leaders.
 noremap <space> <nop>
 let mapleader = "\<space>"
 let maplocalleader = "\\"
 
-" Load sensible defaults and solarized theme
+" Load Pathogen plugins and Solarized theme; set some sensible defaults.
 set nocompatible
 execute pathogen#infect()
 syntax on
@@ -15,11 +15,11 @@ set guifont=Droid\ Sans\ Mono:h14
 set hlsearch
 set list listchars=tab:>\ ,trail:-,extends:$,precedes:$,nbsp:+
 
-" Vim-LaTeX requirements
+" Requirements for Vim-LaTeX.
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
 
-" Set background colour dependent on context
+" Set background colour dependent on context.
 if has('gui_running')
   set background=light
   noremap <leader>bg :<c-u>set background=dark<cr>
@@ -28,46 +28,46 @@ else
   noremap <leader>bg :<c-u>set background=light<cr>
 endif
 
-" Turn off annoying bell
+" Turn off annoying bell.
 set visualbell t_vb=
 
-" Useful metrics
+" Display useful metrics.
 set number
 set showcmd
 
-" Split options
+" Split options.
 set equalalways eadirection=hor
 set splitbelow splitright
 
-" Prefer vertical split for help
+" Prefer vertical split for help.
 autocmd FileType help wincmd L
 autocmd FileType help vertical resize 97
 
-" Use 2 spaces for a tab
+" Default to two spaces for a tab.
 set tabstop=2 shiftwidth=2 expandtab
 
-" Bash-style autocompletion
+" Bash-style autocompletion.
 set wildmode=longest,list
 
-" Only insert one space after sentence end on joining
+" Only insert one space after period when joining.
 set nojoinspaces
 
-" Spell checking
+" Enable spell checking.
 set spell spelllang=en_gb
 
-" Wrapping options
+" Text wrapping options.
 set nowrap
 set textwidth=79
 set colorcolumn=+1
-set formatoptions=tcqnlBj " FIXME: Something is doing +=ro
+set formatoptions=tcqnlBj " FIXME: Something is doing +=ro.
 
-" Swap h and l
+" Swap h and l.
 noremap h l
 noremap l h
 noremap <c-w>h <c-w>l
 noremap <c-w>l <c-w>h
 
-" Use arrow keys to move between buffers
+" Use arrow keys to move between buffers.
 noremap <left> <c-w>h
 noremap <down> <c-w>j
 noremap <up> <c-w>k
@@ -87,11 +87,14 @@ nnoremap <leader>u viwU
 noremap <leader>. :<c-u>cd %:h<cr>:<c-u>pwd<cr>
 noremap <leader><leader> :<c-u>cd<cr>:<c-u>pwd<cr>
 
-" HACK: Create "an entire" object
+" HACK: Create ‘an entire’ object.
 onoremap <silent> ae :<c-u>normal! ggVG<cr>
 vnoremap <silent> ae <esc>ggVG<cr>
 
-" Syntastic syntax checking
+" Syntastic syntax checking.
+"
+" FIXME: One of these status line options is wiping out all of the other useful
+" information (location, number of selected characters, etc.).
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -102,23 +105,11 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_markdown_mdl_args = "--style ~/.mdstyle"
-let g:syntastic_scss_checkers = ['scss_lint']
+let g:syntastic_scss_checkers = ['scss_lint']  " FIXME: Not working in MacVim.
 let g:syntastic_yaml_checkers = ['yamllint']
-let g:syntastic_sh_checkers = ['bashate']
+let g:syntastic_sh_checkers = ['bashate']  " FIXME: Not working at all.
 
-" Abbreviations
-iabbrev @@ joe.cridge@me.com
-iabbrev @@k ***REMOVED***
-iabbrev ccopy Copyright (C) 2015 Joe Cridge. All rights reserved.
-iabbrev ddef #define  
-iabbrev envv #!/usr/bin/env
-iabbrev j- Joe
-iabbrev jc Joe Cridge
-iabbrev mmobile ***REMOVED***
-iabbrev thne then
-iabbrev wweb www.joecridge.me
-
-" File-specific autocommands
+" File-specific autocommands.
 autocmd FileType c setlocal tabstop=8 shiftwidth=8
 autocmd FileType changelog setlocal tabstop=8 shiftwidth=8 noexpandtab
 autocmd FileType sh,zsh setlocal tabstop=4 shiftwidth=4

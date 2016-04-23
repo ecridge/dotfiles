@@ -51,7 +51,7 @@
       <autogen>__KeyToKey__ KeyCode::EQUAL, KeyCode::VK_OPEN_URL_APP_MacVim</autogen>
     </item>
     <item>
-      <name>Cmd-Pulse for screenshot</name>
+      <name>Use Cmd-Pulse for screenshot</name>
       <identifier>private.cmdPulseScreenshot</identifier>
       <autogen>
         __KeyToKey__

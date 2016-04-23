@@ -192,9 +192,9 @@ __git_ps1_show_upstream ()
 	if [[ -z "$verbose" ]]; then
 		case "$count" in
 		"") # no upstream
-			p="" ;;
+			p="#" ;;
 		"0	0") # equal to upstream
-			p="=" ;;
+			p="" ;;
 		"0	"*) # ahead of upstream
 			p=">" ;;
 		*"	0") # behind upstream

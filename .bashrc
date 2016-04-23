@@ -79,4 +79,7 @@ binsync > /dev/null
 # Other things that need loading.
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 [[ -f "$HOME/.git-completion.bash" ]] && source "$HOME/.git-completion.bash"
-[[ -f "$HOME/.hhighlight.sh" ]] && source "$HOME/.hhighlight.sh"
+
+
+# Exit cleanly.
+true

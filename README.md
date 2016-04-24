@@ -9,7 +9,7 @@ BSD toolchain that comes with OS X. These are easily replaced using
 1.  Clone and unpack:
 
     ```bash
-    cd && git clone -n git@github.com:joecridge/dotfiles.git
+    cd && git clone -n git@github.com:joecridge/dotfiles.git -b darwin
     mv dotfiles/.git . && rmdir dotfiles
     git reset --hard HEAD  # Caution: existing dotfiles will be overwritten!
     ```

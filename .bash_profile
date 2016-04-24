@@ -1,4 +1,4 @@
-# This file just sources ~/.profile and ~/.bashrc
+# This file just sources ~/.profile and ~/.bashrc.
 #
 # Environment variables that are needed by other shells (such as sh or
 # graphical sessions) need to be in ~/.profile. There shouldn’t be anything in

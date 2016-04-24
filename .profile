@@ -11,23 +11,12 @@ export GLOBIGNORE='.:..'  # Stop .* from matching the . and .. directories.
 export HISTCONTROL=ignoreboth  # Forget duplicate and space-prefixed commands.
 export HISTFILESIZE=1000  # Maximum number of commands saved in .bash_history.
 export HISTSIZE=500  # Maximum number of commands to remember from one session.
+export LC_TIME=en_DK.UTF-8
 export RI='--format ansi --width 79'
 export RI_PAGER='less -r'
 export TZ=Europe/London
 
-# Use the GNU toolchain.
-PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-MANPATH="/usr/local/opt/findutils/libexec/gnuman:$MANPATH"
-MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-
 # Add user binaries to PATH.
 if [ -d "$HOME/bin" ]; then
-    PATH="$HOME/bin:$PATH"
+    export PATH="$HOME/bin:$PATH"
 fi
-
-# Add Go packages to PATH.
-PATH="$PATH:/usr/local/opt/go/libexec/bin"
-
-# Export final paths to subshells.
-export PATH
-export MANPATH

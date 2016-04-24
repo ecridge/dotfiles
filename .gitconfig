@@ -22,8 +22,6 @@
 	dt = difftool
 	df = diff
 	cp = cherry-pick
-[credential]
-	helper = osxkeychain
 [diff]
 	tool = vimdiff
 [filter "lfs"]

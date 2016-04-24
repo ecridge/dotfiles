@@ -3,9 +3,9 @@
 	email = joe.cridge@me.com
 	signingkey = DD659648
 [core]
-	editor = nvim
-	autocrlf = input
+	autocrlf = true
 	excludesfile = ~/.globalgitignore
+	attributesfile = ~/.globalgitattributes
 [color]
 	ui = true
 [format]
@@ -25,10 +25,8 @@
 	puhs = push
 	stat = shortlog -sne
 	ar = archive
-[credential]
-	helper = osxkeychain
 [diff]
-	tool = nvim -d
+	tool = bc
 	compactionHeuristic = true
 	submodule = log
 [filter "lfs"]
@@ -41,7 +39,7 @@
 [difftool]
 	prompt = false
 [merge]
-	tool = nvim -d
+	tool = bc
 	conflictstyle = diff3
 [mergetool]
 	prompt = false

@@ -22,13 +22,9 @@ syntax: glob
 *.msm
 *.msp
 
-# GPG
-syntax: glob
-secring.*
-
 # MATLAB
 syntax: glob
-*.m~
+*.asv
 *.mex*
 slprj/
 
@@ -51,25 +47,6 @@ syntax: regexp
 ~\$.*\.mht.*
 .*\.~vsdx
 
-# macOS
-syntax: glob
-.DS_Store
-.AppleDouble
-.LSOverride
-Icon
-._*
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
-
 # Vim
 syntax: regexp
 [._].*\.s[a-w][a-z]
@@ -80,18 +57,18 @@ Session.vim
 *~
 tags
 
-# Xcode
+# Visual Studio
 syntax: glob
-DerivedData/
-*.pbxuser
-!default.pbxuser
-*.mode1v3
-!default.mode1v3
-*.mode2v3
-!default.mode2v3
-*.perspectivev3
-!default.perspectivev3
-xcuserdata/
-*.moved-aside
-*.xccheckout
-*.xcscmblueprint
+.vscode
+
+# Windows
+syntax: glob
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk

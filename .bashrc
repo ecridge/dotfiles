@@ -62,6 +62,12 @@ alias vi=nvim
 alias vim=nvim
 alias vimdiff='nvim -d'
 alias vd=vimdiff
+alias vim="/cygdrive/c/Program\ Files\ \(x86\)/vim/vim73/gvim.exe -u 'C:\Program Files (x86)\vim\_vimrc'"
+
+# Function to load Beyond Compare from the command line.
+bc() {
+  "/cygdrive/c/Program Files (x86)/Beyond Compare 4/BCompare.exe" $1 $2 -fv "Beyond Compare"
+}
 
 
 # Function to make a new directory and change into it.

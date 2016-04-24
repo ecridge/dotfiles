@@ -16,12 +16,14 @@
 !.gitconfig
 !.gitignore
 !.gitmodules
+!.globalgitattributes
 !.globalgitignore
 !.globalhgignore
 !.hgrc
 !.hyper.js
 !.inputrc
 !.mdstyle
+!.minttyrc
 !.profile
 !.tern-config
 !.vimrc
@@ -49,16 +51,7 @@
 !resources/**
 
 
-# Track everything in ~/.config/nvim. These are mostly submodules.
-!.config/nvim/
-!.config/nvim/**
-.config/nvim/.netrwhist
-.config/nvim/autoload/pathogen.vim
-.config/nvim/spell/en.utf-8.spl
-.config/nvim/spell/en.utf-8.sug
-
-
-# Track Hammerspoon settings.
-!.hammerspoon/
-!.hammerspoon/*.lua
-!.hammerspoon/jeospoon
+# Track everything in ~/.vim. These are mostly submodules.
+!.vim/
+!.vim/**
+.vim/.netrwhist

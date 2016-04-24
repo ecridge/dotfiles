@@ -20,24 +20,10 @@ if [ -f "$HOME/private/.secrets" ]; then
     . "$HOME/private/.secrets"
 fi
 
-# Add brew sbin to PATH.
-if [ -d "/usr/local/sbin" ]; then
-    PATH="/usr/local/sbin:$PATH"
-fi
-
-# Use the GNU toolchain.
-PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-MANPATH="/usr/local/opt/findutils/libexec/gnuman:$MANPATH"
-MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-
 # Add user binaries to PATH.
 if [ -d "$HOME/bin" ]; then
     PATH="$HOME/bin:$PATH"
 fi
 
-# Add Go packages to PATH.
-PATH="$PATH:/usr/local/opt/go/libexec/bin"
-
-# Export final paths to subshells.
+# Export final path to subshells.
 export PATH
-export MANPATH

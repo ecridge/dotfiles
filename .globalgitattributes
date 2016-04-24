@@ -1,0 +1,12 @@
+# Default for when core.autocrlf is not set
+* text=auto
+
+# Files that should be converted to native format on checkout
+*.c text
+*.h text
+
+# Binary files that should never be converted
+*.png binary
+*.jpg binary
+*.PNG binary
+*.JPG binary

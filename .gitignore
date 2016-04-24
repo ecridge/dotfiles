@@ -21,6 +21,7 @@
 !.hgrc
 !.hyper.js
 !.inputrc
+!.hidden
 !.mdstyle
 !.profile
 !.tern-config
@@ -44,9 +45,10 @@
 !src/*.sh
 
 
-# Track everything from the resources folder.
+# Track (almost) everything from the resources folder.
 !resources
 !resources/**
+resources/macOS/
 
 
 # Track everything in ~/.config/nvim. These are mostly submodules.
@@ -59,12 +61,5 @@
 .config/nvim/.netrwhist
 
 
-# Track .terminfo
-!.terminfo
-!.terminfo/**/*
-
-
-# Track Hammerspoon settings.
-!.hammerspoon/
-!.hammerspoon/*.lua
-!.hammerspoon/jeospoon
+# Track locally installed fonts.
+!.local/share/fonts/**

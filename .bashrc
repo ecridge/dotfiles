@@ -9,7 +9,7 @@ shopt -s dotglob  # Globs match hidden files.
 shopt -s extglob  # Enable extended globbing, e.g. !(*.html|*.css).
 shopt -s lithist
 shopt -s no_empty_cmd_completion
-shopt -s nullglob  # Don’t take non-matching globs literally.
+#shopt -s nullglob  # Incompatible with the Ubuntu bash-completion package.
 shopt -s globstar  # ** expands to any number of directories.
 shopt -s histappend
 
@@ -32,12 +32,12 @@ gumpf+='coverage_report'
 
 # Set aliases.
 alias ag='ag -s'  # Case-sensitive by default.
+alias alert='notify-send --urgency=low -i terminal "Bash: exit $?"'
 alias ascii="ag '[^ -~\\n]'"  # Highlight non-ASCII characters in a file.
 alias aq='ag -Q'  # Match literals instead of regexen.
-alias b=brew
 alias c=clear
 alias chdom=chmod  # Common typo.
-alias chrome='open -a /Applications/Google\ Chrome.app/'
+alias chrome=google-chrome
 alias dr=docker
 alias dc=docker-compose
 alias e=nvim
@@ -55,8 +55,9 @@ alias post="curl -sSi -X POST -H 'Content-type: application/json' -d"
 alias printenv="printenv | sort | grep -Pe '^[A-Z][A-Z0-9_]*(?==)'"
 alias put="curl -sSi -X PUT -H 'Content-type: application/json' -d"
 alias py='clear && bpython'
+alias py3='clear && bpython3'
 alias sudoa='sudo '  # An alias of sudo that expands aliases.
-alias q=logout
+alias q=exit
 alias t="tree -I \"$gumpf\""
 alias vi=nvim
 alias vim=nvim
@@ -93,11 +94,19 @@ temp() {
 # Run login items.
 binsync > /dev/null
 
+# Enable programmable completion.
+if ! shopt -oq posix; then
+    if [ -f /usr/share/bash-completion/bash_completion ]; then
+        . /usr/share/bash-completion/bash_completion
+    elif [ -f /etc/bash_completion ]; then
+        . /etc/bash_completion
+    fi
+fi
+
 
 # Other things that need loading.
 if which rbenv &> /dev/null; then eval "$(rbenv init -)"; fi
 [[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
-[[ -f $HOME/.git-completion.bash ]] && source "$HOME/.git-completion.bash"
 [[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
 [[ -f $HOME/.bowman.bash ]] && source "$HOME/.bowman.bash"
 if which fasd &> /dev/null; then eval "$(fasd --init auto)"; fi
@@ -123,7 +132,7 @@ custom_prompt() {
     local BG='48;5;'
     local FG='38;5;'
     local RESET="\[\e[0m\]"
-    local RESET_BG="\[\e[48;5;235m\]" # 49 is buggy on Terminal.app
+    local RESET_BG="\[\e[49m\]"
 
     # Text colours.
     local STATUS_FG=223 # gruvbox fg

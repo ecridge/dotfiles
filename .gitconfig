@@ -26,8 +26,6 @@
 	puhs = push
 	stat = shortlog -sne
 	ar = archive
-[credential]
-	helper = osxkeychain
 [diff]
 	tool = idea
 	indentHeuristic = true

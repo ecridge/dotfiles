@@ -1,7 +1,3 @@
-# General
-[submodule "jeospoon"]
-	path = .hammerspoon/jeospoon
-	url = https://github.com/joecridge/jeospoon.git
 [submodule "private"]
 	path = private
 	url = git@github.com:joecridge/private.git

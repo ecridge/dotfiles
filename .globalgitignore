@@ -24,24 +24,14 @@
 # GPG
 secring.*
 
-# macOS
-.AppleDB
-.AppleDesktop
-.AppleDouble
-.DS_Store
-.DocumentRevisions-V100
-.LSOverride
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-._*
-.apdisk
-.fseventsd
-.localized
-Icon
-Network Trash Folder
-Temporary Items
+# LibreOffice
+.~lock.*#
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
 
 # MATLAB
 *.m~
@@ -56,13 +46,6 @@ slprj/
 .hgsubstate
 .hgtags
 
-# Office
-*.tmp
-~$*.doc*
-~$*.xls*
-*.xlk
-~$*.ppt*
-
 # Tern
 .tern-port
 
@@ -73,18 +56,3 @@ Session.vim
 .netrwhist
 *~
 tags
-
-# Xcode
-DerivedData/
-*.pbxuser
-!default.pbxuser
-*.mode1v3
-!default.mode1v3
-*.mode2v3
-!default.mode2v3
-*.perspectivev3
-!default.perspectivev3
-xcuserdata/
-*.moved-aside
-*.xccheckout
-*.xcscmblueprint

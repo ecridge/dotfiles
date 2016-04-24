@@ -1,28 +1,18 @@
-# Welcome $HOME (macOS)
+# Welcome $HOME (Linux)
 
-These configuration files are for the GNU toolchain, rather than the default
-BSD toolchain that comes with macOS. These are easily replaced using
-[Homebrew][] – see [this Gist][gist] from <https://www.topbug.net/>.
+These configuration files are for the GNU toolchain.
 
 ## Install
 
 1.  Clone and unpack:
 
     ```bash
-    cd && git clone -n git@github.com:joecridge/dotfiles.git -b darwin
+    cd && git clone -n git@github.com:joecridge/dotfiles.git -b linux
     mv dotfiles/.git . && rmdir dotfiles
     git reset --hard HEAD  # Caution: existing dotfiles will be overwritten!
+    git submodule update --init --recursive
     ```
 
 2.  Install the dependencies listed on the [wiki][].
 
-3.  Hide this file and the user binaries from Finder:
-
-    ```bash
-    chflags hidden README.md bin private resources
-    ```
-
-[Homebrew]: http://brew.sh/
-[gist]: https://gist.github.com/xuhdev/8b1b16fb802f6870729038ce3789568f
 [wiki]: https://github.com/joecridge/dotfiles/wiki
-[xuhdev]: https://github.com/xuhdev

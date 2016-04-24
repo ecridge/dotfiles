@@ -12,6 +12,7 @@ export GOROOT=/usr/local/Cellar/go/1.10/libexec
 export HISTCONTROL=ignoreboth  # Forget duplicate and space-prefixed commands.
 export HISTFILESIZE=1000  # Maximum number of commands saved in .bash_history.
 export HISTSIZE=500  # Maximum number of commands to remember from one session.
+export LC_TIME=en_DK.UTF-8
 export PYENV_ROOT="$HOME/.pyenv"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 export RI='--format ansi --width 79'
@@ -22,16 +23,6 @@ export TZ=Europe/London
 if [ -f "$HOME/private/.secrets" ]; then
     . "$HOME/private/.secrets"
 fi
-
-# Add brew sbin to PATH.
-if [ -d "/usr/local/sbin" ]; then
-    PATH="/usr/local/sbin:$PATH"
-fi
-
-# Use the GNU toolchain.
-PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-MANPATH="/usr/local/opt/findutils/libexec/gnuman:$MANPATH"
-MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # Add Python packages to PATH.
 PATH="$HOME/.pyenv/bin:$PATH"
@@ -44,6 +35,5 @@ if [ -d "$HOME/bin" ]; then
     PATH="$HOME/bin:$PATH"
 fi
 
-# Export final paths to subshells.
+# Export final path to subshells.
 export PATH
-export MANPATH

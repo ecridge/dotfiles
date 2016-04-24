@@ -52,10 +52,11 @@ fi
 
 
 # Set aliases.
+alias alert='notify-send --urgency=low -i terminal "Bash: exit $?"'
 alias ascii="grep -ne '[^ -~]'"  # Highlight non-ASCII characters in a file.
 alias clr=clear
 alias chdom=chmod  # Common typo.
-alias chrome='open -a /Applications/Google\ Chrome.app/'
+alias chrome=google-chrome
 alias bundel=bundle  # Another typo.
 alias electron=node_modules/.bin/electron
 alias grep='grep --color=auto --exclude-dir=.git'

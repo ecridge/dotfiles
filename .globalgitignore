@@ -63,7 +63,6 @@ Session.vim
 tags
 
 # Xcode
-build/
 DerivedData/
 *.pbxuser
 !default.pbxuser

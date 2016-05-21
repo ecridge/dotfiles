@@ -103,15 +103,16 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
+let g:syntastic_html_checkers = ['validator']
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_markdown_mdl_args = "--style ~/.mdstyle"
 let g:syntastic_sass_checkers = ['sass_lint']
 let g:syntastic_scss_checkers = ['sass_lint']
-let g:syntastic_yaml_checkers = ['yamllint']
 let g:syntastic_sh_checkers = ['bashate']  " FIXME: Not working at all.
+let g:syntastic_yaml_checkers = ['yamllint']
 
 " File-specific autocommands.
 autocmd FileType c setlocal tabstop=8 shiftwidth=8
 autocmd FileType changelog setlocal tabstop=8 shiftwidth=8 noexpandtab
-autocmd FileType sh,zsh setlocal tabstop=4 shiftwidth=4
+autocmd FileType html,sh,zsh setlocal tabstop=4 shiftwidth=4
 autocmd BufRead,BufNewFile .babelrc setlocal filetype=json

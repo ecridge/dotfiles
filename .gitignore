@@ -13,6 +13,8 @@
 !\.gitconfig
 !\.gitignore
 !\.globalgitignore
+!\.globalhgignore
+!\.hgrc
 !\.inputrc
 !\.mdstyle
 !\.profile

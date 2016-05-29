@@ -1,0 +1,22 @@
+[alias]
+ad = add
+bm = bookmark
+ci = commit
+df = diff
+lg = log -G --template "({rev}:{node|short}) {desc|firstline}"
+log = log -G
+st = status
+ud = update
+
+[extensions]
+hgext.convert =
+histedit =
+mq =
+rebase =
+shelve =
+strip =
+transplant =
+
+[ui]
+ignore = ~/.globalhgignore
+username = Joe Cridge <joe.cridge@me.com>

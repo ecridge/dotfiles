@@ -23,7 +23,7 @@
 # Track Bash and Ruby scripts under src.
 #
 # Both the directory and its contents have to be specified in order for the
-# default ignore above to be overridden. Note that this overrides anything an
+# default ignore above to be overridden. Note that this overrides anything in
 # .globalgitignore, so that (for instance) adding the pattern !src/* will cause
 # Git to track src/.blah.sh.swp, src/.DS_Store and the like.
 !src/

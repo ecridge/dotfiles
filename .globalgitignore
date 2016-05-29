@@ -29,6 +29,14 @@ secring.*
 *.mex*
 slprj/
 
+# Mercurial
+.hg/
+.hgignore
+.hgsigs
+.hgsub
+.hgsubstate
+.hgtags
+
 # Office
 *.tmp
 ~$*.doc*

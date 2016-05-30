@@ -42,7 +42,7 @@ custom_prompt() {
 
 
 # Load colour profile for ls.
-if which dircolors > /dev/null; then
+if which dircolors &> /dev/null; then
     if [[ -r ~/.dircolors ]]; then
         eval "$(dircolors -b ~/.dircolors)"
     else
@@ -106,7 +106,7 @@ binsync > /dev/null
 
 
 # Other things that need loading.
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if which rbenv &> /dev/null; then eval "$(rbenv init -)"; fi
 [[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
 [[ -f $HOME/.git-completion.bash ]] && source "$HOME/.git-completion.bash"
 

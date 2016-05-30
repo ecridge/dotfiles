@@ -111,5 +111,12 @@ if which rbenv &> /dev/null; then eval "$(rbenv init -)"; fi
 [[ -f $HOME/.git-completion.bash ]] && source "$HOME/.git-completion.bash"
 
 
+# Gimmicks.
+if which fortune cowsay lolcat &> /dev/null; then
+    fortune | cowsay | lolcat
+    echo
+fi
+
+
 # Exit cleanly.
 true

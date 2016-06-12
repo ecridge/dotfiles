@@ -15,6 +15,9 @@ set guifont=Droid\ Sans\ Mono:h14
 set hlsearch
 set list listchars=tab:>\ ,trail:-,extends:$,precedes:$,nbsp:+
 
+" Add custom task tags.
+autocmd Syntax * call matchadd('Todo', '\W\zs\(BUG\|HACK\)')
+
 " Requirements for Vim-LaTeX.
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'

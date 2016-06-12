@@ -22,6 +22,8 @@
 	dt = difftool
 	df = diff
 	cp = cherry-pick
+	psuh = push
+	puhs = push
 [credential]
 	helper = osxkeychain
 [diff]

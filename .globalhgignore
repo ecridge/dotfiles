@@ -48,7 +48,7 @@ syntax: regexp
 ~\$.*\.thm.*
 ~\$.*\.mht.*
 
-# OS X
+# macOS
 syntax: glob
 .DS_Store
 .AppleDouble

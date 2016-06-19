@@ -44,7 +44,7 @@ slprj/
 *.xlk
 ~$*.ppt*
 
-# OS X
+# macOS
 .DS_Store
 .AppleDouble
 .LSOverride

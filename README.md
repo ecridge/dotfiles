@@ -1,7 +1,7 @@
-# Welcome $HOME (OS X)
+# Welcome $HOME (macOS)
 
 These configuration files are for the GNU toolchain, rather than the default
-BSD toolchain that comes with OS X. These are easily replaced using
+BSD toolchain that comes with macOS. These are easily replaced using
 [Homebrew][] – see [this Gist][gist] from <https://www.topbug.net/>.
 
 ## Install

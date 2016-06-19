@@ -29,6 +29,8 @@
 # .globalgitignore, so that (for instance) adding the pattern !src/* will cause
 # Git to track src/.blah.sh.swp, src/.DS_Store and the like.
 !src/
+!src/*.pl
+!src/*.py
 !src/*.rb
 !src/*.sh
 

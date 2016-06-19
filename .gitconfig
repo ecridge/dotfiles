@@ -6,7 +6,6 @@
 	editor = vim
 	autocrlf = input
 	excludesfile = ~/.globalgitignore
-	pager = less -r
 [color]
 	ui = true
 [format]
@@ -28,6 +27,7 @@
 	helper = osxkeychain
 [diff]
 	tool = vimdiff
+	compactionHeuristic = true
 [filter "lfs"]
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f
@@ -47,3 +47,16 @@
 	smtpuser = joe.cridge@me.com
 	smtpserverport = 587
 	confirm = auto
+[pager]
+	log = diff-highlight | less
+	show = diff-highlight | less
+	diff = diff-highlight | less
+[color "diff"]
+	meta = yellow
+	frag = blue
+	whitespace = green ul
+[color "diff-highlight"]
+	oldHighlight = ul
+	oldReset = noul
+[interactive]
+	diffFilter = diff-highlight

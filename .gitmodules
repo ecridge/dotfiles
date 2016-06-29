@@ -2,6 +2,10 @@
 	path = .vim/bundle/dash.vim
 	url = https://github.com/rizzatti/dash.vim.git
 
+[submodule "jeo"]
+	path = Library/Application Support/Karabiner/jeo
+	url = https://github.com/joecridge/jeo.git
+
 [submodule "syntastic"]
 	path = .vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git

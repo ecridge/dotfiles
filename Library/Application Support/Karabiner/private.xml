@@ -187,6 +187,6 @@
   </item>
   <item>
     <name>Jeo Keyboard Layout</name>
-    <include path="Jeo/jeo.xml" />
+    <include path="jeo/jeo.xml" />
   </item>
 </root>

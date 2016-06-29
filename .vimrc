@@ -46,7 +46,7 @@ set splitbelow splitright
 
 " Prefer vertical split for help.
 autocmd FileType help wincmd L
-autocmd FileType help vertical resize 97
+autocmd FileType help vertical resize 96
 
 " Default to two spaces for a tab.
 set tabstop=2 shiftwidth=2 expandtab
@@ -122,4 +122,5 @@ autocmd FileType c setlocal tabstop=8 shiftwidth=8
 autocmd FileType changelog setlocal tabstop=8 shiftwidth=8 noexpandtab
 autocmd FileType html,sh,zsh setlocal tabstop=4 shiftwidth=4
 autocmd BufRead,BufNewFile .babelrc setlocal filetype=json
-autocmd BufRead,BufNewFile .gitconfig setlocal noexpandtab
+autocmd BufRead,BufNewFile .gitconfig,.gitmodules setlocal noexpandtab
+autocmd BufRead,BufNewFile .gitconfig,.gitmodules setlocal ts=8 sw=8

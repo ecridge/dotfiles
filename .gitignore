@@ -6,21 +6,21 @@
 
 # Explicitly track these files.
 !README.md
-!\.bash_profile
-!\.bashrc
-!\.eslintrc\.yml
-!\.git-prompt\.sh
-!\.gitconfig
-!\.gitignore
-!\.gitmodules
-!\.globalgitignore
-!\.globalhgignore
-!\.hgrc
-!\.inputrc
-!\.mdstyle
-!\.profile
-!\.vimrc
-!\.yamllint
+!.bash_profile
+!.bashrc
+!.eslintrc.yml
+!.git-prompt.sh
+!.gitconfig
+!.gitignore
+!.gitmodules
+!.globalgitignore
+!.globalhgignore
+!.hgrc
+!.inputrc
+!.mdstyle
+!.profile
+!.vimrc
+!.yamllint
 
 
 # Track Bash and Ruby scripts under src.

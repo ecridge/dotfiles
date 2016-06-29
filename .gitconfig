@@ -23,11 +23,13 @@
 	cp = cherry-pick
 	psuh = push
 	puhs = push
+	spuh = push
 [credential]
 	helper = osxkeychain
 [diff]
 	tool = vimdiff
 	compactionHeuristic = true
+	submodule = log
 [filter "lfs"]
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f

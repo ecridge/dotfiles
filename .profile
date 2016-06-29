@@ -15,6 +15,11 @@ export RI='--format ansi --width 79'
 export RI_PAGER='less -r'
 export TZ=Europe/London
 
+# Set private environment variables.
+if [ -f "$HOME/private/.secrets" ]; then
+    . "$HOME/private/.secrets"
+fi
+
 # Use the GNU toolchain.
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 MANPATH="/usr/local/opt/findutils/libexec/gnuman:$MANPATH"

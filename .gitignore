@@ -45,6 +45,7 @@
 # Track everything in ~/.vim. These are mostly submodules.
 !.vim/
 !.vim/**
+.vim/.netrwhist
 
 
 # Track Karabiner settings.

@@ -6,6 +6,10 @@
 	path = Library/Application Support/Karabiner/jeo
 	url = https://github.com/joecridge/jeo.git
 
+[submodule "private"]
+	path = private
+	url = git@github.com:joecridge/private.git
+
 [submodule "syntastic"]
 	path = .vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
@@ -92,7 +96,7 @@
 
 [submodule "vim-target"]
 	path = .vim/bundle/vim-target
-	url = https://github.com/joecridge/vim-target.git
+	url = git@github.com:joecridge/vim-target.git
 
 [submodule "vim-unimpaired"]
 	path = .vim/bundle/vim-unimpaired

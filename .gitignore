@@ -6,6 +6,7 @@
 
 # Explicitly track these files.
 !README.md
+!private
 !.bash_profile
 !.bashrc
 !.eslintrc.yml
@@ -37,8 +38,9 @@
 
 
 # Track everything from the resources folder.
-!resources/
+!resources
 !resources/**
+
 
 # Track everything in ~/.vim. These are mostly submodules.
 !.vim/

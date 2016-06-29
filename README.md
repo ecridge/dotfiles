@@ -19,7 +19,7 @@ BSD toolchain that comes with macOS. These are easily replaced using
 3.  Hide this file and the user binaries from Finder:
 
     ```bash
-    chflags hidden README.md bin resources
+    chflags hidden README.md bin private resources
     ```
 
 [Homebrew]: http://brew.sh/

@@ -12,6 +12,7 @@
 !\.git-prompt\.sh
 !\.gitconfig
 !\.gitignore
+!\.gitmodules
 !\.globalgitignore
 !\.globalhgignore
 !\.hgrc
@@ -38,6 +39,10 @@
 # Track everything from the resources folder.
 !resources/
 !resources/**
+
+# Track everything in ~/.vim. These are mostly submodules.
+!.vim/
+!.vim/**
 
 
 # Track Karabiner settings.

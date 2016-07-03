@@ -1,0 +1,7 @@
+---
+# User configuration for Vint.
+# NB: The documentation specifies `.yaml` extension instead of `.yml`.
+cmdargs:
+  severity: style_problem  # Check code style as well.
+  color: true
+...

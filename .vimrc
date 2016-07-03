@@ -116,6 +116,7 @@ let g:syntastic_sass_checkers = ['sass_lint']
 let g:syntastic_scss_checkers = ['sass_lint']
 let g:syntastic_sh_checkers = ['bashate']  " FIXME: Not working at all.
 let g:syntastic_yaml_checkers = ['yamllint']
+let g:syntastic_vim_checkers = ['vint']
 
 " File-specific autocommands.
 autocmd FileType c setlocal tabstop=8 shiftwidth=8

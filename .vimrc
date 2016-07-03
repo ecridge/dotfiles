@@ -16,9 +16,8 @@ set hlsearch
 set list listchars=tab:>\ ,trail:-,extends:$,precedes:$,nbsp:+
 
 " Add custom task tags.
-autocmd Syntax * call matchadd('Todo', '\W\zs\(BUG\|HACK\)')
-autocmd Syntax * call matchadd('Error', '^\(<<<<<<<\||||||||\|>>>>>>>\) .*$')
-autocmd Syntax * call matchadd('Error', '^=======$')
+autocmd Syntax * call matchadd('Todo', '\v<(BUG|HACK)>')
+autocmd Syntax * call matchadd('Error', '\v^([<|=>])\1{6}( .*)?$')
 
 " Requirements for Vim-LaTeX.
 set grepprg=grep\ -nH\ $*

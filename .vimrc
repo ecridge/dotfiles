@@ -64,6 +64,7 @@ set nowrap
 set textwidth=79
 set colorcolumn=+1
 set formatoptions=tcqnlBj " FIXME: Something is doing +=ro.
+set sidescroll=1
 
 " Swap h and l.
 noremap h l

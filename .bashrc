@@ -68,10 +68,15 @@ alias printenv="printenv | sort | grep -Pe '^[A-Z][A-Z0-9_]*(?==)'"
 alias py='clear && python'
 alias sudoa='sudo '  # An alias of sudo that expands aliases.
 alias q=logout
-alias tree="tree -I '.DS_Store|.AppleDouble|.LSOverride|._*|.DocumentRevisions\
--V100|.fseventd|.Spotlight-V100|.TemporaryItems|.Trashes|.VolumeIcon.icns|.App\
-leDB|.AppleDesktop|Network Trash Folder|Temporary Items|.apdisk|.localized|[._\
-]*.?s[a-w][a-z]|Session.vim.netrwhist|*~|tags|node_modules|.git'"
+alias tree="tree -I \"*.7z|*.jar|*.rar|*.zip|*.gz|*.bzip|*.bz2|*.xz|*.lzma|*.c\
+ab|*.iso|*.tar|*.dmg|*.xpi|*.gem|*.egg|*.deb|*.rpm|*.msi|*.msm|*.msp|secring.*\
+|*.m~|*.mex*|slprj|.hg|.hgignore|.hgsigs|.hgsub|.hgsubstate|.hgtags|*.tmp|~\$*\
+.doc*|~\$*.xls*|*.xlk|~\$*.ppt*|.DS_Store|.AppleDouble|.LSOverride|Icon\r\r|._\
+*|.DocumentRevisions-V100|.fseventsd|.Spotlight-V100|.TemporaryItems|.Trashes|\
+.VolumeIcon.icns|.AppleDB|.AppleDesktop|Network Trash Folder|Temporary Items|.\
+apdisk|[._]*.s[a-w][a-z]|[._]s[a-w][a-z]|Session.vim|.netrwhist|*~|tags|Derive\
+dData|*.pbxuser|*.mode1v3|*.mode2v3|*.perspectivev3|xcuserdata|*.moved-aside|*\
+.xccheckout|*.xcscmblueprint\""
 alias vd=vimdiff
 
 

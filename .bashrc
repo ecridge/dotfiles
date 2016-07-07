@@ -76,7 +76,7 @@ ab|*.iso|*.tar|*.dmg|*.xpi|*.gem|*.egg|*.deb|*.rpm|*.msi|*.msm|*.msp|secring.*\
 .VolumeIcon.icns|.AppleDB|.AppleDesktop|Network Trash Folder|Temporary Items|.\
 apdisk|[._]*.s[a-w][a-z]|[._]s[a-w][a-z]|Session.vim|.netrwhist|*~|tags|Derive\
 dData|*.pbxuser|*.mode1v3|*.mode2v3|*.perspectivev3|xcuserdata|*.moved-aside|*\
-.xccheckout|*.xcscmblueprint\""
+.xccheckout|*.xcscmblueprint|.git\""
 alias vd=vimdiff
 
 

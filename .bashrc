@@ -52,7 +52,7 @@ fi
 
 
 # Set aliases.
-alias ascii="grep -ne '[^ -~]'"  # Highlight non-ASCII characters in a file.
+alias ascii="ag '[^ -~\\n]'"  # Highlight non-ASCII characters in a file.
 alias clr=clear
 alias chdom=chmod  # Common typo.
 alias chrome='open -a /Applications/Google\ Chrome.app/'

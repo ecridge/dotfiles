@@ -35,7 +35,9 @@ slprj/
 # Git
 syntax: glob
 .git/
+.gitattributes
 .gitignore
+.gitmodules
 
 # Office
 syntax: regexp
@@ -47,6 +49,7 @@ syntax: regexp
 ~\$.*\.sld.*
 ~\$.*\.thm.*
 ~\$.*\.mht.*
+.*\.~vsdx
 
 # macOS
 syntax: glob

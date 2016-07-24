@@ -78,6 +78,12 @@ noremap <down> <c-w>j
 noremap <up> <c-w>k
 noremap <right> <c-w>l
 
+" Enable vim-easy-align.
+" NB: Shadows `ga` for get-ascii-under-cursor; use `:as[cii]` instead.
+" FIXME: The nmap doesn’t appear to work?
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+
 " LEARN VIMSCRIPT THE HARD WAY
 inoremap <c-u> <esc>viwUea
 inoremap <c-space> <insert>

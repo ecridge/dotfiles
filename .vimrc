@@ -121,13 +121,14 @@ let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_sass_checkers = ['sass_lint']
 let g:syntastic_scss_checkers = ['sass_lint']
 let g:syntastic_sh_checkers = ['bashate']  " FIXME: Not working at all.
+let g:syntastic_typescript_checkers = ['tslint']
 let g:syntastic_yaml_checkers = ['yamllint']
 let g:syntastic_vim_checkers = ['vint']
 
 " File-specific autocommands.
 autocmd FileType c setlocal tabstop=8 shiftwidth=8
 autocmd FileType changelog setlocal tabstop=8 shiftwidth=8 noexpandtab
-autocmd FileType html,sh,zsh setlocal tabstop=4 shiftwidth=4
+autocmd FileType sh,zsh setlocal tabstop=4 shiftwidth=4
 autocmd BufRead,BufNewFile .babelrc setlocal filetype=json
 autocmd BufRead,BufNewFile .gitconfig,.gitmodules setlocal noexpandtab
 autocmd BufRead,BufNewFile .gitconfig,.gitmodules setlocal ts=8 sw=8

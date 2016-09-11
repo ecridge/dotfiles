@@ -21,9 +21,30 @@
 	dt = difftool
 	df = diff
 	cp = cherry-pick
-	psuh = push
-	puhs = push
+	hsup = push
+	hspu = push
+	husp = push
+	hups = push
+	hpus = push
+	hpsu = push
+	shup = push
+	shpu = push
+	suhp = push
+	suph = push
 	spuh = push
+	sphu = push
+	ushp = push
+	usph = push
+	uhsp = push
+	uhps = push
+	uphs = push
+	upsh = push
+	psuh = push
+	pshu = push
+	puhs = push
+	phus = push
+	phsu = push
+	stat = shortlog -sne
 [credential]
 	helper = osxkeychain
 [diff]

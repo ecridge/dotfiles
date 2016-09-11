@@ -52,6 +52,7 @@ fi
 
 
 # Set aliases.
+alias ag='ag -s'  # Case-sensitive by default.
 alias ascii="ag '[^ -~\\n]'"  # Highlight non-ASCII characters in a file.
 alias clr=clear
 alias chdom=chmod  # Common typo.

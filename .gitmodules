@@ -19,6 +19,9 @@
 [submodule "vim-afterimage"]
 	path = .vim/bundle/vim-afterimage
 	url = https://github.com/tpope/vim-afterimage.git
+[submodule "vim-airline"]
+	path = .vim/bundle/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
 [submodule "vim-capslock"]
 	path = .vim/bundle/vim-capslock
 	url = https://github.com/tpope/vim-capslock.git

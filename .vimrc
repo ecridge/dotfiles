@@ -11,7 +11,7 @@ filetype plugin indent on
 syntax enable
 colorscheme solarized
 set showtabline=1
-set guifont=Droid\ Sans\ Mono:h14
+set guifont=Droid\ Sans\ Mono\ Slashed\ for\ Powerline:h14
 set hlsearch
 set list listchars=tab:>\ ,trail:-,extends:$,precedes:$,nbsp:+
 
@@ -103,12 +103,6 @@ onoremap <silent> ae :<c-u>normal! ggVG<cr>
 vnoremap <silent> ae <esc>ggVG<cr>
 
 " Syntastic syntax checking.
-"
-" FIXME: One of these status line options is wiping out all of the other useful
-" information (location, number of selected characters, etc.).
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -124,6 +118,24 @@ let g:syntastic_sh_checkers = ['bashate']  " FIXME: Not working at all.
 let g:syntastic_typescript_checkers = ['tslint']
 let g:syntastic_yaml_checkers = ['yamllint']
 let g:syntastic_vim_checkers = ['vint']
+
+" Setup vim-airline.
+set noshowmode
+let g:airline_theme='solarized'
+let g:airline_powerline_fonts=1
+let g:airline_mode_map = {
+    \ '__' : '   ',
+    \ 'n'  : 'NRM',
+    \ 'i'  : 'INS',
+    \ 'R'  : 'REP',
+    \ 'c'  : 'CMD',
+    \ 'v'  : 'VIS',
+    \ 'V'  : 'LIN',
+    \ '' : 'BLK',
+    \ 's'  : 'SEL',
+    \ 'S'  : 'SEL',
+    \ '' : 'SEL',
+    \ }
 
 " File-specific autocommands.
 autocmd FileType c setlocal tabstop=8 shiftwidth=8

@@ -22,6 +22,9 @@
 [submodule "vim-airline"]
 	path = .vim/bundle/vim-airline
 	url = https://github.com/vim-airline/vim-airline.git
+[submodule "vim-airline-themes"]
+	path = .vim/bundle/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes
 [submodule "vim-capslock"]
 	path = .vim/bundle/vim-capslock
 	url = https://github.com/tpope/vim-capslock.git

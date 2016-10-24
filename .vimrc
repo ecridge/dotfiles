@@ -140,6 +140,7 @@ let g:airline_mode_map = {
 " File-specific autocommands.
 autocmd FileType c setlocal tabstop=8 shiftwidth=8
 autocmd FileType changelog setlocal tabstop=8 shiftwidth=8 noexpandtab
+autocmd FileType javascript setlocal textwidth=100
 autocmd FileType sh,zsh setlocal tabstop=4 shiftwidth=4
 autocmd BufRead,BufNewFile .babelrc setlocal filetype=json
 autocmd BufRead,BufNewFile .gitconfig,.gitmodules setlocal noexpandtab

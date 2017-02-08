@@ -107,6 +107,15 @@ temp() {
 }
 
 
+# Load gimme.
+function gimme {
+    python ~/src/gimme/gimme.py $*
+    if [ $? -eq 0 ]; then
+        cd `cat  ~/.gimme/gimme_hist.txt`
+    fi
+}
+
+
 # Run login items.
 binsync > /dev/null
 

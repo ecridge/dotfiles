@@ -76,7 +76,7 @@ alias chrome='open -a /Applications/Google\ Chrome.app/'
 alias bundel=bundle  # Another typo.
 alias e=vim
 alias electron=node_modules/.bin/electron
-alias g=git
+alias gi=git
 alias grep='grep --color=auto --exclude-dir=.git'
 alias h=help
 alias l='ls --color=auto'
@@ -89,7 +89,7 @@ alias n=npm
 alias o=open
 alias printenv="printenv | sort | grep -Pe '^[A-Z][A-Z0-9_]*(?==)'"
 alias py='clear && python'
-alias s='sudo '  # An alias of sudo that expands aliases.
+alias sudoa='sudo '  # An alias of sudo that expands aliases.
 alias q=logout
 alias t="tree -I \"$gumpf\""
 alias vd=vimdiff
@@ -129,6 +129,9 @@ binsync > /dev/null
 if which rbenv &> /dev/null; then eval "$(rbenv init -)"; fi
 [[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
 [[ -f $HOME/.git-completion.bash ]] && source "$HOME/.git-completion.bash"
+[[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
+[[ -f $HOME/.bowman.bash ]] && source "$HOME/.bowman.bash"
+eval "$(fasd --init auto)"
 
 
 # Gimmicks.

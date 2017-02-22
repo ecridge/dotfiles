@@ -13,6 +13,8 @@ shopt -s nullglob  # Don’t take non-matching globs literally.
 shopt -s globstar  # ** expands to any number of directories.
 shopt -s histappend
 
+set -o pipefail
+
 
 # Check whether this is a documented chroot environment.
 if [[ -z ${debian_chroot:-} && -r /etc/debian_chroot ]]; then
@@ -51,33 +53,40 @@ if which dircolors &> /dev/null; then
 fi
 
 
+# List boring files.
+gumpf='*.7z|*.jar|*.rar|*.zip|*.gz|*.bzip|*.bz2|*.xz|*.lzma|*.cab|*.iso|*.tar|'
+gumpf+='*.dmg|*.xpi|*.gem|*.egg|*.deb|*.rpm|*.msi|*.msm|*.msp|secring.*|*.m~|'
+gumpf+='*.mex*|slprj|.hg|.hgignore|.hgsigs|.hgsub|.hgsubstate|.hgtags|*.tmp|'
+gumpf+='~$*.doc*|~$*.xls*|*.xlk|~$*.ppt*|.DS_Store|.AppleDouble|.LSOverride|'
+gumpf+='Icon\r\r|._*|.DocumentRevisions-V100|.fseventsd|.Spotlight-V100|'
+gumpf+='.TemporaryItems|.Trashes|.VolumeIcon.icns|.AppleDB|.AppleDesktop|'
+gumpf+='Network Trash Folder|Temporary Items|.apdisk|[._]*.s[a-w][a-z]|'
+gumpf+='[._]s[a-w][a-z]|Session.vim|.netrwhist|*~|tags|DerivedData|*.pbxuser|'
+gumpf+='*.mode1v3|*.mode2v3|*.perspectivev3|xcuserdata|*.moved-aside|'
+gumpf+='*.xccheckout|*.xcscmblueprint|.git|node_modules|typings'
+
+
 # Set aliases.
 alias ag='ag -s'  # Case-sensitive by default.
 alias ascii="ag '[^ -~\\n]'"  # Highlight non-ASCII characters in a file.
-alias clr=clear
+alias c=clear
 alias chdom=chmod  # Common typo.
 alias chrome='open -a /Applications/Google\ Chrome.app/'
 alias bundel=bundle  # Another typo.
+alias e=vim
 alias electron=node_modules/.bin/electron
 alias grep='grep --color=auto --exclude-dir=.git'
-alias ls='ls --color=auto'
-alias la='ls -A'
-alias ll="ls -AhFl --time-style='+%Y-%m-%d %H:%M
-%a %d %b %H:%M'"  # Newline is necessary.
+alias l='ls --color=auto'
+alias la='l -A'
+alias ll=$'l -AhFl --time-style=\'+%Y-%m-%d %H:%M\n%a %d %b %H:%M\''
 alias mdl='mdl --style ~/.mdstyle'
+alias me=mvim
+alias o=open
 alias printenv="printenv | sort | grep -Pe '^[A-Z][A-Z0-9_]*(?==)'"
 alias py='clear && python'
-alias sudoa='sudo '  # An alias of sudo that expands aliases.
+alias s='sudo '  # An alias of sudo that expands aliases.
 alias q=logout
-alias tree="tree -I \"*.7z|*.jar|*.rar|*.zip|*.gz|*.bzip|*.bz2|*.xz|*.lzma|*.c\
-ab|*.iso|*.tar|*.dmg|*.xpi|*.gem|*.egg|*.deb|*.rpm|*.msi|*.msm|*.msp|secring.*\
-|*.m~|*.mex*|slprj|.hg|.hgignore|.hgsigs|.hgsub|.hgsubstate|.hgtags|*.tmp|~\$*\
-.doc*|~\$*.xls*|*.xlk|~\$*.ppt*|.DS_Store|.AppleDouble|.LSOverride|Icon\r\r|._\
-*|.DocumentRevisions-V100|.fseventsd|.Spotlight-V100|.TemporaryItems|.Trashes|\
-.VolumeIcon.icns|.AppleDB|.AppleDesktop|Network Trash Folder|Temporary Items|.\
-apdisk|[._]*.s[a-w][a-z]|[._]s[a-w][a-z]|Session.vim|.netrwhist|*~|tags|Derive\
-dData|*.pbxuser|*.mode1v3|*.mode2v3|*.perspectivev3|xcuserdata|*.moved-aside|*\
-.xccheckout|*.xcscmblueprint|.git|node_modules|typings\""
+alias t="tree -I \"$gumpf\""
 alias vd=vimdiff
 
 
@@ -103,15 +112,6 @@ temp() {
         mkdir -vm 700 $NAME
     else
         mktemp -dp . temp-XXXX
-    fi
-}
-
-
-# Load gimme.
-function gimme {
-    python ~/src/gimme/gimme.py $*
-    if [ $? -eq 0 ]; then
-        cd `cat  ~/.gimme/gimme_hist.txt`
     fi
 }
 

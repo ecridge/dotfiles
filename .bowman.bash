@@ -2,6 +2,20 @@
 # See <http://seanbowman.me/blog/fzf-fasd-and-bash-aliases/>.
 
 
+# Bash completion for aliases.
+complete -F _fzf_path_completion -o default -o bashdefault ag
+complete -F _fzf_file_completion -o default -o bashdefault chrome
+complete -F _fzf_file_completion -o default -o bashdefault e
+complete -F _fzf_dir_completion -o default -o bashdefault electron
+complete -F _fzf_file_completion -o default -o bashdefault l
+complete -F _fzf_file_completion -o default -o bashdefault la
+complete -F _fzf_file_completion -o default -o bashdefault ll
+complete -F _fzf_file_completion -o default -o bashdefault me
+complete -F _fzf_path_completion -o default -o bashdefault o
+complete -F _fzf_dir_completion -o default -o bashdefault t
+complete -F _fzf_file_completion -o default -o bashdefault vd
+
+
 # Go to frecent directory.
 g() {
     local dir="$(fasd -ld "$@")"
@@ -44,7 +58,7 @@ gf() {
 complete -f gf
 
 
-# View known file with syntax highlighting.
+# View file with syntax highlighting.
 v() {
     ftype=$(pygmentize -N "$1")
     pygmentize -l "$ftype"\
@@ -52,20 +66,7 @@ v() {
         less -R
 }
 complete -f v
-
-
-# Interactive find nested file, then view with syntax highlighting.
-vv() {
-    local file
-    if [[ -e "$1" ]]; then
-        v "$1"
-    else
-        file=$(fzf --query="$1"\
-          --select-1 --exit-0)
-        [ -n "$file" ] && v "$file"
-    fi
-}
-complete -f vv
+complete -F _fzf_file_completion -o default -o bashdefault v
 
 
 # Find nested file.

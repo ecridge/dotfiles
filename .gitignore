@@ -9,6 +9,7 @@
 !private
 !.bash_profile
 !.bashrc
+!.bowman.bash
 !.eslintrc.yml
 !.git-prompt.sh
 !.gitconfig

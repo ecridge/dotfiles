@@ -68,6 +68,7 @@ gumpf+='*.xccheckout|*.xcscmblueprint|.git|node_modules|typings'
 
 # Set aliases.
 alias ag='ag -s'  # Case-sensitive by default.
+alias b=brew
 alias ascii="ag '[^ -~\\n]'"  # Highlight non-ASCII characters in a file.
 alias c=clear
 alias chdom=chmod  # Common typo.
@@ -75,12 +76,16 @@ alias chrome='open -a /Applications/Google\ Chrome.app/'
 alias bundel=bundle  # Another typo.
 alias e=vim
 alias electron=node_modules/.bin/electron
+alias g=git
 alias grep='grep --color=auto --exclude-dir=.git'
+alias h=help
 alias l='ls --color=auto'
 alias la='l -A'
 alias ll=$'l -AhFl --time-style=\'+%Y-%m-%d %H:%M\n%a %d %b %H:%M\''
+alias m=man
 alias mdl='mdl --style ~/.mdstyle'
 alias me=mvim
+alias n=npm
 alias o=open
 alias printenv="printenv | sort | grep -Pe '^[A-Z][A-Z0-9_]*(?==)'"
 alias py='clear && python'

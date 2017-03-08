@@ -74,8 +74,9 @@ alias c=clear
 alias chdom=chmod  # Common typo.
 alias chrome='open -a /Applications/Google\ Chrome.app/'
 alias bundel=bundle  # Another typo.
-alias e=vim
+alias e=nvim
 alias electron=node_modules/.bin/electron
+alias get="curl -sSi -X GET -H 'Accept: application/json'"
 alias gi=git
 alias grep='grep --color=auto --exclude-dir=.git'
 alias h=help
@@ -87,7 +88,9 @@ alias mdl='mdl --style ~/.mdstyle'
 alias me=mvim
 alias n=npm
 alias o=open
+alias post="curl -sSi -X POST -H 'Content-type: application/json' -d"
 alias printenv="printenv | sort | grep -Pe '^[A-Z][A-Z0-9_]*(?==)'"
+alias put="curl -sSi -X PUT -H 'Content-type: application/json' -d"
 alias py='clear && python'
 alias sudoa='sudo '  # An alias of sudo that expands aliases.
 alias q=logout

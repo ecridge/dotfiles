@@ -1,4 +1,3 @@
-# Guard against non-interactive shells.
 [[ $- == *i* ]] || return 0
 
 
@@ -23,7 +22,6 @@ fi
 
 
 # Customise command prompt.
-[[ -f $HOME/.git-prompt.sh ]] && source "$HOME/.git-prompt.sh"
 PROMPT_COMMAND='custom_prompt;history -a'
 custom_prompt() {
     exit_code=$?
@@ -133,6 +131,7 @@ binsync > /dev/null
 if which rbenv &> /dev/null; then eval "$(rbenv init -)"; fi
 [[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
 [[ -f /usr/local/etc/bash_completion ]] && . /usr/local/etc/bash_completion
+[[ -f $HOME/.git-prompt.sh ]] && source "$HOME/.git-prompt.sh"
 [[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
 [[ -f $HOME/.bowman.bash ]] && source "$HOME/.bowman.bash"
 eval "$(fasd --init auto)"

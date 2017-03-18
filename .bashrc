@@ -74,6 +74,7 @@ alias c=clear
 alias chdom=chmod  # Common typo.
 alias chrome='open -a /Applications/Google\ Chrome.app/'
 alias bundel=bundle  # Another typo.
+alias dr=docker
 alias e=nvim
 alias electron=node_modules/.bin/electron
 alias get="curl -sSi -X GET -H 'Accept: application/json'"
@@ -131,10 +132,15 @@ binsync > /dev/null
 # Other things that need loading.
 if which rbenv &> /dev/null; then eval "$(rbenv init -)"; fi
 [[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
-[[ -f $HOME/.git-completion.bash ]] && source "$HOME/.git-completion.bash"
+[[ -f /usr/local/etc/bash_completion ]] && . /usr/local/etc/bash_completion
 [[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
 [[ -f $HOME/.bowman.bash ]] && source "$HOME/.bowman.bash"
 eval "$(fasd --init auto)"
+
+
+# Autocompletion for aliases
+complete -F _docker dr
+__git_complete gi __git_main
 
 
 # Gimmicks.

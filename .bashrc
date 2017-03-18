@@ -1,3 +1,4 @@
+# Guard against non-interactive shells.
 [[ $- == *i* ]] || return 0
 
 
@@ -22,6 +23,7 @@ fi
 
 
 # Customise command prompt.
+[[ -f $HOME/.git-prompt.sh ]] && source "$HOME/.git-prompt.sh"
 PROMPT_COMMAND='custom_prompt;history -a'
 custom_prompt() {
     exit_code=$?
@@ -76,7 +78,6 @@ alias dr=docker
 alias e=nvim
 alias electron=node_modules/.bin/electron
 alias get="curl -sSi -X GET -H 'Accept: application/json'"
-alias gi=git
 alias grep='grep --color=auto --exclude-dir=.git'
 alias h=help
 alias l='ls --color=auto'
@@ -130,16 +131,10 @@ binsync > /dev/null
 # Other things that need loading.
 if which rbenv &> /dev/null; then eval "$(rbenv init -)"; fi
 [[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
-[[ -f /usr/local/etc/bash_completion ]] && . /usr/local/etc/bash_completion
-[[ -f $HOME/.git-prompt.sh ]] && source "$HOME/.git-prompt.sh"
+[[ -f $HOME/.git-completion.bash ]] && source "$HOME/.git-completion.bash"
 [[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
 [[ -f $HOME/.bowman.bash ]] && source "$HOME/.bowman.bash"
 eval "$(fasd --init auto)"
-
-
-# Autocompletion for aliases
-complete -F _docker dr
-__git_complete gi __git_main
 
 
 # Gimmicks.

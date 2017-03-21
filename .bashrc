@@ -16,43 +16,6 @@ shopt -s histappend
 set -o pipefail
 
 
-# Check whether this is a documented chroot environment.
-if [[ -z ${debian_chroot:-} && -r /etc/debian_chroot ]]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
-
-
-# Customise command prompt.
-[[ -f $HOME/.git-prompt.sh ]] && source "$HOME/.git-prompt.sh"
-PROMPT_COMMAND='custom_prompt;history -a'
-custom_prompt() {
-    exit_code=$?
-
-    bash_version=$(echo $BASH_VERSION | sed -e 's/\([0-9.]*\)(.*/\1/')
-    msg=${debian_chroot:+($debian_chroot)}
-    short_path=$(pwd | sed -e "s|^${HOME}|~|" -re 's|([^/]{0,2})[^/]*/|\1/|g')
-    window_title="Bash $bash_version  –  $(pwd | grep -o '[^/]\+$')"
-
-    if [[ $exit_code -ne 0 ]]; then
-        msg="\[\e[31m\]exit $exit_code\[\e[0m\]\n$msg"
-    fi
-
-    PS1="$msg\u@\h:$short_path\[\e[32m\]\$(__git_ps1 '[%s]')\[\e[0m\]\$ "
-
-    echo -n -e "\033]0;$window_title\007"
-}
-
-
-# Load colour profile for ls.
-if which dircolors &> /dev/null; then
-    if [[ -r ~/.dircolors ]]; then
-        eval "$(dircolors -b ~/.dircolors)"
-    else
-        eval "$(dircolors -b)"
-    fi
-fi
-
-
 # List boring files.
 gumpf='*.7z|*.jar|*.rar|*.zip|*.gz|*.bzip|*.bz2|*.xz|*.lzma|*.cab|*.iso|*.tar|'
 gumpf+='*.dmg|*.xpi|*.gem|*.egg|*.deb|*.rpm|*.msi|*.msm|*.msp|secring.*|*.m~|'
@@ -136,6 +99,43 @@ if which rbenv &> /dev/null; then eval "$(rbenv init -)"; fi
 [[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
 [[ -f $HOME/.bowman.bash ]] && source "$HOME/.bowman.bash"
 eval "$(fasd --init auto)"
+
+
+# Check whether this is a documented chroot environment.
+if [[ -z ${debian_chroot:-} && -r /etc/debian_chroot ]]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
+
+
+# Customise command prompt.
+[[ -f $HOME/.git-prompt.sh ]] && source "$HOME/.git-prompt.sh"
+PROMPT_COMMAND='custom_prompt;history -a'
+custom_prompt() {
+    exit_code=$?
+
+    bash_version=$(echo $BASH_VERSION | sed -e 's/\([0-9.]*\)(.*/\1/')
+    msg=${debian_chroot:+($debian_chroot)}
+    short_path=$(pwd | sed -e "s|^${HOME}|~|" -re 's|([^/]{0,2})[^/]*/|\1/|g')
+    window_title="Bash $bash_version  –  $(pwd | grep -o '[^/]\+$')"
+
+    if [[ $exit_code -ne 0 ]]; then
+        msg="\[\e[31m\]exit $exit_code\[\e[0m\]\n$msg"
+    fi
+
+    PS1="$msg\u@\h:$short_path\[\e[32m\]\$(__git_ps1 '[%s]')\[\e[0m\]\$ "
+
+    echo -n -e "\033]0;$window_title\007"
+}
+
+
+# Load colour profile for ls.
+if which dircolors &> /dev/null; then
+    if [[ -r ~/.dircolors ]]; then
+        eval "$(dircolors -b ~/.dircolors)"
+    else
+        eval "$(dircolors -b)"
+    fi
+fi
 
 
 # Gimmicks.

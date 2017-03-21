@@ -68,6 +68,7 @@ gumpf+='*.xccheckout|*.xcscmblueprint|.git|node_modules|typings'
 
 # Set aliases.
 alias ag='ag -s'  # Case-sensitive by default.
+alias aq='ag -Q'  # Match literals instead of regexen.
 alias b=brew
 alias ascii="ag '[^ -~\\n]'"  # Highlight non-ASCII characters in a file.
 alias c=clear

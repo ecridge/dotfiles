@@ -45,6 +45,7 @@
 	phus = push
 	phsu = push
 	stat = shortlog -sne
+	ar = archive
 [credential]
 	helper = osxkeychain
 [diff]

@@ -62,3 +62,4 @@
 # Track Hammerspoon settings.
 !.hammerspoon/
 !.hammerspoon/*.lua
+!.hammerspoon/jeospoon

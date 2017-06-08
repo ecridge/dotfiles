@@ -4,6 +4,9 @@
 [submodule "jeo"]
 	path = Library/Application Support/Karabiner/jeo
 	url = https://github.com/joecridge/jeo.git
+[submodule "jeospoon"]
+	path = .hammerspoon/jeospoon
+	url = git@github.com:joecridge/jeospoon.git
 [submodule "private"]
 	path = private
 	url = git@github.com:joecridge/private.git

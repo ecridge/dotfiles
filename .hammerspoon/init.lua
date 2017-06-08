@@ -1,6 +1,4 @@
--------------------------------------------------------------------------------
--- Hammerspoon entry point
--------------------------------------------------------------------------------
-
-require("qgmlwy") -- QWERTY to QGMLWY.
-require("reload") -- Auto-reload config.
+-- Jeo keyboard layout.
+jeo = require 'jeospoon'
+jeo.setEditor('MacVim')
+jeoEventTap = hs.eventtap.new(jeo.KEY_EVENTS, jeo.handleKeyEvent)

@@ -10,6 +10,7 @@
 !.bash_profile
 !.bashrc
 !.bowman.bash
+!.dircolors
 !.eslintrc.yml
 !.git-prompt.sh
 !.gitconfig

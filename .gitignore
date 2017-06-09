@@ -18,6 +18,7 @@
 !.globalgitignore
 !.globalhgignore
 !.hgrc
+!.hyper.js
 !.inputrc
 !.mdstyle
 !.profile

@@ -1,9 +1,6 @@
 [submodule "dash.vim"]
 	path = .vim/bundle/dash.vim
 	url = https://github.com/rizzatti/dash.vim.git
-[submodule "jeo"]
-	path = Library/Application Support/Karabiner/jeo
-	url = https://github.com/joecridge/jeo.git
 [submodule "jeospoon"]
 	path = .hammerspoon/jeospoon
 	url = git@github.com:joecridge/jeospoon.git

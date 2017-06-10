@@ -12,6 +12,23 @@ jeoEventTap:start()
 
 
 -------------------------------------------------------------------------------
+-- Toggle Jeo when a YubiKey is inserted
+-------------------------------------------------------------------------------
+
+yubikeyWatcher = hs.usb.watcher.new(function(event)
+  if event.vendorName == 'Yubico' then
+    if event.eventType == 'added' then
+      jeo.enablePassThrough()
+    else
+      jeo.disablePassThrough()
+    end
+  end
+end)
+
+yubikeyWatcher:start()
+
+
+-------------------------------------------------------------------------------
 -- Allow forward delete to remove files in Finder
 -------------------------------------------------------------------------------
 

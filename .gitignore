@@ -54,13 +54,6 @@
 .vim/.netrwhist
 
 
-# Track Karabiner settings.
-!Library/
-!Library/Application Support
-!Library/Application Support/Karabiner/
-!Library/Application Support/Karabiner/private.xml
-!Library/Application Support/Karabiner/Jeo
-
 # Track Hammerspoon settings.
 !.hammerspoon/
 !.hammerspoon/*.lua

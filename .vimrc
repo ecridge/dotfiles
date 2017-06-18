@@ -102,6 +102,11 @@ noremap <leader><leader> :<c-u>cd<cr>:<c-u>pwd<cr>
 onoremap <silent> ae :<c-u>normal! ggVG<cr>
 vnoremap <silent> ae <esc>ggVG<cr>
 
+" JavaScript syntax plugins.
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_flow = 1
+let g:jsx_ext_required = 0
+
 " Syntastic syntax checking.
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_always_populate_loc_list = 1
@@ -111,6 +116,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_html_checkers = ['validator']
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_markdown_mdl_args = "--style ~/.mdstyle"
+let g:syntastic_pug_checkers = ['pug_lint']
 let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_sass_checkers = ['sass_lint']
 let g:syntastic_scss_checkers = ['sass_lint']
@@ -140,7 +146,7 @@ let g:airline_mode_map = {
 " File-specific autocommands.
 autocmd FileType c,cpp,make setlocal tabstop=8 shiftwidth=8
 autocmd FileType changelog setlocal tabstop=8 shiftwidth=8 noexpandtab
-autocmd FileType javascript setlocal textwidth=100
+autocmd FileType javascript,json setlocal textwidth=100
 autocmd FileType sh,zsh setlocal tabstop=4 shiftwidth=4
 autocmd BufRead,BufNewFile .babelrc,.eslintrc,.htmllintrc setlocal filetype=json
 autocmd BufRead,BufNewFile .gitconfig,.gitmodules setlocal noexpandtab

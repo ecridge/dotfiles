@@ -46,7 +46,6 @@ module.exports = {
     'hyper-nobold',
     'hypercwd',
     'hyperlinks',
-    'hyperpower',
     'hyperterm-alternatescroll',
     'hyperterm-close-on-left',
     'hyperterm-paste',

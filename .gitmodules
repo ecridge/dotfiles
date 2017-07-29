@@ -1,12 +1,15 @@
-[submodule "dash.vim"]
-	path = .vim/bundle/dash.vim
-	url = https://github.com/rizzatti/dash.vim.git
+# General
 [submodule "jeospoon"]
 	path = .hammerspoon/jeospoon
 	url = git@github.com:joecridge/jeospoon.git
 [submodule "private"]
 	path = private
 	url = git@github.com:joecridge/private.git
+
+# Vim
+[submodule "dash.vim"]
+	path = .vim/bundle/dash.vim
+	url = https://github.com/rizzatti/dash.vim.git
 [submodule "syntastic"]
 	path = .vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
@@ -106,3 +109,14 @@
 [submodule "YouCompleteMe"]
 	path = .vim/bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git
+
+# Neovim
+[submodule "tpope/vim-commentary"]
+	path = .nvim/pack/tpope/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
+[submodule "altercation/vim-colors-solarized"]
+	path = .nvim/pack/altercation/opt/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "evanmiller/nginx-vim-syntax"]
+	path = .vim/bundle/nginx-vim-syntax
+	url = https://github.com/evanmiller/nginx-vim-syntax.git

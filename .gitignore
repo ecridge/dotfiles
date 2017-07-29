@@ -48,7 +48,15 @@
 !resources/**
 
 
-# Track everything in ~/.vim. These are mostly submodules.
+# Track select files from ~/.config.
+!.config
+!.config/nvim/
+!.config/nvim/init.vim
+
+
+# Track everything in ~/.nvim and ~/.vim. These are mostly submodules.
+!.nvim/
+!.nvim/**
 !.vim/
 !.vim/**
 .vim/.netrwhist

@@ -7,6 +7,9 @@
 	url = git@github.com:joecridge/private.git
 
 # Vim
+[submodule "Dockerfile.vim"]
+	path = .vim/bundle/Dockerfile.vim
+	url = https://github.com/ekalinin/Dockerfile.vim.git
 [submodule "dash.vim"]
 	path = .vim/bundle/dash.vim
 	url = https://github.com/rizzatti/dash.vim.git
@@ -112,17 +115,29 @@
 [submodule "YouCompleteMe"]
 	path = .vim/bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "evanmiller/nginx-vim-syntax"]
+	path = .vim/bundle/nginx-vim-syntax
+	url = https://github.com/evanmiller/nginx-vim-syntax.git
 
 # Neovim
-[submodule "tpope/vim-commentary"]
-	path = .nvim/pack/tpope/start/vim-commentary
-	url = https://github.com/tpope/vim-commentary.git
 [submodule "altercation/vim-colors-solarized"]
 	path = .nvim/pack/altercation/opt/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "briancollins/vim-jst"]
 	path = .nvim/pack/briancollins/start/vim-jst
 	url = https://github.com/briancollins/vim-jst.git
+[submodule "ekalinin/Dockerfile.vim"]
+	path = .nvim/pack/ekalinin/start/Dockerfile.vim
+	url = https://github.com/ekalinin/Dockerfile.vim.git
 [submodule "evanmiller/nginx-vim-syntax"]
 	path = .vim/bundle/nginx-vim-syntax
 	url = https://github.com/evanmiller/nginx-vim-syntax.git
+[submodule "pangloss/vim-javascript"]
+	path = .nvim/pack/pangloss/start/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
+[submodule "tpope/vim-commentary"]
+	path = .nvim/pack/tpope/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
+[submodule "w0rp/ale"]
+	path = .nvim/pack/w0rp/start/ale
+	url = https://github.com/w0rp/ale.git

@@ -67,6 +67,9 @@
 [submodule "vim-jinja"]
 	path = .vim/bundle/vim-jinja
 	url = https://github.com/niftylettuce/vim-jinja.git
+[submodule "vim-jst"]
+	path = .vim/bundle/vim-jst
+	url = https://github.com/briancollins/vim-jst.git
 [submodule "vim-jsx"]
 	path = .vim/bundle/vim-jsx
 	url = https://github.com/mxw/vim-jsx.git
@@ -117,6 +120,9 @@
 [submodule "altercation/vim-colors-solarized"]
 	path = .nvim/pack/altercation/opt/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "briancollins/vim-jst"]
+	path = .nvim/pack/briancollins/start/vim-jst
+	url = https://github.com/briancollins/vim-jst.git
 [submodule "evanmiller/nginx-vim-syntax"]
 	path = .vim/bundle/nginx-vim-syntax
 	url = https://github.com/evanmiller/nginx-vim-syntax.git

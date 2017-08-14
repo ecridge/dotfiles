@@ -1,0 +1,13 @@
+{
+  "libs": [
+    "browser",
+    "chai",
+    "ecmascript",
+    "jquery",
+    "react"
+  ],
+  "plugins": {
+    "complete_strings": {},
+    "node": {}
+  }
+}

@@ -23,6 +23,7 @@
 !.inputrc
 !.mdstyle
 !.profile
+!.tern-config
 !.vimrc
 !.vintrc.yaml
 !.yamllint

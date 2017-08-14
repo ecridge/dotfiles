@@ -1,10 +1,10 @@
 # General
 [submodule "jeospoon"]
 	path = .hammerspoon/jeospoon
-	url = git@github.com:joecridge/jeospoon.git
+	url = https://github.com/joecridge/jeospoon.git
 [submodule "private"]
 	path = private
-	url = https://github.com/joecridge/jeospoon.git
+	url = git@github.com:joecridge/private.git
 
 # Vim
 [submodule "Dockerfile.vim"]

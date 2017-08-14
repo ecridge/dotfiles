@@ -120,12 +120,21 @@
 [submodule "Shougo/deoplete.nvim"]
 	path = .nvim/pack/Shougo/start/deoplete.nvim
 	url = https://github.com/Shougo/deoplete.nvim.git
+[submodule "Shougo/neco-syntax"]
+	path = .nvim/pack/Shougo/start/neco-syntax
+	url = https://github.com/Shougo/neco-syntax.git
+[submodule "Shougo/neco-vim"]
+	path = .nvim/pack/Shougo/start/neco-vim
+	url = https://github.com/Shougo/neco-vim.git
 [submodule "altercation/vim-colors-solarized"]
 	path = .nvim/pack/altercation/opt/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "briancollins/vim-jst"]
 	path = .nvim/pack/briancollins/start/vim-jst
 	url = https://github.com/briancollins/vim-jst.git
+[submodule "carlitux/deoplete-ternjs"]
+	path = .nvim/pack/carlitux/start/deoplete-ternjs
+	url = https://github.com/carlitux/deoplete-ternjs.git
 [submodule "ekalinin/Dockerfile.vim"]
 	path = .nvim/pack/ekalinin/start/Dockerfile.vim
 	url = https://github.com/ekalinin/Dockerfile.vim.git

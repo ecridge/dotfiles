@@ -48,7 +48,6 @@ module.exports = {
     'hyperlinks',
     'hyperterm-alternatescroll',
     'hyperterm-close-on-left',
-    'hyperterm-paste',
     'hyperterm-tabs'
   ],
   localPlugins: []

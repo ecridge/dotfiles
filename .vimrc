@@ -39,7 +39,9 @@ set spell spelllang=en_gb spellfile=~/.vim/spell/en.utf-8.add
 set splitbelow splitright
 set wildmode=longest,list
 
-" Syntax plugins.
+" Syntax highlighting.
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_flow = 1
 execute pathogen#infect()
 syntax on
 filetype plugin indent on

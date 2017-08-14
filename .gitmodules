@@ -10,3 +10,6 @@
 [submodule "vim/solarized"]
 	path = .vim/bundle/vim-colors-solarized
 	url = https://github.com/joecridge/vim-colors-solarized.git
+[submodule "vim/sleuth"]
+	path = .vim/bundle/vim-sleuth
+	url = https://github.com/tpope/vim-sleuth

@@ -34,7 +34,6 @@ set matchtime=2 showmatch
 set nojoinspaces
 set number
 set colorcolumn=+1 sidescroll=1 sidescrolloff=1 textwidth=79 nowrap
-set shiftround shiftwidth=2 softtabstop=-1 tabstop=2 expandtab
 set spell spelllang=en_gb spellfile=~/.vim/spell/en.utf-8.add
 set splitbelow splitright
 set wildmode=longest,list

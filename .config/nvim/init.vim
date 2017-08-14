@@ -164,5 +164,6 @@ augroup END
 " Plugin configuration
 "------------------------------------------------------------------------------
 
+source ~/.config/nvim/deoplete.vim
 source ~/.config/nvim/ale.vim
 source ~/.config/nvim/vim-javascript.vim

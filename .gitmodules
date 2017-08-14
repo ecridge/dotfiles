@@ -4,7 +4,7 @@
 	url = git@github.com:joecridge/jeospoon.git
 [submodule "private"]
 	path = private
-	url = git@github.com:joecridge/private.git
+	url = https://github.com/joecridge/jeospoon.git
 
 # Vim
 [submodule "Dockerfile.vim"]
@@ -117,6 +117,9 @@
 	url = https://github.com/evanmiller/nginx-vim-syntax.git
 
 # Neovim
+[submodule "Shougo/deoplete.nvim"]
+	path = .nvim/pack/Shougo/start/deoplete.nvim
+	url = https://github.com/Shougo/deoplete.nvim.git
 [submodule "altercation/vim-colors-solarized"]
 	path = .nvim/pack/altercation/opt/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git

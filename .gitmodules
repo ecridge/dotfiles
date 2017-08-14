@@ -126,9 +126,6 @@
 [submodule "Shougo/neco-vim"]
 	path = .nvim/pack/Shougo/start/neco-vim
 	url = https://github.com/Shougo/neco-vim.git
-[submodule "altercation/vim-colors-solarized"]
-	path = .nvim/pack/altercation/opt/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "briancollins/vim-jst"]
 	path = .nvim/pack/briancollins/start/vim-jst
 	url = https://github.com/briancollins/vim-jst.git
@@ -141,6 +138,9 @@
 [submodule "evanmiller/nginx-vim-syntax"]
 	path = .vim/bundle/nginx-vim-syntax
 	url = https://github.com/evanmiller/nginx-vim-syntax.git
+[submodule "joecridge/vim-colors-solarized"]
+	path = .nvim/pack/joecridge/opt/vim-colors-solarized
+	url = https://github.com/joecridge/vim-colors-solarized.git
 [submodule "pangloss/vim-javascript"]
 	path = .nvim/pack/pangloss/start/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git

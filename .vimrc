@@ -1,155 +1,196 @@
-" Set leaders.
-noremap <space> <nop>
-let mapleader = "\<space>"
-let maplocalleader = "\\"
+set encoding=utf-8
+scriptencoding utf-8
 
-" Load Pathogen plugins and Solarized theme; set some sensible defaults.
-set nocompatible
+
+"------------------------------------------------------------------------------
+" Define leaders
+"
+" This must stay at the top of `init.vim`!
+" Leader commands are defined further down.
+"------------------------------------------------------------------------------
+
+" Use space as the leader.
+" This will show up in the status line as `<20>`.
+noremap <Space> <Nop>
+let g:mapleader = "\<Space>"
+
+" Use backspace as the local leader.
+" This will show up in the status line as `<80>kb` [sic].
+noremap <Backspace> <Nop>
+let g:maplocalleader = "\<Backspace>"
+
+" Unmap return for good measure.
+nnoremap <Return> <Nop>
+
+
+"------------------------------------------------------------------------------
+" General settings
+"------------------------------------------------------------------------------
+
+" Basics.
+set formatoptions+=n1
+set list listchars=extends:$,nbsp:+,precedes:$,tab:>\ ,trail:-
+set matchtime=2 showmatch
+set nojoinspaces
+set number
+set colorcolumn=+1 sidescroll=1 sidescrolloff=1 textwidth=79 nowrap
+set shiftround shiftwidth=2 softtabstop=-1 tabstop=2 expandtab
+set spell spelllang=en_gb spellfile=~/.vim/spell/en.utf-8.add
+set splitbelow splitright
+set wildmode=longest,list
+
+" Syntax plugins.
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
-syntax enable
+
+" Colour scheme.
+packadd vim-colors-solarized
+set background=dark
 colorscheme solarized
-set showtabline=1
-set guifont=Droid\ Sans\ Mono\ Slashed\ for\ Powerline:h14
-set hlsearch
-set list listchars=tab:>\ ,trail:-,extends:$,precedes:$,nbsp:+
-
-" Add custom task tags.
-autocmd Syntax * call matchadd('Todo', '\v<(BUG|HACK)>')
-autocmd Syntax * call matchadd('Error', '\v^([<|=>])\1{6}( .*)?$')
-
-" Requirements for Vim-LaTeX.
-set grepprg=grep\ -nH\ $*
-let g:tex_flavor='latex'
-
-" Set background colour dependent on context.
-if has('gui_running')
-  set background=light
-  noremap <leader>bg :<c-u>set background=dark<cr>
-else
-  set background=dark
-  noremap <leader>bg :<c-u>set background=light<cr>
-endif
-
-" Turn off annoying bell.
-set visualbell t_vb=
-
-" Display useful metrics.
-set number
-set showcmd
-
-" Split options.
-set equalalways eadirection=hor
-set splitbelow splitright
+call togglebg#map('<F5>')
 
 " Prefer vertical split for help.
-autocmd FileType help wincmd L
-autocmd FileType help vertical resize 96
+augroup HelpSplit
+  autocmd!
+  autocmd FileType help wincmd L
+  autocmd FileType help vertical resize 96
+augroup END
 
-" Default to two spaces for a tab.
-set tabstop=2 shiftwidth=2 expandtab
 
-" Bash-style autocompletion.
-set wildmode=longest,list
+"------------------------------------------------------------------------------
+" Insert mode
+"------------------------------------------------------------------------------
 
-" Only insert one space after period when joining.
-set nojoinspaces
+" Ctrl-A to jump to line start.
+" Ctrl-E to jump to line end.
+inoremap <C-a> <Esc>I
+inoremap <C-e> <Esc>A
 
-" Enable spell checking.
-set spell spelllang=en_gb
+" Ctrl-D to delete line under cursor.
+inoremap <silent> <C-d> <Esc>ddi
 
-" Text wrapping options.
-set nowrap
-set textwidth=79
-set colorcolumn=+1
-set formatoptions=tcqnlBj " FIXME: Something is doing +=ro.
-set sidescroll=1
+" Ctrl-G to move line under cursor up.
+" Ctrl-- to move line under cursor down.
+inoremap <silent> <C-g> <Esc>:m .-2<CR>==gi
+inoremap <silent> <C-_> <Esc>:m .+1<CR>==gi
 
-" Swap h and l.
+" Ctrl-U to upper-case word under cursor.
+inoremap <silent> <C-u> _<Esc>mza<C-Right><Esc>bgUiw`zi<Del>
+
+
+"------------------------------------------------------------------------------
+" Normal mode
+"------------------------------------------------------------------------------
+
+" Swap H and L.
 noremap h l
 noremap l h
-noremap <c-w>h <c-w>l
-noremap <c-w>l <c-w>h
+noremap <C-w>h <C-w>l
+noremap <C-w>l <C-w>h
 
-" Use arrow keys to move between buffers.
-noremap <left> <c-w>h
-noremap <down> <c-w>j
-noremap <up> <c-w>k
-noremap <right> <c-w>l
+" Use arrow keys to move between windows.
+noremap <Left> <C-w>h
+noremap <Down> <C-w>j
+noremap <Up> <C-w>k
+noremap <Right> <C-w>l
 
-" Enable vim-easy-align.
-" NB: Shadows `ga` for get-ascii-under-cursor; use `:as[cii]` instead.
-" FIXME: The nmap doesn’t appear to work?
-xmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
+" \ to delete line under cursor.
+nnoremap <silent> \ dd
 
-" LEARN VIMSCRIPT THE HARD WAY
-inoremap <c-u> <esc>viwUea
-inoremap <c-space> <insert>
-nnoremap <silent> - :m .+<cr>
-nnoremap <silent> _ :m .-2<cr>
-noremap Y y$
-noremap <silent> <leader>co :e!<cr>
-noremap <leader>ev :<c-u>vsplit $MYVIMRC<cr>G
-noremap <silent> <leader>h :<c-u>nohlsearch<cr>
-noremap <leader>sv :<c-u>source $MYVIMRC<cr>
-nnoremap <leader>u viwU
-noremap <leader>. :<c-u>cd %:h<cr>:<c-u>pwd<cr>
-noremap <leader><leader> :<c-u>cd<cr>:<c-u>pwd<cr>
+" Ctrl-U to upper-case word under cursor.
+nnoremap <C-u> mzgUiw`z
 
-" HACK: Create ‘an entire’ object.
-onoremap <silent> ae :<c-u>normal! ggVG<cr>
-vnoremap <silent> ae <esc>ggVG<cr>
 
-" JavaScript syntax plugins.
-let g:flow#autoclose = 1
+"------------------------------------------------------------------------------
+" Leader commands
+"------------------------------------------------------------------------------
+
+" ‘Check out’ a file.
+noremap <silent> <Leader>co :<C-u>e!<CR>
+
+" Edit and source ~/.vimrc.
+noremap <silent> <Leader>ev :<C-u>vsplit $MYVIMRC<CR>G
+noremap <silent> <Leader>sv :<C-u>source $MYVIMRC<CR>
+
+" Hide search matches.
+noremap <silent> <Leader>h :<C-u>nohlsearch<CR>
+
+" Toggle background.
+map <silent> <Leader>bg <F5>
+
+" Set working directory based on current file.
+noremap <Leader>. :<C-u>cd %:h<CR>:<C-u>pwd<CR>
+
+" Save and quit.
+noremap <Leader>q :<C-u>wq<CR>
+
+
+"------------------------------------------------------------------------------
+" Miscellaneous
+"------------------------------------------------------------------------------
+
+" Create ‘an entire’ text object.
+onoremap <silent> ae :<C-u>normal! ggVG<CR>
+vnoremap <silent> ae <Esc>ggVG<CR>
+
+
+"------------------------------------------------------------------------------
+" Autocommands
+"------------------------------------------------------------------------------
+
+" Disable comment continuation (when opening lines).
+augroup CommentContinuation
+  autocmd!
+  autocmd BufEnter * setlocal formatoptions-=o
+augroup END
+
+" Add custom task tags (BUG, HACK, and merge conflict delimiters).
+augroup CustomTaskTags
+  autocmd!
+  autocmd Syntax * call matchadd('Todo', '\v<(BUG|HACK)>')
+  autocmd Syntax * call matchadd('Error', '\v^([<|=>])\1{6}( .*)?$')
+augroup END
+
+
+"------------------------------------------------------------------------------
+" w0rp/ale: asynchronous lint engine
+"------------------------------------------------------------------------------
+
+" Manually enable linters.
+let g:ale_linters = {
+\   'markdown': ['mdl'],
+\   'javascript': ['eslint'],
+\   'json': ['jsonlint'],
+\   'scss': ['sass-lint'],
+\   'vim': ['vint'],
+\   'yaml': ['yamllint'],
+\}
+
+" Always keep the gutter open.
+let g:ale_sign_column_always = 1
+
+" Customise gutter indicators.
+let g:ale_sign_error = 'E'
+let g:ale_sign_warning = 'W'
+
+
+"------------------------------------------------------------------------------
+" Shougo/Deoplete.nvim: asynchronous keyword completion
+"------------------------------------------------------------------------------
+
+let g:deoplete#enable_at_startup = 1
+
+" Use tab for autocompletion.
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+
+" Use `gb` to go to definition using Tern.
+autocmd FileType javascript nnoremap <silent> <buffer> gb :TernDef<CR>
+
+
+"------------------------------------------------------------------------------
+" pangloss/vim-javascript: JavaScript indentation and syntax highlighting
+"------------------------------------------------------------------------------
+
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_flow = 1
-let g:jsx_ext_required = 0
-
-" Syntastic syntax checking.
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_css_checkers = ['stylelint']
-let g:syntastic_html_checkers = ['validator']
-let g:syntastic_javascript_checkers = ['standard']
-let g:syntastic_markdown_mdl_args = "--style ~/.mdstyle"
-let g:syntastic_pug_checkers = ['pug_lint']
-let g:syntastic_ruby_checkers = ['rubocop']
-let g:syntastic_sass_checkers = ['sass_lint']
-let g:syntastic_scss_checkers = ['sass_lint']
-let g:syntastic_sh_checkers = ['bashate']  " FIXME: Not working at all.
-let g:syntastic_typescript_checkers = ['tslint']
-let g:syntastic_yaml_checkers = ['yamllint']
-let g:syntastic_vim_checkers = ['vint']
-
-" Setup vim-airline.
-set noshowmode
-let g:airline_theme='solarized'
-let g:airline_powerline_fonts=1
-let g:airline_mode_map = {
-    \ '__' : '   ',
-    \ 'n'  : 'NRM',
-    \ 'i'  : 'INS',
-    \ 'R'  : 'REP',
-    \ 'c'  : 'CMD',
-    \ 'v'  : 'VIS',
-    \ 'V'  : 'LIN',
-    \ '' : 'BLK',
-    \ 's'  : 'SEL',
-    \ 'S'  : 'SEL',
-    \ '' : 'SEL',
-    \ }
-
-" File-specific autocommands.
-autocmd FileType c,cpp,make setlocal tabstop=8 shiftwidth=8
-autocmd FileType changelog setlocal tabstop=8 shiftwidth=8 noexpandtab
-autocmd FileType javascript,json setlocal textwidth=100
-autocmd FileType sh,zsh setlocal tabstop=4 shiftwidth=4
-autocmd BufRead,BufNewFile .babelrc,.eslintrc,.htmllintrc setlocal filetype=json
-autocmd BufRead,BufNewFile .gitconfig,.gitmodules setlocal noexpandtab
-autocmd BufRead,BufNewFile .gitconfig,.gitmodules setlocal ts=8 sw=8

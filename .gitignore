@@ -52,16 +52,12 @@
 # Track select files from ~/.config.
 !.config
 !.config/nvim/
-!.config/nvim/*.vim
+!.config/nvim/init.vim
 
 
-# Track everything in ~/.nvim and ~/.vim. These are mostly submodules.
-!.nvim/
-!.nvim/**
+# Track everything in ~/.vim. These are mostly submodules.
 !.vim/
 !.vim/**
-.nvim/spell/en.utf-8.spl
-.nvim/spell/en.utf-8.sug
 .vim/.netrwhist
 
 

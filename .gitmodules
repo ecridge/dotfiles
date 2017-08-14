@@ -112,9 +112,6 @@
 [submodule "yats.vim"]
 	path = .vim/bundle/yats.vim
 	url = https://github.com/HerringtonDarkholme/yats.vim.git
-[submodule "YouCompleteMe"]
-	path = .vim/bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe.git
 [submodule "evanmiller/nginx-vim-syntax"]
 	path = .vim/bundle/nginx-vim-syntax
 	url = https://github.com/evanmiller/nginx-vim-syntax.git

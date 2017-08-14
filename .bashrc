@@ -49,7 +49,6 @@ alias la='l -A'
 alias ll=$'l -AhFl --time-style=\'+%Y-%m-%d %H:%M\n%a %d %b %H:%M\''
 alias m=man
 alias mdl='mdl --style ~/.mdstyle'
-alias me=mvim
 alias n=npm
 alias o=open
 alias post="curl -sSi -X POST -H 'Content-type: application/json' -d"

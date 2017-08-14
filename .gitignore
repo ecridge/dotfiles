@@ -59,6 +59,8 @@
 !.vim/
 !.vim/**
 .vim/.netrwhist
+.vim/spell/en.utf-8.spl
+.vim/spell/en.utf-8.sug
 
 
 # Track Hammerspoon settings.

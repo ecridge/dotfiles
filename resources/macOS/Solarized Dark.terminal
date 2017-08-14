@@ -184,9 +184,9 @@
 	<key>FontAntialias</key>
 	<true/>
 	<key>FontHeightSpacing</key>
-	<real>1</real>
+	<real>0.84999999999999998</real>
 	<key>FontWidthSpacing</key>
-	<real>0.99596774193548387</real>
+	<integer>1</integer>
 	<key>ProfileCurrentVersion</key>
 	<real>2.0499999999999998</real>
 	<key>RunCommandAsShell</key>
@@ -211,7 +211,7 @@
 	<key>ShowActiveProcessArgumentsInTitle</key>
 	<false/>
 	<key>ShowActiveProcessInTabTitle</key>
-	<true/>
+	<false/>
 	<key>ShowActiveProcessInTitle</key>
 	<false/>
 	<key>ShowCommandKeyInTitle</key>
@@ -225,6 +225,8 @@
 	<key>ShowRepresentedURLPathInTitle</key>
 	<true/>
 	<key>ShowShellCommandInTitle</key>
+	<false/>
+	<key>ShowTTYNameInTabTitle</key>
 	<false/>
 	<key>ShowTTYNameInTitle</key>
 	<false/>
@@ -243,12 +245,14 @@
 	<data>
 	YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
 	AAGGoKMHCA9VJG51bGzTCQoLDA0OVU5TUkdCXE5TQ29sb3JTcGFjZVYkY2xhc3NPECcw
-	LjQ0MDU4MDI0ODggMC41MDk2MjkzMDkyIDAuNTE2ODU3OTgxNwAQAYAC0hAREhNaJGNs
+	LjQzOTIxNTY4NjMgMC41MDk4MDM5MjE2IDAuNTE3NjQ3MDU4OAAQAYAC0hAREhNaJGNs
 	YXNzbmFtZVgkY2xhc3Nlc1dOU0NvbG9yohIUWE5TT2JqZWN0XxAPTlNLZXllZEFyY2hp
 	dmVy0RcYVHJvb3SAAQgRGiMtMjc7QUhOW2KMjpCVoKmxtL3P0tcAAAAAAAABAQAAAAAA
 	AAAZAAAAAAAAAAAAAAAAAAAA2Q==
 	</data>
 	<key>UseBoldFonts</key>
+	<false/>
+	<key>UseBrightBold</key>
 	<false/>
 	<key>VisualBell</key>
 	<false/>
@@ -368,7 +372,7 @@
 	<key>name</key>
 	<string>Solarized Dark</string>
 	<key>rowCount</key>
-	<integer>30</integer>
+	<integer>32</integer>
 	<key>shellExitAction</key>
 	<integer>0</integer>
 	<key>type</key>

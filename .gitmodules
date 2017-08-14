@@ -91,3 +91,15 @@
 [submodule "vim/tern"]
 	path = .vim/bundle/deoplete-ternjs
 	url = https://github.com/carlitux/deoplete-ternjs
+[submodule "vim/jspc"]
+	path = .vim/bundle/jspc.vim
+	url = https://github.com/othree/jspc.vim
+[submodule "vim/tern_full"]
+	path = .vim/bundle/tern_for_vim
+	url = https://github.com/ternjs/tern_for_vim
+[submodule "vim/airline"]
+	path = .vim/bundle/vim-airline
+	url = https://github.com/vim-airline/vim-airline
+[submodule "vim/airline-themes"]
+	path = .vim/bundle/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes

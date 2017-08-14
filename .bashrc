@@ -58,6 +58,9 @@ alias py='clear && python'
 alias sudoa='sudo '  # An alias of sudo that expands aliases.
 alias q=logout
 alias t="tree -I \"$gumpf\""
+alias vi=nvim
+alias vim=nvim
+alias vimdiff='nvim -d'
 alias vd=vimdiff
 
 

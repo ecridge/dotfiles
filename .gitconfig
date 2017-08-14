@@ -28,7 +28,7 @@
 [credential]
 	helper = osxkeychain
 [diff]
-	tool = vimdiff
+	tool = nvim -d
 	compactionHeuristic = true
 	submodule = log
 [filter "lfs"]
@@ -41,7 +41,7 @@
 [difftool]
 	prompt = false
 [merge]
-	tool = vimdiff
+	tool = nvim -d
 	conflictstyle = diff3
 [mergetool]
 	prompt = false

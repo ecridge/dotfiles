@@ -34,6 +34,7 @@ set matchtime=2 showmatch
 set nojoinspaces
 set number
 set colorcolumn=+1 sidescroll=1 sidescrolloff=1 textwidth=79 nowrap
+set shiftround shiftwidth=2 softtabstop=-1 tabstop=2 expandtab
 set spell spelllang=en_gb spellfile=~/.vim/spell/en.utf-8.add
 set splitbelow splitright
 set wildmode=longest,list
@@ -152,38 +153,28 @@ augroup END
 
 
 "------------------------------------------------------------------------------
-" w0rp/ale: asynchronous lint engine
-"------------------------------------------------------------------------------
-
-" Manually enable linters.
-let g:ale_linters = {
-\   'markdown': ['mdl'],
-\   'javascript': ['eslint'],
-\   'json': ['jsonlint'],
-\   'scss': ['sass-lint'],
-\   'vim': ['vint'],
-\   'yaml': ['yamllint'],
-\}
-
-" Always keep the gutter open.
-let g:ale_sign_column_always = 1
-
-" Customise gutter indicators.
-let g:ale_sign_error = 'E'
-let g:ale_sign_warning = 'W'
-
-
-"------------------------------------------------------------------------------
 " Shougo/Deoplete.nvim: asynchronous keyword completion
 "------------------------------------------------------------------------------
 
 let g:deoplete#enable_at_startup = 1
 
+let g:deoplete#omni#functions = {}
+let g:deoplete#omni#functions.javascript = ['tern#Complete', 'jspc#omni']
+
+let g:deoplete#sources = {}
+let g:deoplete#sources['javascript.jsx'] = ['buffer', 'file', 'ternjs']
+
+let g:tern#command = ['tern']
+let g:tern#arguments = ['--persistent']
+
 " Use tab for autocompletion.
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 " Use `gb` to go to definition using Tern.
-autocmd FileType javascript nnoremap <silent> <buffer> gb :TernDef<CR>
+augroup GotoDefinition
+  autocmd!
+  autocmd FileType javascript nnoremap <silent> <buffer> gb :TernDef<CR>
+augroup END
 
 
 "------------------------------------------------------------------------------
@@ -192,3 +183,76 @@ autocmd FileType javascript nnoremap <silent> <buffer> gb :TernDef<CR>
 
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_flow = 1
+
+
+"------------------------------------------------------------------------------
+" vim-airline/vim-airline: lightweight status line
+"------------------------------------------------------------------------------
+
+set noshowmode
+
+let g:airline_theme='solarized'
+let g:airline_powerline_fonts = 1
+
+let g:airline_detect_spell = 0
+
+let g:airline_mode_map = {
+    \ '__' : '   ',
+    \ 'n'  : 'N',
+    \ 'i'  : 'I',
+    \ 'R'  : 'R',
+    \ 'c'  : 'C',
+    \ 'v'  : 'V',
+    \ 'V'  : 'L',
+    \ '' : 'B',
+    \ 's'  : 'S',
+    \ 'S'  : 'S',
+    \ '' : 'S',
+\ }
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+let g:airline_symbols.branch = ''
+let g:airline_symbols.notexists = ''
+let g:airline_symbols.whitespace = ''
+
+let g:airline_skip_empty_sections = 1
+
+let g:airline_section_x = ''
+let g:airline_section_z = '%l:%c (%p%%)'
+
+let g:airline#extensions#hunks#non_zero_only = 1
+let g:airline#parts#ffenc#skip_expected_string = 'utf-8[unix]'
+
+let g:airline#extensions#default#section_truncate_width = {
+    \ 'b': 79,
+    \ 'x': 79,
+    \ 'y': 79,
+    \ 'warning': 69,
+    \ 'error': 59
+\ }
+
+"------------------------------------------------------------------------------
+" w0rp/ale: asynchronous lint engine
+"------------------------------------------------------------------------------
+
+" Manually enable linters.
+let g:ale_linters = {
+    \ 'css': ['stylelint'],
+    \ 'html': ['htmlhint'],
+    \ 'markdown': ['mdl'],
+    \ 'javascript': ['eslint'],
+    \ 'json': ['jsonlint'],
+    \ 'scss': ['sass-lint'],
+    \ 'vim': ['vint'],
+    \ 'yaml': ['yamllint'],
+\ }
+
+" Always keep the gutter open.
+let g:ale_sign_column_always = 1
+
+" Customise gutter indicators.
+let g:ale_sign_error = 'E'
+let g:ale_sign_warning = 'W'

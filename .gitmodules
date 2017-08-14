@@ -7,3 +7,6 @@
 	url = git@github.com:joecridge/private.git
 
 # Vim
+[submodule "vim/solarized"]
+	path = .vim/bundle/vim-colors-solarized
+	url = https://github.com/joecridge/vim-colors-solarized.git

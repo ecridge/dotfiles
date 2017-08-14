@@ -45,7 +45,6 @@ syntax on
 filetype plugin indent on
 
 " Colour scheme.
-packadd vim-colors-solarized
 set background=dark
 colorscheme solarized
 call togglebg#map('<F5>')

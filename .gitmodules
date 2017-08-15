@@ -7,9 +7,6 @@
 	url = git@github.com:joecridge/private.git
 
 # Vim
-[submodule "vim/solarized"]
-	path = .vim/bundle/vim-colors-solarized
-	url = https://github.com/joecridge/vim-colors-solarized.git
 [submodule "vim/sleuth"]
 	path = .vim/bundle/vim-sleuth
 	url = https://github.com/tpope/vim-sleuth
@@ -100,6 +97,6 @@
 [submodule "vim/airline"]
 	path = .vim/bundle/vim-airline
 	url = https://github.com/vim-airline/vim-airline
-[submodule "vim/airline-themes"]
-	path = .vim/bundle/vim-airline-themes
-	url = https://github.com/vim-airline/vim-airline-themes
+[submodule "vim/gruvbox"]
+	path = .vim/bundle/gruvbox
+	url = https://github.com/morhetz/gruvbox

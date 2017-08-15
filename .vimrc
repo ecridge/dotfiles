@@ -48,8 +48,9 @@ filetype plugin indent on
 
 " Colour scheme.
 set background=dark
-colorscheme solarized
-call togglebg#map('<F5>')
+colorscheme gruvbox
+"colorscheme solarized
+"call togglebg#map('<F5>')
 
 " Prefer vertical split for help.
 augroup HelpSplit
@@ -196,7 +197,6 @@ augroup END
 
 set noshowmode
 
-let g:airline_theme='solarized'
 let g:airline_powerline_fonts = 1
 
 let g:airline_detect_spell = 0

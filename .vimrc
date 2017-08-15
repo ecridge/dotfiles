@@ -55,7 +55,7 @@ call togglebg#map('<F5>')
 augroup HelpSplit
   autocmd!
   autocmd FileType help wincmd L
-  autocmd FileType help vertical resize 96
+  autocmd FileType help vertical resize 82
 augroup END
 
 
@@ -155,6 +155,17 @@ augroup END
 
 
 "------------------------------------------------------------------------------
+" airblade/vim-gitgutter: annotate unstaged changes
+"------------------------------------------------------------------------------
+
+set signcolumn=yes
+set updatetime=250 " ms
+
+" Highlight line changes.
+noremap <silent> <Leader>hc :<C-u>GitGutterLineHighlightsToggle<CR>
+
+
+"------------------------------------------------------------------------------
 " Shougo/Deoplete.nvim: asynchronous keyword completion
 "------------------------------------------------------------------------------
 
@@ -170,21 +181,13 @@ let g:tern#command = ['tern']
 let g:tern#arguments = ['--persistent']
 
 " Use tab for autocompletion.
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 
 " Use `gb` to go to definition using Tern.
 augroup GotoDefinition
   autocmd!
   autocmd FileType javascript nnoremap <silent> <buffer> gb :TernDef<CR>
 augroup END
-
-
-"------------------------------------------------------------------------------
-" pangloss/vim-javascript: JavaScript indentation and syntax highlighting
-"------------------------------------------------------------------------------
-
-let g:javascript_plugin_jsdoc = 1
-let g:javascript_plugin_flow = 1
 
 
 "------------------------------------------------------------------------------

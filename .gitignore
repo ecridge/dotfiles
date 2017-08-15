@@ -55,12 +55,12 @@
 !.config/nvim/init.vim
 
 
-# Track everything in ~/.vim. These are mostly submodules.
-!.vim/
-!.vim/**
-.vim/.netrwhist
-.vim/spell/en.utf-8.spl
-.vim/spell/en.utf-8.sug
+# Track everything in ~/.config/nvim. These are mostly submodules.
+!.config/nvim/
+!.config/nvim/**
+.config/nvim/.netrwhist
+.config/nvim/spell/en.utf-8.spl
+.config/nvim/spell/en.utf-8.sug
 
 
 # Track Hammerspoon settings.

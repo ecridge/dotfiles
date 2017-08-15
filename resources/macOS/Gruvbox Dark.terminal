@@ -318,9 +318,9 @@
 	<key>FontAntialias</key>
 	<true/>
 	<key>FontHeightSpacing</key>
-	<real>1</real>
+	<real>0.84999999999999998</real>
 	<key>FontWidthSpacing</key>
-	<real>0.99596774193548387</real>
+	<integer>1</integer>
 	<key>ProfileCurrentVersion</key>
 	<real>2.0499999999999998</real>
 	<key>RunCommandAsShell</key>

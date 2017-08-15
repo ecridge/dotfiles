@@ -412,7 +412,7 @@
 	<key>ShowActiveProcessArgumentsInTitle</key>
 	<false/>
 	<key>ShowActiveProcessInTabTitle</key>
-	<true/>
+	<false/>
 	<key>ShowActiveProcessInTitle</key>
 	<false/>
 	<key>ShowCommandKeyInTitle</key>

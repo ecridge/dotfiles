@@ -106,3 +106,6 @@
 [submodule "vim/ctrlp"]
 	path = .config/nvim/bundle/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim
+[submodule "vim/auto-pairs"]
+	path = .config/nvim/bundle/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs

@@ -9,7 +9,7 @@ let g:ale_linters = {
     \ 'markdown': ['mdl'],
     \ 'javascript': ['eslint'],
     \ 'json': ['jsonlint'],
-    \ 'scss': ['sass-lint'],
+    \ 'scss': ['sasslint'],
     \ 'vim': ['vint'],
     \ 'yaml': ['yamllint'],
 \ }
@@ -20,3 +20,7 @@ let g:ale_sign_column_always = 1
 " Customise gutter indicators.
 let g:ale_sign_error = 'E'
 let g:ale_sign_warning = 'W'
+
+" Add mappings for jumping between errors.
+nmap <silent> [<lt> <Plug>(ale_previous_wrap)
+nmap <silent> ]> <Plug>(ale_next_wrap)

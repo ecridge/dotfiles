@@ -35,7 +35,7 @@ set nojoinspaces
 set number
 set colorcolumn=+1 sidescroll=1 sidescrolloff=1 textwidth=79 nowrap
 set shiftround shiftwidth=2 softtabstop=-1 tabstop=2 expandtab
-set spell spelllang=en_gb spellfile=~/.vim/spell/en.utf-8.add
+set spell spelllang=en_gb spellfile=~/.config/nvim/spell/en.utf-8.add
 set splitbelow splitright
 set wildmode=longest,list
 
@@ -115,12 +115,12 @@ nnoremap <C-u> mzgUiw`z
 " ‘Check out’ a file.
 noremap <silent> <Leader>co :<C-u>e!<CR>
 
-" Edit and source ~/.vimrc.
+" Edit and source `init.vim`.
 noremap <silent> <Leader>ev :<C-u>tabedit $MYVIMRC<CR>G
 noremap <silent> <Leader>sv :<C-u>source $MYVIMRC<CR>
 
 " Hide search matches.
-noremap <silent> <Leader>h :<C-u>nohlsearch<CR>
+noremap <silent> <Leader>nh :<C-u>nohlsearch<CR>
 
 " Toggle background.
 map <silent> <Leader>bg <F5>

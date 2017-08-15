@@ -49,16 +49,11 @@
 !resources/**
 
 
-# Track select files from ~/.config.
-!.config
-!.config/nvim/
-!.config/nvim/init.vim
-
-
 # Track everything in ~/.config/nvim. These are mostly submodules.
 !.config/nvim/
 !.config/nvim/**
 .config/nvim/.netrwhist
+.config/nvim/autoload/pathogen.vim
 .config/nvim/spell/en.utf-8.spl
 .config/nvim/spell/en.utf-8.sug
 

@@ -1,2 +1,2 @@
-let &rtp = '~/.vim,' . &rtp
+set runtimepath^=~/.vim
 source ~/.vimrc

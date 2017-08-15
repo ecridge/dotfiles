@@ -141,8 +141,9 @@ fi
 
 
 # Gimmicks.
-if which fortune cowsay lolcat &> /dev/null; then
-    fortune | cowsay | lolcat
+if which fortune sed par &> /dev/null; then
+    echo
+    fortune | sed 's/^/  > /' | par 76
     echo
 fi
 

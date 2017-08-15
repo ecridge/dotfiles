@@ -97,6 +97,10 @@ noremap <Down> <C-w>j
 noremap <Up> <C-w>k
 noremap <Right> <C-w>l
 
+" Use tab and shift-tab to cycle windows.
+nnoremap <Tab> <C-w>w
+nnoremap <S-Tab> <C-w>W
+
 " \ to delete line under cursor.
 nnoremap <silent> \ dd
 
@@ -112,7 +116,7 @@ nnoremap <C-u> mzgUiw`z
 noremap <silent> <Leader>co :<C-u>e!<CR>
 
 " Edit and source ~/.vimrc.
-noremap <silent> <Leader>ev :<C-u>vsplit $MYVIMRC<CR>G
+noremap <silent> <Leader>ev :<C-u>tabedit $MYVIMRC<CR>G
 noremap <silent> <Leader>sv :<C-u>source $MYVIMRC<CR>
 
 " Hide search matches.

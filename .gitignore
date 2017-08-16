@@ -59,6 +59,11 @@
 .config/nvim/.netrwhist
 
 
+# Track .terminfo
+!.terminfo
+!.terminfo/**/*
+
+
 # Track Hammerspoon settings.
 !.hammerspoon/
 !.hammerspoon/*.lua

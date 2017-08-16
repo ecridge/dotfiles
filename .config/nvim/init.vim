@@ -171,8 +171,8 @@ augroup END
 " Plugin configuration
 "------------------------------------------------------------------------------
 
-source ~/.config/nvim/gitgutter.vim
 source ~/.config/nvim/indent-guides.vim
+source ~/.config/nvim/gitgutter.vim
 source ~/.config/nvim/deoplete.vim
 source ~/.config/nvim/airline.vim
 source ~/.config/nvim/ale.vim

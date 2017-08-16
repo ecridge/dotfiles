@@ -1,7 +1,6 @@
 set encoding=utf-8
 scriptencoding utf-8
 
-
 "------------------------------------------------------------------------------
 " Define leaders
 "
@@ -141,7 +140,7 @@ vnoremap <silent> ae <Esc>ggVG<CR>
 
 
 "------------------------------------------------------------------------------
-" Autocommands
+" General autocommands
 "------------------------------------------------------------------------------
 
 " Disable comment continuation (when opening lines).
@@ -155,6 +154,16 @@ augroup CustomTaskTags
   autocmd!
   autocmd Syntax * call matchadd('Todo', '\v<(BUG|HACK)>')
   autocmd Syntax * call matchadd('Error', '\v^([<|=>])\1{6}( .*)?$')
+augroup END
+
+
+"------------------------------------------------------------------------------
+" Language-specific autocommands
+"------------------------------------------------------------------------------
+
+augroup LanguageSpecific
+  autocmd!
+  autocmd FileType html,jst setlocal formatoptions-=t textwidth=100
 augroup END
 
 

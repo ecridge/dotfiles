@@ -115,10 +115,8 @@ PROMPT_COMMAND='custom_prompt;history -a'
 custom_prompt() {
     exit_code=$?
 
-    bash_version=$(echo $BASH_VERSION | sed -e 's/\([0-9.]*\)(.*/\1/')
     msg=${debian_chroot:+($debian_chroot)}
     short_path=$(pwd | sed -e "s|^${HOME}|~|" -re 's|([^/]{0,2})[^/]*/|\1/|g')
-    window_title="Bash $bash_version  –  $(pwd | grep -o '[^/]\+$')"
 
     if [[ $exit_code -ne 0 ]]; then
         msg="\[\e[31m\]exit $exit_code\[\e[0m\]\n$msg"
@@ -126,7 +124,7 @@ custom_prompt() {
 
     PS1="$msg\u@\h:$short_path\[\e[32m\]\$(__git_ps1 '[%s]')\[\e[0m\]\$ "
 
-    echo -n -e "\033]0;$window_title\007"
+    echo -n -e "\033]0;$short_path\007"
 }
 
 
@@ -142,7 +140,6 @@ fi
 
 # Gimmicks.
 if which fortune sed par &> /dev/null; then
-    echo
     fortune | sed 's/^/  > /' | par 76
     echo
 fi

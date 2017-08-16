@@ -48,9 +48,8 @@ filetype plugin indent on
 
 " Colour scheme.
 set background=dark
+let g:gruvbox_italic = 1
 colorscheme gruvbox
-"colorscheme solarized
-"call togglebg#map('<F5>')
 
 " Prefer vertical split for help.
 augroup HelpSplit

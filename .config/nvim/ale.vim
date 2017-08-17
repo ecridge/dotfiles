@@ -7,7 +7,7 @@ let g:ale_linters = {
     \ 'css': ['stylelint'],
     \ 'html': ['htmlhint'],
     \ 'markdown': ['mdl'],
-    \ 'javascript': ['eslint'],
+    \ 'javascript': ['standard'],
     \ 'json': ['jsonlint'],
     \ 'scss': ['sasslint'],
     \ 'vim': ['vint'],

@@ -24,6 +24,25 @@
 # GPG
 secring.*
 
+# macOS
+.AppleDB
+.AppleDesktop
+.AppleDouble
+.DS_Store
+.DocumentRevisions-V100
+.LSOverride
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+._*
+.apdisk
+.fseventsd
+.localized
+Icon
+Network Trash Folder
+Temporary Items
+
 # MATLAB
 *.m~
 *.mex*
@@ -44,24 +63,8 @@ slprj/
 *.xlk
 ~$*.ppt*
 
-# macOS
-.AppleDB
-.AppleDesktop
-.AppleDouble
-.DS_Store
-.DocumentRevisions-V100
-.LSOverride
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-._*
-.apdisk
-.fseventsd
-.localized
-Icon
-Network Trash Folder
-Temporary Items
+# Tern
+.tern-port
 
 # Vim
 [._]*.s[a-w][a-z]

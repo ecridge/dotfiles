@@ -4,7 +4,7 @@
 
 jeo = require 'jeospoon'
 
-jeo.setEditor('MacVim')
+jeo.setEditor('Google Chrome')
 jeo.setTerminal('Hyper')
 
 jeoEventTap = hs.eventtap.new(jeo.KEY_EVENTS, jeo.handleKeyEvent):start()

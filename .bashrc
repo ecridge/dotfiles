@@ -140,6 +140,7 @@ fi
 
 # Gimmicks.
 if which fortune sed par &> /dev/null; then
+    echo
     fortune | sed 's/^/  > /' | par 76
     echo
 fi

@@ -10,6 +10,7 @@ let g:ale_linters = {
     \ 'javascript': ['standard'],
     \ 'json': ['jsonlint'],
     \ 'scss': ['sasslint'],
+    \ 'sql': ['sqlint'],
     \ 'vim': ['vint'],
     \ 'yaml': ['yamllint'],
 \ }

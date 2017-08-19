@@ -6,7 +6,6 @@ export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWSTASHSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
 export GIT_PS1_SHOWUPSTREAM=auto
-export GIT_PS1_STATESEPARATOR=']['
 export GLOBIGNORE='.:..'  # Stop .* from matching the . and .. directories.
 export HISTCONTROL=ignoreboth  # Forget duplicate and space-prefixed commands.
 export HISTFILESIZE=1000  # Maximum number of commands saved in .bash_history.

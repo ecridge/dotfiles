@@ -113,18 +113,80 @@ fi
 [[ -f $HOME/.git-prompt.sh ]] && source "$HOME/.git-prompt.sh"
 PROMPT_COMMAND='custom_prompt;history -a'
 custom_prompt() {
-    exit_code=$?
+    local raw_status=$? # Must come first!
+    local raw_chroot=$debian_chroot
+    local raw_host='\u@\h'
+    local raw_path=$(pwd | sed -e "s|^${HOME}|~|" -re 's|([^/]{0,2})[^/]*/|\1/|g')
+    local raw_branch=$(__git_ps1 '%s')
 
-    msg=${debian_chroot:+($debian_chroot)}
-    short_path=$(pwd | sed -e "s|^${HOME}|~|" -re 's|([^/]{0,2})[^/]*/|\1/|g')
+    local ARROW=$'\ue0b0'
+    local BG='48;5;'
+    local FG='38;5;'
+    local RESET="\[\e[0m\]"
+    local RESET_BG="\[\e[49m\]"
 
-    if [[ $exit_code -ne 0 ]]; then
-        msg="\[\e[31m\]exit $exit_code\[\e[0m\]\n$msg"
+    # Text colours.
+    local STATUS_FG=223 # gruvbox fg
+    local CHROOT_FG=223 # gruvbox fg
+    local HOST_FG=248   # gruvbox fg3
+    local PATH_FG=246   # gruvbox gray
+    local BRANCH_FG=246 # gruvbox gray
+
+    # Background colours.
+    local STATUS_BG=166 # gruvbox orange
+    local CHROOT_BG=66  # gruvbox blue
+    local HOST_BG=241   # gruvbox bg3
+    local PATH_BG=239   # gruvbox bg2
+    local BRANCH_BG=237 # gruvbox bg1
+
+    local pretty_status="\[\e[$FG$STATUS_FG;$BG${STATUS_BG}m\] $raw_status "
+    local pretty_chroot="\[\e[$FG$CHROOT_FG;$BG${CHROOT_BG}m\] $raw_chroot "
+    local pretty_host="\[\e[$FG$HOST_FG;$BG${HOST_BG}m\] $raw_host "
+    local pretty_path="\[\e[$FG$PATH_FG;$BG${PATH_BG}m\] $raw_path "
+    local pretty_branch="\[\e[$FG$BRANCH_FG;$BG${BRANCH_BG}m\] $raw_branch "
+
+    if [[ -n $debian_chroot ]]; then
+        status_arrow_bg=$CHROOT_BG
+    else
+        status_arrow_bg=$HOST_BG
     fi
 
-    PS1="$msg\u@\h:$short_path\[\e[32m\]\$(__git_ps1 '[%s]')\[\e[0m\]\$ "
+    if [[ -n $raw_branch ]]; then
+        branch_arrow_fg=$BRANCH_BG
+    else
+        branch_arrow_fg=$PATH_BG
+    fi
 
-    echo -n -e "\033]0;$short_path\007"
+    local status_arrow="\[\e[$FG$STATUS_BG;$BG${status_arrow_bg}m\]$ARROW"
+    local chroot_arrow="\[\e[$FG$CHROOT_BG;$BG${HOST_BG}m\]$ARROW"
+    local host_arrow="\[\e[$FG$HOST_BG;$BG${PATH_BG}m\]$ARROW"
+    local path_arrow="\[\e[$FG$PATH_BG;$BG${BRANCH_BG}m\]$ARROW"
+    local branch_arrow="\[\e[$FG${branch_arrow_fg}m\]$RESET_BG$ARROW"
+
+    if [[ -z $debian_chroot ]]; then
+        pretty_chroot=
+        chroot_arrow=
+    fi
+
+    if [[ $raw_status -eq 0 ]]; then
+        pretty_status=
+        status_arrow=
+    fi
+
+    if [[ -z $raw_branch ]]; then
+        pretty_branch=
+        path_arrow=
+    fi
+
+    PS1="$pretty_status$status_arrow$pretty_chroot$chroot_arrow$pretty_host"
+    PS1="$PS1$host_arrow$pretty_path$path_arrow$pretty_branch$branch_arrow$RESET "
+
+    PS2="\[\e[38;5;246;48;5;237m\]...\[\e[38;5;237m\]$RESET_BG$ARROW$RESET "
+    PS3="\[\e[38;5;223;48;5;66m\] ${PS3:=Enter a number: }\[\e[38;5;66m\]$RESET_BG$ARROW$RESET "
+    PS4="\[\e[38;5;223;48;5;66m\] $0:$LINENO \e[38;5;66m\]$RESET_BG$ARROW$RESET "
+
+    # Set the window title.
+    echo -n -e "\033]0;$raw_path\007"
 }
 
 

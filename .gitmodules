@@ -109,3 +109,6 @@
 [submodule "vim/auto-pairs"]
 	path = .config/nvim/bundle/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs
+[submodule "vim/upsql"]
+	path = .config/nvim/bundle/vim-upsql
+	url = https://github.com/joecridge/vim-upsql

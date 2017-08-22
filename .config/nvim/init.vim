@@ -36,7 +36,7 @@ set colorcolumn=+1 sidescroll=1 sidescrolloff=1 textwidth=79 nowrap
 set shiftround shiftwidth=2 softtabstop=-1 tabstop=2 expandtab
 set spell spelllang=en_gb spellfile=~/.config/nvim/spell/en.utf-8.add
 set splitbelow splitright
-set wildmode=longest,list
+set wildignorecase wildmode=longest,list
 
 " Syntax highlighting.
 let g:javascript_plugin_jsdoc = 1
@@ -165,6 +165,8 @@ augroup LanguageSpecific
   autocmd!
   autocmd FileType html,jst setlocal formatoptions-=t textwidth=100
 augroup END
+
+source ~/.config/nvim/jsdoc.vim
 
 
 "------------------------------------------------------------------------------

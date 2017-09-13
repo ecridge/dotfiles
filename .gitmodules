@@ -112,3 +112,15 @@
 [submodule "vim/upsql"]
 	path = .config/nvim/bundle/vim-upsql
 	url = https://github.com/joecridge/vim-upsql
+[submodule "vim/isort"]
+	path = .config/nvim/bundle/vim-isort
+	url = https://github.com/fisadev/vim-isort
+[submodule "vim/autoformat"]
+	path = .config/nvim/bundle/vim-autoformat
+	url = https://github.com/Chiel92/vim-autoformat
+[submodule "vim/deoplete-jedi"]
+	path = .config/nvim/bundle/deoplete-jedi
+	url = https://github.com/zchee/deoplete-jedi
+[submodule "vim/shougo-echodoc"]
+	path = .config/nvim/bundle/echodoc.vim
+	url = https://github.com/Shougo/echodoc.vim

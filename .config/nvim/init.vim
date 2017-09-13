@@ -164,6 +164,8 @@ augroup END
 augroup LanguageSpecific
   autocmd!
   autocmd FileType html,jst setlocal formatoptions-=t textwidth=100
+  autocmd FileType python nnoremap <C-f> :0,$!yapf<CR>
+  autocmd FileType python set joinspaces
 augroup END
 
 source ~/.config/nvim/jsdoc.vim
@@ -179,3 +181,4 @@ source ~/.config/nvim/deoplete.vim
 source ~/.config/nvim/airline.vim
 source ~/.config/nvim/ale.vim
 source ~/.config/nvim/autopairs.vim
+source ~/.config/nvim/python.vim

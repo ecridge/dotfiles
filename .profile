@@ -10,6 +10,7 @@ export GLOBIGNORE='.:..'  # Stop .* from matching the . and .. directories.
 export HISTCONTROL=ignoreboth  # Forget duplicate and space-prefixed commands.
 export HISTFILESIZE=1000  # Maximum number of commands saved in .bash_history.
 export HISTSIZE=500  # Maximum number of commands to remember from one session.
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 export RI='--format ansi --width 79'
 export RI_PAGER='less -r'
 export TZ=Europe/London

@@ -101,13 +101,9 @@ if which rbenv &> /dev/null; then eval "$(rbenv init -)"; fi
 [[ -f $HOME/.git-completion.bash ]] && source "$HOME/.git-completion.bash"
 [[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
 [[ -f $HOME/.bowman.bash ]] && source "$HOME/.bowman.bash"
-eval "$(fasd --init auto)"
-
-
-# Check whether this is a documented chroot environment.
-if [[ -z ${debian_chroot:-} && -r /etc/debian_chroot ]]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
+if which fasd &> /dev/null; then eval "$(fasd --init auto)"; fi
+if which pyenv &> /dev/null; then eval "$(pyenv init -)"; fi
+if which pyenv-virtualenv &> /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
 
 # Customise command prompt.
@@ -115,10 +111,14 @@ fi
 PROMPT_COMMAND='custom_prompt;history -a'
 custom_prompt() {
     local raw_status=$? # Must come first!
-    local raw_chroot="${VIRTUAL_ENV##*/}" # More useful than debian_chroot...
+    local raw_pyenv="$(pyenv version-name)"
     local raw_host='\u@\h'
     local raw_path=$(pwd | sed -e "s|^${HOME}|~|" -re 's|([^/]{0,2})[^/]*/|\1/|g')
     local raw_branch=$(__git_ps1 '%s')
+
+    if [[ "$raw_pyenv" == "$(pyenv global)" ]]; then
+        raw_pyenv=
+    fi
 
     local ARROW=$'\ue0b0'
     local BG='48;5;'
@@ -128,45 +128,45 @@ custom_prompt() {
 
     # Text colours.
     local STATUS_FG=223 # gruvbox fg
-    local CHROOT_FG=223 # gruvbox fg
+    local PYENV_FG=223  # gruvbox fg
     local HOST_FG=248   # gruvbox fg3
     local PATH_FG=246   # gruvbox gray
     local BRANCH_FG=246 # gruvbox gray
 
     # Background colours.
     local STATUS_BG=166 # gruvbox orange
-    local CHROOT_BG=66  # gruvbox blue
+    local PYENV_BG=66   # gruvbox blue
     local HOST_BG=241   # gruvbox bg3
     local PATH_BG=239   # gruvbox bg2
     local BRANCH_BG=237 # gruvbox bg1
 
     local pretty_status="\[\e[$FG$STATUS_FG;$BG${STATUS_BG}m\] $raw_status "
-    local pretty_chroot="\[\e[$FG$CHROOT_FG;$BG${CHROOT_BG}m\] $raw_chroot "
+    local pretty_pyenv="\[\e[$FG$PYENV_FG;$BG${PYENV_BG}m\] $raw_pyenv "
     local pretty_host="\[\e[$FG$HOST_FG;$BG${HOST_BG}m\] $raw_host "
     local pretty_path="\[\e[$FG$PATH_FG;$BG${PATH_BG}m\] $raw_path "
     local pretty_branch="\[\e[$FG$BRANCH_FG;$BG${BRANCH_BG}m\] $raw_branch "
 
-    if [[ -n $raw_chroot ]]; then
-        status_arrow_bg=$CHROOT_BG
+    if [[ -n $raw_pyenv ]]; then
+        local status_arrow_bg=$PYENV_BG
     else
-        status_arrow_bg=$HOST_BG
+        local status_arrow_bg=$HOST_BG
     fi
 
     if [[ -n $raw_branch ]]; then
-        branch_arrow_fg=$BRANCH_BG
+        local branch_arrow_fg=$BRANCH_BG
     else
-        branch_arrow_fg=$PATH_BG
+        local branch_arrow_fg=$PATH_BG
     fi
 
     local status_arrow="\[\e[$FG$STATUS_BG;$BG${status_arrow_bg}m\]$ARROW"
-    local chroot_arrow="\[\e[$FG$CHROOT_BG;$BG${HOST_BG}m\]$ARROW"
+    local pyenv_arrow="\[\e[$FG$PYENV_BG;$BG${HOST_BG}m\]$ARROW"
     local host_arrow="\[\e[$FG$HOST_BG;$BG${PATH_BG}m\]$ARROW"
     local path_arrow="\[\e[$FG$PATH_BG;$BG${BRANCH_BG}m\]$ARROW"
     local branch_arrow="\[\e[$FG${branch_arrow_fg}m\]$RESET_BG$ARROW"
 
-    if [[ -z $raw_chroot ]]; then
-        pretty_chroot=
-        chroot_arrow=
+    if [[ -z $raw_pyenv ]]; then
+        pretty_pyenv=
+        pyenv_arrow=
     fi
 
     if [[ $raw_status -eq 0 ]]; then
@@ -179,7 +179,7 @@ custom_prompt() {
         path_arrow=
     fi
 
-    PS1="$pretty_status$status_arrow$pretty_chroot$chroot_arrow$pretty_host"
+    PS1="$pretty_status$status_arrow$pretty_pyenv$pyenv_arrow$pretty_host"
     PS1="$PS1$host_arrow$pretty_path$path_arrow$pretty_branch$branch_arrow$RESET "
 
     PS2="\[\e[38;5;246;48;5;237m\]...\[\e[38;5;237m\]$RESET_BG$ARROW$RESET "

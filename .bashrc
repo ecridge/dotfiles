@@ -26,7 +26,8 @@ gumpf+='.TemporaryItems|.Trashes|.VolumeIcon.icns|.AppleDB|.AppleDesktop|'
 gumpf+='Network Trash Folder|Temporary Items|.apdisk|[._]*.s[a-w][a-z]|'
 gumpf+='[._]s[a-w][a-z]|Session.vim|.netrwhist|*~|tags|DerivedData|*.pbxuser|'
 gumpf+='*.mode1v3|*.mode2v3|*.perspectivev3|xcuserdata|*.moved-aside|'
-gumpf+='*.xccheckout|*.xcscmblueprint|.git|node_modules|typings'
+gumpf+='*.xccheckout|*.xcscmblueprint|.git|node_modules|typings|__pycache__|'
+gumpf+='coverage_report'
 
 
 # Set aliases.
@@ -54,7 +55,7 @@ alias o=open
 alias post="curl -sSi -X POST -H 'Content-type: application/json' -d"
 alias printenv="printenv | sort | grep -Pe '^[A-Z][A-Z0-9_]*(?==)'"
 alias put="curl -sSi -X PUT -H 'Content-type: application/json' -d"
-alias py='clear && python'
+alias py='clear && bpython'
 alias sudoa='sudo '  # An alias of sudo that expands aliases.
 alias q=logout
 alias t="tree -I \"$gumpf\""
@@ -114,7 +115,7 @@ fi
 PROMPT_COMMAND='custom_prompt;history -a'
 custom_prompt() {
     local raw_status=$? # Must come first!
-    local raw_chroot=$debian_chroot
+    local raw_chroot="${VIRTUAL_ENV##*/}" # More useful than debian_chroot...
     local raw_host='\u@\h'
     local raw_path=$(pwd | sed -e "s|^${HOME}|~|" -re 's|([^/]{0,2})[^/]*/|\1/|g')
     local raw_branch=$(__git_ps1 '%s')
@@ -145,7 +146,7 @@ custom_prompt() {
     local pretty_path="\[\e[$FG$PATH_FG;$BG${PATH_BG}m\] $raw_path "
     local pretty_branch="\[\e[$FG$BRANCH_FG;$BG${BRANCH_BG}m\] $raw_branch "
 
-    if [[ -n $debian_chroot ]]; then
+    if [[ -n $raw_chroot ]]; then
         status_arrow_bg=$CHROOT_BG
     else
         status_arrow_bg=$HOST_BG
@@ -163,7 +164,7 @@ custom_prompt() {
     local path_arrow="\[\e[$FG$PATH_BG;$BG${BRANCH_BG}m\]$ARROW"
     local branch_arrow="\[\e[$FG${branch_arrow_fg}m\]$RESET_BG$ARROW"
 
-    if [[ -z $debian_chroot ]]; then
+    if [[ -z $raw_chroot ]]; then
         pretty_chroot=
         chroot_arrow=
     fi

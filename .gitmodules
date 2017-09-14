@@ -124,3 +124,6 @@
 [submodule "vim/shougo-echodoc"]
 	path = .config/nvim/bundle/echodoc.vim
 	url = https://github.com/Shougo/echodoc.vim
+[submodule "vim/nginx"]
+	path = .config/nvim/bundle/nginx.vim
+	url = https://github.com/chr4/nginx.vim

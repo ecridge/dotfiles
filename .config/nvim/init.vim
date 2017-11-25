@@ -163,7 +163,7 @@ augroup END
 
 augroup LanguageSpecific
   autocmd!
-  autocmd FileType html,jst setlocal formatoptions-=t textwidth=100
+  autocmd FileType html,htmldjango,jst setlocal formatoptions-=t textwidth=100
   autocmd FileType python nnoremap <C-f> :0,$!yapf<CR>
   autocmd FileType python set joinspaces
 augroup END

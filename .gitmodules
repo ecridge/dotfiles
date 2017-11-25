@@ -121,3 +121,6 @@
 [submodule "vim/nginx"]
 	path = .config/nvim/bundle/nginx.vim
 	url = https://github.com/chr4/nginx.vim
+[submodule "vim/python-indent"]
+	path = .config/nvim/bundle/vim-python-pep8-indent
+	url = https://github.com/Vimjas/vim-python-pep8-indent.git

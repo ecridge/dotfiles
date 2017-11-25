@@ -32,19 +32,17 @@ gumpf+='coverage_report'
 
 # Set aliases.
 alias ag='ag -s'  # Case-sensitive by default.
+alias ascii="ag '[^ -~\\n]'"  # Highlight non-ASCII characters in a file.
 alias aq='ag -Q'  # Match literals instead of regexen.
 alias b=brew
-alias ascii="ag '[^ -~\\n]'"  # Highlight non-ASCII characters in a file.
 alias c=clear
 alias chdom=chmod  # Common typo.
 alias chrome='open -a /Applications/Google\ Chrome.app/'
-alias bundel=bundle  # Another typo.
 alias dr=docker
+alias dc=docker-compose
 alias e=nvim
-alias electron=node_modules/.bin/electron
 alias get="curl -sSi -X GET -H 'Accept: application/json'"
 alias grep='grep --color=auto --exclude-dir=.git'
-alias h=help
 alias l='ls --color=auto'
 alias la='l -A'
 alias ll=$'l -AhFl --time-style=\'+%Y-%m-%d %H:%M\n%a %d %b %H:%M\''

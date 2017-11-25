@@ -3,7 +3,9 @@
 "------------------------------------------------------------------------------
 
 set signcolumn=yes
-set updatetime=250 " ms
+"set updatetime=250 " ms
+
+let g:gitgutter_enabled = 0
 
 " Highlight line changes.
 " HACK: This also toggles the indent guides, because together they look awful!

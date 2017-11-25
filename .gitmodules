@@ -91,9 +91,6 @@
 [submodule "vim/jspc"]
 	path = .config/nvim/bundle/jspc.vim
 	url = https://github.com/othree/jspc.vim
-[submodule "vim/tern_full"]
-	path = .config/nvim/bundle/tern_for_vim
-	url = https://github.com/ternjs/tern_for_vim
 [submodule "vim/airline"]
 	path = .config/nvim/bundle/vim-airline
 	url = https://github.com/vim-airline/vim-airline
@@ -112,9 +109,6 @@
 [submodule "vim/upsql"]
 	path = .config/nvim/bundle/vim-upsql
 	url = https://github.com/joecridge/vim-upsql
-[submodule "vim/isort"]
-	path = .config/nvim/bundle/vim-isort
-	url = https://github.com/fisadev/vim-isort
 [submodule "vim/autoformat"]
 	path = .config/nvim/bundle/vim-autoformat
 	url = https://github.com/Chiel92/vim-autoformat

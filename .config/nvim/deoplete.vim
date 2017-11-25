@@ -4,8 +4,8 @@
 
 set completeopt-=preview
 
-let g:echodoc#enable_at_startup = 1
-let g:deoplete#enable_at_startup = 1
+let g:echodoc#enable_at_startup = 0
+let g:deoplete#enable_at_startup = 0
 let g:deoplete#enable_smart_case = 1
 
 let g:deoplete#omni#functions = {}

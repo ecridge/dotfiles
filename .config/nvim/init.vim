@@ -164,6 +164,7 @@ augroup END
 augroup LanguageSpecific
   autocmd!
   autocmd FileType html,htmldjango,jst setlocal formatoptions-=t textwidth=100
+  autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
   autocmd FileType python nnoremap <C-f> :0,$!yapf<CR>
   autocmd FileType python set joinspaces
 augroup END

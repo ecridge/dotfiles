@@ -12,6 +12,7 @@ let g:ale_linters = {
     \ 'python': ['pylint', 'flake8'],
     \ 'scss': ['sasslint'],
     \ 'sql': ['sqlint'],
+    \ 'typescript': ['tslint'],
     \ 'vim': ['vint'],
     \ 'yaml': ['yamllint'],
 \ }

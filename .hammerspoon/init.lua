@@ -5,7 +5,6 @@
 jeo = require 'jeospoon'
 
 jeo.setEditor('Google Chrome')
-jeo.setTerminal('Hyper')
 
 jeoEventTap = hs.eventtap.new(jeo.KEY_EVENTS, jeo.handleKeyEvent):start()
 jeoEventTap:start()

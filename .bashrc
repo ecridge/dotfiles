@@ -122,7 +122,7 @@ custom_prompt() {
     local BG='48;5;'
     local FG='38;5;'
     local RESET="\[\e[0m\]"
-    local RESET_BG="\[\e[49m\]"
+    local RESET_BG="\[\e[48;5;235m\]" # 49 is buggy on Terminal.app
 
     # Text colours.
     local STATUS_FG=223 # gruvbox fg

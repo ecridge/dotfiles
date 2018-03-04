@@ -7,6 +7,8 @@ export GIT_PS1_SHOWSTASHSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
 export GIT_PS1_SHOWUPSTREAM=auto
 export GLOBIGNORE='.:..'  # Stop .* from matching the . and .. directories.
+export GOPATH="$HOME/go"
+export GOROOT=/usr/local/Cellar/go/1.10/libexec
 export HISTCONTROL=ignoreboth  # Forget duplicate and space-prefixed commands.
 export HISTFILESIZE=1000  # Maximum number of commands saved in .bash_history.
 export HISTSIZE=500  # Maximum number of commands to remember from one session.
@@ -30,13 +32,13 @@ PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 MANPATH="/usr/local/opt/findutils/libexec/gnuman:$MANPATH"
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
+# Add Go packages to PATH.
+PATH="$HOME/go/bin:/usr/local/opt/go/libexec/bin:$PATH"
+
 # Add user binaries to PATH.
 if [ -d "$HOME/bin" ]; then
     PATH="$HOME/bin:$PATH"
 fi
-
-# Add Go packages to PATH.
-PATH="$PATH:/usr/local/opt/go/libexec/bin"
 
 # Export final paths to subshells.
 export PATH

@@ -9,3 +9,10 @@ aug GoSpecific
   au FileType go setl listchars=extends:$,nbsp:+,precedes:$,tab:\ \ ,trail:-
   au FileType go setl com=:// | setl fo+=ar
 aug END
+
+
+"------------------------------------------------------------------------------
+" Other Go configuration
+"------------------------------------------------------------------------------
+
+let g:go_template_autocreate = 0

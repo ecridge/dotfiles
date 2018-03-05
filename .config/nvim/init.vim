@@ -169,6 +169,7 @@ augroup LanguageSpecific
   autocmd FileType python set joinspaces
 augroup END
 
+source ~/.config/nvim/go.vim
 source ~/.config/nvim/jsdoc.vim
 
 

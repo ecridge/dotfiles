@@ -38,6 +38,10 @@ set spell spelllang=en_gb spellfile=~/.config/nvim/spell/en.utf-8.add
 set splitbelow splitright
 set wildignorecase wildmode=longest,list
 
+" Python.
+let g:python_host_prog = '/Users/joe/.pyenv/versions/neovim2/bin/python'
+let g:python3_host_prog = '/Users/joe/.pyenv/versions/neovim3/bin/python'
+
 " Syntax highlighting.
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_flow = 1

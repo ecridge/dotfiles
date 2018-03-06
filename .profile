@@ -12,6 +12,7 @@ export GOROOT=/usr/local/Cellar/go/1.10/libexec
 export HISTCONTROL=ignoreboth  # Forget duplicate and space-prefixed commands.
 export HISTFILESIZE=1000  # Maximum number of commands saved in .bash_history.
 export HISTSIZE=500  # Maximum number of commands to remember from one session.
+export PYENV_ROOT="$HOME/.pyenv"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 export RI='--format ansi --width 79'
 export RI_PAGER='less -r'
@@ -31,6 +32,9 @@ fi
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 MANPATH="/usr/local/opt/findutils/libexec/gnuman:$MANPATH"
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+
+# Add Python packages to PATH.
+PATH="$HOME/.pyenv/bin:$PATH"
 
 # Add Go packages to PATH.
 PATH="$HOME/go/bin:/usr/local/opt/go/libexec/bin:$PATH"

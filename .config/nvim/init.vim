@@ -133,6 +133,9 @@ noremap <Leader>. :<C-u>cd %:h<CR>:<C-u>pwd<CR>
 " Save and quit.
 noremap <Leader>q :<C-u>wq<CR>
 
+" Edit snippets.
+noremap <Leader>u :<C-u>UltiSnipsEdit<CR>
+
 
 "------------------------------------------------------------------------------
 " Miscellaneous
@@ -188,3 +191,4 @@ source ~/.config/nvim/airline.vim
 source ~/.config/nvim/ale.vim
 source ~/.config/nvim/autopairs.vim
 source ~/.config/nvim/python.vim
+source ~/.config/nvim/ultisnips.vim

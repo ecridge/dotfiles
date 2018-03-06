@@ -130,3 +130,12 @@
 [submodule "vim/go"]
 	path = .config/nvim/bundle/vim-go
 	url = https://github.com/fatih/vim-go.git
+[submodule "vim/deoplete-go"]
+	path = .config/nvim/bundle/deoplete-go
+	url = https://github.com/zchee/deoplete-go.git
+[submodule "vim/ultisnips"]
+	path = .config/nvim/bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
+[submodule "vim/isort"]
+	path = .config/nvim/bundle/vim-isort
+	url = https://github.com/fisadev/vim-isort

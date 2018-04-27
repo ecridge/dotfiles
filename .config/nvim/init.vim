@@ -174,6 +174,7 @@ augroup LanguageSpecific
   autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
   autocmd FileType python nnoremap <C-f> :0,$!yapf<CR>
   autocmd FileType python set joinspaces
+  autocmd FileType kotlin set shiftwidth=4 tabstop=4 textwidth=100
 augroup END
 
 source ~/.config/nvim/go.vim

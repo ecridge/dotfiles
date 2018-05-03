@@ -20,6 +20,7 @@
 	ad = add
 	dt = difftool
 	df = diff
+	mt = mergetool
 	cp = cherry-pick
 	psuh = push
 	puhs = push
@@ -28,9 +29,14 @@
 [credential]
 	helper = osxkeychain
 [diff]
-	tool = nvim -d
-	compactionHeuristic = true
+	tool = idea
+	indentHeuristic = true
 	submodule = log
+[difftool]
+	prompt = false
+	trustExitCode = true
+[difftool "idea"]
+	cmd = idea diff \"$LOCAL\" \"$REMOTE\"
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -38,13 +44,12 @@
 	required = true
 [push]
 	default = simple
-[difftool]
-	prompt = false
 [merge]
-	tool = nvim -d
+	tool = idea
 	conflictstyle = diff3
-[mergetool]
-	prompt = false
+[mergetool "idea"]
+	cmd = idea merge \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+	trustExitCode = true
 [sendemail]
 	smtpencryption = tls
 	smtpserver = smtp.mail.me.com

@@ -4,7 +4,7 @@
 
 jeo = require 'jeospoon'
 
-jeo.setEditor('Google Chrome')
+jeo.setEditor('IntelliJ IDEA')
 
 jeoEventTap = hs.eventtap.new(jeo.KEY_EVENTS, jeo.handleKeyEvent):start()
 jeoEventTap:start()

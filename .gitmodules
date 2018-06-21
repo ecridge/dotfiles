@@ -133,9 +133,6 @@
 [submodule "vim/ultisnips"]
 	path = .config/nvim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
-[submodule "vim/isort"]
-	path = .config/nvim/bundle/vim-isort
-	url = https://github.com/fisadev/vim-isort
 [submodule "vim/kotlin"]
 	path = .config/nvim/bundle/kotlin-vim
 	url = https://github.com/udalov/kotlin-vim

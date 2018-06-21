@@ -186,6 +186,7 @@ source ~/.config/nvim/jsdoc.vim
 " Plugin configuration
 "------------------------------------------------------------------------------
 
+source ~/.config/nvim/editorconfig.vim
 source ~/.config/nvim/indent-guides.vim
 source ~/.config/nvim/gitgutter.vim
 source ~/.config/nvim/deoplete.vim

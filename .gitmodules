@@ -139,3 +139,6 @@
 [submodule "vim/kotlin"]
 	path = .config/nvim/bundle/kotlin-vim
 	url = https://github.com/udalov/kotlin-vim
+[submodule "vim/editorconfig"]
+	path = .config/nvim/bundle/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim.git

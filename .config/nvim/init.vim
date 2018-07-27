@@ -87,12 +87,6 @@ inoremap <silent> <C-u> _<Esc>mza<C-Right><Esc>bgUiw`zi<Del>
 " Normal mode
 "------------------------------------------------------------------------------
 
-" Swap H and L.
-noremap h l
-noremap l h
-noremap <C-w>h <C-w>l
-noremap <C-w>l <C-w>h
-
 " Use arrow keys to move between windows.
 noremap <Left> <C-w>h
 noremap <Down> <C-w>j

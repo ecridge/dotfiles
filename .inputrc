@@ -17,10 +17,6 @@ set menu-complete-display-prefix on
 
 set keymap vi-command
 
-# Swap h and l.
-"l": "\e[D"
-"h": "\e[C"
-
 # Make up and down arrows recall commands that have the same beginning.
 "\e[A": history-search-backward
 "\e[B": history-search-forward

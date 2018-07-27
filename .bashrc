@@ -43,6 +43,7 @@ alias dc=docker-compose
 alias e=nvim
 alias get="curl -sSi -X GET -H 'Accept: application/json'"
 alias grep='grep --color=auto --exclude-dir=.git'
+alias ie='nvim --noplugin'
 alias l='ls --color=auto'
 alias la='l -A'
 alias ll=$'l -AhFl --time-style=\'+%Y-%m-%d %H:%M\n%a %d %b %H:%M\''

@@ -159,7 +159,7 @@ augroup END
 " Add custom task tags (BUG, HACK, and merge conflict delimiters).
 augroup CustomTaskTags
   autocmd!
-  autocmd Syntax * call matchadd('Todo', '\v<(BUG|HACK)>')
+  autocmd Syntax * call matchadd('Todo', '\v<(BUG|HACK|TL;DR)>')
   autocmd Syntax * call matchadd('Error', '\v^([<|=>])\1{6}( .*)?$')
 augroup END
 

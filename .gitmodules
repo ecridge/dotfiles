@@ -135,3 +135,6 @@
 [submodule "vim/editorconfig"]
 	path = .config/nvim/bundle/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim.git
+[submodule "vim/kinesis"]
+	path = .config/nvim/bundle/vim-kinesis
+	url = https://github.com/joecridge/vim-kinesis.git

@@ -99,9 +99,6 @@
 [submodule "vim/auto-pairs"]
 	path = .config/nvim/bundle/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs
-[submodule "vim/upsql"]
-	path = .config/nvim/bundle/vim-upsql
-	url = https://github.com/joecridge/vim-upsql
 [submodule "vim/autoformat"]
 	path = .config/nvim/bundle/vim-autoformat
 	url = https://github.com/Chiel92/vim-autoformat
@@ -138,3 +135,6 @@
 [submodule "vim/kinesis"]
 	path = .config/nvim/bundle/vim-kinesis
 	url = https://github.com/joecridge/vim-kinesis.git
+[submodule "vim/pqsql"]
+	path = .config/nvim/pgsql.vim
+	url = https://github.com/lifepillar/pgsql.vim

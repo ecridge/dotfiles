@@ -46,6 +46,9 @@ slprj/
 .hgsubstate
 .hgtags
 
+# Python
+.python-version
+
 # Tern
 .tern-port
 

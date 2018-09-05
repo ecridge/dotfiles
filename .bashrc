@@ -104,14 +104,21 @@ if ! shopt -oq posix; then
 fi
 
 
+# Set up pyenv and pyenv-virtualenv.
+if which pyenv &> /dev/null; then
+    eval "$(pyenv init -)"
+    if [[ -d $(pyenv root)/plugins/pyenv-virtualenv ]]; then
+        eval "$(pyenv virtualenv-init -)"
+    fi
+fi
+
+
 # Other things that need loading.
 if which rbenv &> /dev/null; then eval "$(rbenv init -)"; fi
 [[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
 [[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
 [[ -f $HOME/.bowman.bash ]] && source "$HOME/.bowman.bash"
 if which fasd &> /dev/null; then eval "$(fasd --init auto)"; fi
-if which pyenv &> /dev/null; then eval "$(pyenv init -)"; fi
-if which pyenv-virtualenv &> /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
 
 # Customise command prompt.

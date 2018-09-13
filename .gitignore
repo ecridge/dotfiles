@@ -19,11 +19,12 @@
 !.globalgitignore
 !.globalhgignore
 !.hgrc
+!.hidden
 !.hyper.js
 !.inputrc
-!.hidden
 !.mdstyle
 !.profile
+!.psqlrc
 !.tern-config
 !.vimrc
 !.vintrc.yaml

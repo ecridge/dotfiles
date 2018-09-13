@@ -164,13 +164,17 @@ augroup END
 
 augroup LanguageSpecific
   autocmd!
-  autocmd FileType html,htmldjango,jst setlocal formatoptions-=t textwidth=100
   autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
+  autocmd BufNewFile,BufRead *.xkb,*/xkb/*/* set filetype=xkb
+  autocmd BufNewFile,BufRead .pg_service.conf set filetype=dosini
+  autocmd BufNewFile,BufRead .pgpass set filetype=conf
+  autocmd FileType html,htmldjango,jst setlocal formatoptions-=t textwidth=100
+  autocmd FileType kotlin set commentstring=//%s formatoptions+=r
+  autocmd FileType kotlin set shiftwidth=4 tabstop=4 textwidth=120
   autocmd FileType python nnoremap <C-f> :0,$!yapf<CR>
   autocmd FileType python set joinspaces
-  autocmd FileType kotlin set shiftwidth=4 tabstop=4 textwidth=120
-  autocmd FileType kotlin set commentstring=//%s formatoptions+=r
-  autocmd FileType sh,sql set shiftwidth=4 tabstop=4
+  autocmd FileType sh,sshconfig,sql set shiftwidth=4 tabstop=4
+  autocmd FileType xkb set shiftwidth=4 tabstop=4
 augroup END
 
 source ~/.config/nvim/go.vim

@@ -170,7 +170,7 @@ augroup LanguageSpecific
   autocmd FileType python set joinspaces
   autocmd FileType kotlin set shiftwidth=4 tabstop=4 textwidth=120
   autocmd FileType kotlin set commentstring=//%s formatoptions+=r
-  autocmd FileType sql set shiftwidth=4 tabstop=4
+  autocmd FileType sh,sql set shiftwidth=4 tabstop=4
 augroup END
 
 source ~/.config/nvim/go.vim

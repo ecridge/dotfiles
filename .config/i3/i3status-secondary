@@ -1,0 +1,12 @@
+# i3status bar for additional monitors (sans tray icons)
+# vim: set ft=conf ts=4 sw=4 et :
+
+general {
+    output_format = "i3bar"
+}
+
+order += "time"
+
+time {
+    format = "%Y-%m-%d %H:%M "
+}

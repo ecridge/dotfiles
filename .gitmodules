@@ -138,3 +138,6 @@
 [submodule "vim/pqsql"]
 	path = .config/nvim/pgsql.vim
 	url = https://github.com/lifepillar/pgsql.vim
+[submodule "vim/mediawiki"]
+	path = .config/nvim/bundle/mediawiki.vim
+	url = https://github.com/chikamichi/mediawiki.vim

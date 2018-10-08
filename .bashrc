@@ -38,8 +38,9 @@ alias aq='ag -Q'  # Match literals instead of regexen.
 alias c=clear
 alias chdom=chmod  # Common typo.
 alias chrome=google-chrome
-alias dr=docker
 alias dc=docker-compose
+alias diff='diff --color=auto'
+alias dr=docker
 alias e=nvim
 alias get="curl -sSi -X GET -H 'Accept: application/json'"
 alias grep='grep --color=auto --exclude-dir=.git'

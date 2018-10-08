@@ -62,6 +62,10 @@ resources/macOS/
 .config/nvim/.netrwhist
 
 
+# Track httpie config.
+!.httpie
+!.httpie/config.json
+
 # Track i3 config.
 !.config/i3
 !.config/i3/**

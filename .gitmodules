@@ -141,3 +141,6 @@
 [submodule "vim/pgsql"]
 	path = .config/nvim/bundle/pgsql.vim
 	url = https://github.com/lifepillar/pgsql.vim
+[submodule "vim/capnp"]
+	path = .config/nvim/bundle/vim-capnp
+	url = https://github.com/cstrahan/vim-capnp.git

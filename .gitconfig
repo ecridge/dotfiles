@@ -41,6 +41,8 @@
 	sm = submodule
 	st = status
 	stat = shortlog -sne
+[credential]
+	helper = osxkeychain
 [diff]
 	tool = idea
 	indentHeuristic = true

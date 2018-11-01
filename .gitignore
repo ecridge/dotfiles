@@ -49,10 +49,9 @@
 !src/*.sh
 
 
-# Track (almost) everything from the resources folder.
+# Track everything from the resources folder.
 !resources
 !resources/**
-resources/macOS/
 
 
 # Track everything in ~/.config/nvim. These are mostly submodules.
@@ -66,22 +65,20 @@ resources/macOS/
 .config/nvim/spell/en.utf-8.sug
 
 
+# Track .terminfo
+!.terminfo
+!.terminfo/**/*
+
+
 # Track httpie config.
 !.httpie
 !.httpie/config.json
 
-# Track i3 config.
-!.config/i3
-!.config/i3/**
 
-# Track IPython config.
-!.ipython
-!.ipython/profile_default
-!.ipython/profile_default/ipython_config.py
-
-
-# Track locally installed fonts.
-!.local/share/fonts/**
+# Track Hammerspoon settings.
+!.hammerspoon/
+!.hammerspoon/*.lua
+!.hammerspoon/jeospoon
 
 
 # Track the git template directory.

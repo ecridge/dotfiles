@@ -7,6 +7,7 @@
 # Explicitly track these files.
 !README.md
 !private
+!.agignore
 !.bash_profile
 !.bashrc
 !.bowman.bash

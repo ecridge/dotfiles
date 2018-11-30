@@ -74,3 +74,8 @@ resources/macOS/
 
 # Track locally installed fonts.
 !.local/share/fonts/**
+
+
+# Track the git template directory.
+!.git_template
+!.git_template/**

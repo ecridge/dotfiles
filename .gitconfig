@@ -26,6 +26,7 @@
 	puhs = push
 	stat = shortlog -sne
 	ar = archive
+	ctags = !.git/hooks/ctags
 [diff]
 	tool = idea
 	indentHeuristic = true
@@ -67,3 +68,5 @@
 	oldReset = noul
 [interactive]
 	diffFilter = diff-highlight
+[init]
+	templatedir = ~/.git_template

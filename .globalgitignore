@@ -21,6 +21,20 @@
 *.msm
 *.msp
 
+# Backups
+*~
+*.bak
+*.orig
+
+# Emacs >:(
+*.elc
+.\#*
+/.emacs.desktop
+/.emacs.desktop.lock
+\#*\#
+auto-save-list
+tramp
+
 # GPG
 secring.*
 
@@ -28,7 +42,6 @@ secring.*
 .~lock.*#
 
 # Linux
-*~
 .fuse_hidden*
 .directory
 .Trash-*

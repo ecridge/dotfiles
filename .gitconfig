@@ -11,22 +11,32 @@
 [format]
 	pretty = medium
 [alias]
-	lng = log --pretty=format:'%C(yellow)%h %Creset%s%C(bold red)%d%Creset %Cblue(%an, %ar)%Creset' --abbrev-commit --graph
-	lg = log --pretty=format:'%C(yellow)%h %Creset%s' --abbrev-commit --graph
-	st = status
-	co = checkout
-	br = branch
-	ci = commit
 	ad = add
-	dt = difftool
-	df = diff
-	mt = mergetool
+	ap = add -p
+	ar = archive
+	br = branch
+	ca = commit --amend
+	can = commit --amend --no-edit
+	ci = commit
+	co = checkout
 	cp = cherry-pick
+	ctags = !.git/hooks/ctags
+	dc = diff --cached
+	df = diff
+	dt = difftool
+	lg = log --pretty=format:'%C(yellow)%h %Creset%s' --abbrev-commit --graph
+	lng = log --pretty=format:'%C(yellow)%h %Creset%s%C(bold red)%d%Creset %Cblue(%an, %ar)%Creset' --abbrev-commit --graph
+	mt = mergetool
+	pr = pull --rebase --autostash
 	psuh = push
 	puhs = push
+	rc = rebase --continue
+	ri = rebase --interactive --autostash
+	rh = reset HEAD
+	rv = remote -v
+	sm = submodule
+	st = status
 	stat = shortlog -sne
-	ar = archive
-	ctags = !.git/hooks/ctags
 [diff]
 	tool = idea
 	indentHeuristic = true

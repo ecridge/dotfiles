@@ -195,3 +195,7 @@ source ~/.config/nvim/indent-guides.vim
 source ~/.config/nvim/pgsql.vim
 source ~/.config/nvim/python.vim
 source ~/.config/nvim/ultisnips.vim
+
+if filereadable(expand('~/.config/nvim/local.vim'))
+  source ~/.config/nvim/local.vim
+endif

@@ -1,0 +1,6 @@
+[user]
+	email = joecridge@gambitresearch.com
+	signingkey =
+[sendemail]
+	smtpserver = smtp.gmail.com
+	smtpuser = joecridge@gambitresearch.com

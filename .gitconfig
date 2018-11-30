@@ -70,3 +70,5 @@
 	diffFilter = diff-highlight
 [init]
 	templatedir = ~/.git_template
+[includeIf "gitdir:~/Developer/gambit/"]
+	path = ~/.gitconfig_gambit

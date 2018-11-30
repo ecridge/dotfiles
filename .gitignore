@@ -15,6 +15,7 @@
 !.eslintrc.yml
 !.git-prompt.sh
 !.gitconfig
+!.gitconfig_*
 !.gitignore
 !.gitmodules
 !.globalgitignore
@@ -57,10 +58,11 @@ resources/macOS/
 !.config
 !.config/nvim
 !.config/nvim/**
+.config/nvim/.netrwhist
 .config/nvim/autoload/pathogen.vim
+.config/nvim/local.vim
 .config/nvim/spell/en.utf-8.spl
 .config/nvim/spell/en.utf-8.sug
-.config/nvim/.netrwhist
 
 
 # Track httpie config.

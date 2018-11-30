@@ -139,6 +139,12 @@ noremap <Leader>u :<C-u>UltiSnipsEdit<CR>
 onoremap <silent> ae :<C-u>normal! ggVG<CR>
 vnoremap <silent> ae <Esc>ggVG<CR>
 
+" Use enter and backspace to navigate the tag stack.
+nnoremap <CR> <C-]>
+vnoremap <CR> <C-]>
+nnoremap <BS> <C-t>
+vnoremap <BS> <C-t>
+
 
 "------------------------------------------------------------------------------
 " General autocommands

@@ -161,6 +161,17 @@ bindsym $mod+r mode "resize"
 bindsym $mod+x exec betterlockscreen --lock
 
 
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%-
+bindsym XF86AudioMute exec --no-startup-id amixer -D pulse set Master 1+ toggle
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+
 # Configure workspace bars.
 # If you don't see anything, check the display names using `xrandr`!
 
@@ -215,3 +226,8 @@ client.urgent            #d65d0e  #d65d0e     #ebdbb2  #fe8019    #d65d0e
 client.placeholder       #000000  #282828     #a89984  #000000    #1d2021
 client.background                 #282828
 # ---------------------  -------  ----------  -------  ---------  ------------
+
+
+#exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+#exec --no-startup-id gnome-flashback
+exec --no-startup-id "xkbcomp ~/.config/xkb/keymap.xkm $DISPLAY"

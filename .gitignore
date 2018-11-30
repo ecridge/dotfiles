@@ -30,6 +30,7 @@
 !.tern-config
 !.vimrc
 !.vintrc.yaml
+!.xsession
 !.yamllint
 
 

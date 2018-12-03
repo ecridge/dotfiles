@@ -10,6 +10,9 @@ set show-all-if-ambiguous on
 set completion-ignore-case on
 set menu-complete-display-prefix on
 
+# Colour tab completions like `ls` output.
+set colored-stats on
+
 
 ##
 # Normal Mode

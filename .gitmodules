@@ -144,3 +144,6 @@
 [submodule "vim/capnp"]
 	path = .config/nvim/bundle/vim-capnp
 	url = https://github.com/cstrahan/vim-capnp.git
+[submodule "vim/gnupg"]
+	path = .config/nvim/bundle/vim-gnupg
+	url = https://github.com/jamessan/vim-gnupg.git

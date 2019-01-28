@@ -147,3 +147,6 @@
 [submodule "vim/gnupg"]
 	path = .config/nvim/bundle/vim-gnupg
 	url = https://github.com/jamessan/vim-gnupg.git
+[submodule "vim/simpyl-fold"]
+	path = .config/nvim/bundle/SimpylFold
+	url = https://github.com/tmhedberg/SimpylFold.git

@@ -179,6 +179,7 @@ augroup LanguageSpecific
   autocmd FileType kotlin set shiftwidth=4 tabstop=4 textwidth=120
   autocmd FileType python nnoremap <C-f> :0,$!yapf<CR>
   autocmd FileType python set joinspaces
+  autocmd FileType python normal zR
   autocmd FileType sh,sshconfig,sql set shiftwidth=4 tabstop=4
   autocmd FileType xkb set shiftwidth=4 tabstop=4
 augroup END

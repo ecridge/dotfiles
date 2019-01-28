@@ -11,6 +11,7 @@
 [format]
 	pretty = medium
 [alias]
+	aa = add -A
 	ad = add
 	ap = add -p
 	ar = archive
@@ -23,6 +24,7 @@
 	ctags = !.git/hooks/ctags
 	dc = diff --cached
 	df = diff
+	ds = diff --stat
 	dt = difftool
 	lg = log --pretty=format:'%C(yellow)%h %Creset%s' --abbrev-commit --graph
 	lng = log --pretty=format:'%C(yellow)%h %Creset%s%C(bold red)%d%Creset %Cblue(%an, %ar)%Creset' --abbrev-commit --graph
@@ -30,6 +32,8 @@
 	pr = pull --rebase --autostash
 	psuh = push
 	puhs = push
+	qs = ! /usr/local/bin/git-quick-stats
+	rb = rebase
 	rc = rebase --continue
 	ri = rebase --interactive --autostash
 	rh = reset HEAD

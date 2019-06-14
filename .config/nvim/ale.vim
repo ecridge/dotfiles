@@ -24,6 +24,9 @@ let g:ale_sign_column_always = 1
 let g:ale_sign_error = 'E'
 let g:ale_sign_warning = 'W'
 
+" Tell me where the messages are coming from!
+let g:ale_echo_msg_format = '%linter%: %s'
+
 " Add mappings for jumping between errors.
 nmap <silent> [<lt> <Plug>(ale_previous_wrap)
 nmap <silent> ]> <Plug>(ale_next_wrap)

@@ -39,8 +39,8 @@ set splitbelow splitright
 set wildignorecase wildmode=longest,list
 
 " Python.
-let g:python_host_prog = '/usr/bin/python'
-let g:python3_host_prog = '/usr/bin/python3'
+let g:python_host_prog = '/home/joe/.pyenv/versions/neovim2/bin/python'
+let g:python3_host_prog = '/home/joe/.pyenv/versions/neovim3/bin/python'
 
 " Syntax highlighting.
 let g:javascript_plugin_jsdoc = 1
@@ -60,6 +60,10 @@ augroup HelpSplit
   autocmd FileType help wincmd L
   autocmd FileType help vertical resize 82
 augroup END
+
+" Don't show boring files in netrw.
+let g:netrw_hide = 1
+let g:netrw_list_hide= netrw_gitignore#Hide().'.*\.pyc$'
 
 
 "------------------------------------------------------------------------------
@@ -144,6 +148,8 @@ nnoremap <CR> <C-]>
 vnoremap <CR> <C-]>
 nnoremap <BS> <C-t>
 vnoremap <BS> <C-t>
+nnoremap <C-]> <C-W>v<C-]>
+vnoremap <C-]> <C-W>v<C-]>
 
 
 "------------------------------------------------------------------------------

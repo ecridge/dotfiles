@@ -17,6 +17,7 @@ export LESS_TERMCAP_md=$'\033[01;38;5;109m'
 export LESS_TERMCAP_me=$'\033[0m'
 export LESS_TERMCAP_ue=$'\033[0m'
 export LESS_TERMCAP_us=$'\033[03;38;5;142m'
+export MYPYPATH="$HOME/.pyenv/versions/neovim3/lib/python3.7/site-packages"
 export PYENV_ROOT="$HOME/.pyenv"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 export RI='--format ansi --width 79'

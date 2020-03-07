@@ -3,5 +3,6 @@ let g:vim_isort_python_version = 'python3'
 
 " Common typos.
 iabbrev acconut account
+iabbrev aqcuire acquire
 iabbrev improt import
 iabbrev walled wallet

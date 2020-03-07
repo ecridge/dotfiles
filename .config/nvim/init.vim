@@ -183,11 +183,11 @@ augroup LanguageSpecific
   autocmd FileType html,htmldjango,jst setlocal formatoptions-=t textwidth=100
   autocmd FileType kotlin set commentstring=//%s formatoptions+=r
   autocmd FileType kotlin set shiftwidth=4 tabstop=4 textwidth=120
-  autocmd FileType python nnoremap <C-f> :0,$!yapf<CR>
   autocmd FileType python set joinspaces
   autocmd FileType python normal zR
   autocmd FileType sh,sshconfig,sql set shiftwidth=4 tabstop=4
   autocmd FileType xkb set shiftwidth=4 tabstop=4
+  autocmd FileType xml set shiftwidth=4 tabstop=4 formatoptions-=t
 augroup END
 
 source ~/.config/nvim/go.vim

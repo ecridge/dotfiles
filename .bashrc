@@ -145,27 +145,37 @@ custom_prompt() {
     # Text colours.
     local STATUS_FG=223 # gruvbox fg
     local PYENV_FG=223  # gruvbox fg
-    local HOST_FG=248   # gruvbox fg3
+    local LOCAL_FG=248  # gruvbox fg3
+    local REMOTE_FG=223 # gruvbox fg
     local PATH_FG=246   # gruvbox gray
     local BRANCH_FG=246 # gruvbox gray
 
     # Background colours.
     local STATUS_BG=166 # gruvbox orange
     local PYENV_BG=66   # gruvbox blue
-    local HOST_BG=241   # gruvbox bg3
+    local LOCAL_BG=241  # gruvbox bg3
+    local REMOTE_BG=172 # gruvbox yellow
     local PATH_BG=239   # gruvbox bg2
     local BRANCH_BG=237 # gruvbox bg1
 
+    if [[ -n $SSH_CLIENT ]]; then
+        host_fg=$REMOTE_FG
+        host_bg=$REMOTE_BG
+    else
+        host_fg=$LOCAL_FG
+        host_bg=$LOCAL_BG
+    fi
+
     local pretty_status="\[\e[$FG$STATUS_FG;$BG${STATUS_BG}m\] $raw_status "
     local pretty_pyenv="\[\e[$FG$PYENV_FG;$BG${PYENV_BG}m\] $raw_pyenv "
-    local pretty_host="\[\e[$FG$HOST_FG;$BG${HOST_BG}m\] $raw_host "
+    local pretty_host="\[\e[$FG$host_fg;$BG${host_bg}m\] $raw_host "
     local pretty_path="\[\e[$FG$PATH_FG;$BG${PATH_BG}m\] $raw_path "
     local pretty_branch="\[\e[$FG$BRANCH_FG;$BG${BRANCH_BG}m\] $raw_branch "
 
     if [[ -n $raw_pyenv ]]; then
         local status_arrow_bg=$PYENV_BG
     else
-        local status_arrow_bg=$HOST_BG
+        local status_arrow_bg=$host_bg
     fi
 
     if [[ -n $raw_branch ]]; then
@@ -175,8 +185,8 @@ custom_prompt() {
     fi
 
     local status_arrow="\[\e[$FG$STATUS_BG;$BG${status_arrow_bg}m\]$ARROW"
-    local pyenv_arrow="\[\e[$FG$PYENV_BG;$BG${HOST_BG}m\]$ARROW"
-    local host_arrow="\[\e[$FG$HOST_BG;$BG${PATH_BG}m\]$ARROW"
+    local pyenv_arrow="\[\e[$FG$PYENV_BG;$BG${host_bg}m\]$ARROW"
+    local host_arrow="\[\e[$FG$host_bg;$BG${PATH_BG}m\]$ARROW"
     local path_arrow="\[\e[$FG$PATH_BG;$BG${BRANCH_BG}m\]$ARROW"
     local branch_arrow="\[\e[$FG${branch_arrow_fg}m\]$RESET_BG$ARROW"
 

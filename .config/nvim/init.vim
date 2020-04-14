@@ -51,7 +51,10 @@ filetype plugin indent on
 
 " Colour scheme.
 set background=dark
+set termguicolors
 let g:gruvbox_italic = 1
+let g:gruvbox_contrast_dark = 'medium'
+let g:gruvbox_contrast_light = 'soft'
 colorscheme gruvbox
 
 " Prefer vertical split for help.

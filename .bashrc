@@ -142,28 +142,48 @@ custom_prompt() {
     local RESET="\[\e[0m\]"
     local RESET_BG="\[\e[49m\]"
 
+    if [[ "$BACKGROUND" == 'light' ]]; then
+        local gruvbox_fg=237
+        local gruvbox_fg3=241
+        local gruvbox_gray=243
+        local gruvbox_bg1=223
+        local gruvbox_bg2=250
+        local gruvbox_bg3=248
+    else
+        local gruvbox_fg=223
+        local gruvbox_fg3=248
+        local gruvbox_gray=246
+        local gruvbox_bg1=237
+        local gruvbox_bg2=239
+        local gruvbox_bg3=241
+    fi
+
+    local gruvbox_orange=166
+    local gruvbox_blue=66
+    local gruvbox_yellow=172
+
     # Text colours.
-    local STATUS_FG=223 # gruvbox fg
-    local PYENV_FG=223  # gruvbox fg
-    local LOCAL_FG=248  # gruvbox fg3
-    local REMOTE_FG=223 # gruvbox fg
-    local PATH_FG=246   # gruvbox gray
-    local BRANCH_FG=246 # gruvbox gray
+    local STATUS_FG=$gruvbox_fg
+    local PYENV_FG=$gruvbox_fg
+    local LOCAL_FG=$gruvbox_fg3
+    local REMOTE_FG=$gruvbox_fg
+    local PATH_FG=$gruvbox_gray
+    local BRANCH_FG=$gruvbox_gray
 
     # Background colours.
-    local STATUS_BG=166 # gruvbox orange
-    local PYENV_BG=66   # gruvbox blue
-    local LOCAL_BG=241  # gruvbox bg3
-    local REMOTE_BG=172 # gruvbox yellow
-    local PATH_BG=239   # gruvbox bg2
-    local BRANCH_BG=237 # gruvbox bg1
+    local STATUS_BG=$gruvbox_orange
+    local PYENV_BG=$gruvbox_blue
+    local LOCAL_BG=$gruvbox_bg3
+    local REMOTE_BG=$gruvbox_yellow
+    local PATH_BG=$gruvbox_bg2
+    local BRANCH_BG=$gruvbox_bg1
 
     if [[ -n $SSH_CLIENT ]]; then
-        host_fg=$REMOTE_FG
-        host_bg=$REMOTE_BG
+        local host_fg=$REMOTE_FG
+        local host_bg=$REMOTE_BG
     else
-        host_fg=$LOCAL_FG
-        host_bg=$LOCAL_BG
+        local host_fg=$LOCAL_FG
+        local host_bg=$LOCAL_BG
     fi
 
     local pretty_status="\[\e[$FG$STATUS_FG;$BG${STATUS_BG}m\] $raw_status "
@@ -208,9 +228,9 @@ custom_prompt() {
     PS1="$pretty_status$status_arrow$pretty_pyenv$pyenv_arrow$pretty_host"
     PS1="$PS1$host_arrow$pretty_path$path_arrow$pretty_branch$branch_arrow$RESET "
 
-    PS2="\[\e[38;5;246;48;5;237m\]...\[\e[38;5;237m\]$RESET_BG$ARROW$RESET "
-    PS3="\[\e[38;5;223;48;5;66m\] ${PS3:=Enter a number: }\[\e[38;5;66m\]$RESET_BG$ARROW$RESET "
-    PS4="\[\e[38;5;223;48;5;66m\] $0:$LINENO \e[38;5;66m\]$RESET_BG$ARROW$RESET "
+    PS2="\[\e[$FG${gruvbox_gray};$BG${gruvbox_bg1}m\]...\[\e[$FG${gruvbox_bg1}m\]$RESET_BG$ARROW$RESET "
+    PS3="\[\e[$FG${gruvbox_fg};$BG${gruvbox_blue}m\] ${PS3:=Enter a number: }\[\e[$FG${gruvbox_blue}m\]$RESET_BG$ARROW$RESET "
+    PS4="\[\e[$FG${gruvbox_fg};$BG${gruvbox_blue}m\] $0:$LINENO \e[$FG${gruvbox_blue}m\]$RESET_BG$ARROW$RESET "
 
     # Set the window title.
     echo -n -e "\033]0;$raw_path\007"

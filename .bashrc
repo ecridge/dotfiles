@@ -137,30 +137,30 @@ custom_prompt() {
     fi
 
     local ARROW=$'\ue0b0'
-    local BG='48;5;'
-    local FG='38;5;'
+    local BG='48;2;'
+    local FG='38;2;'
     local RESET="\[\e[0m\]"
     local RESET_BG="\[\e[49m\]"
 
     if [[ "$BACKGROUND" == 'light' ]]; then
-        local gruvbox_fg=237
-        local gruvbox_fg3=241
-        local gruvbox_gray=243
-        local gruvbox_bg1=223
-        local gruvbox_bg2=250
-        local gruvbox_bg3=248
+        local gruvbox_fg='60;56;54'
+        local gruvbox_fg3='102;92;84'
+        local gruvbox_gray='124;111;100'
+        local gruvbox_bg1='235;219;178'
+        local gruvbox_bg2='213;196;161'
+        local gruvbox_bg3='189;174;147'
     else
-        local gruvbox_fg=223
-        local gruvbox_fg3=248
-        local gruvbox_gray=246
-        local gruvbox_bg1=237
-        local gruvbox_bg2=239
-        local gruvbox_bg3=241
+        local gruvbox_fg='235;219;178'
+        local gruvbox_fg3='189;174;147'
+        local gruvbox_gray='168;153;132'
+        local gruvbox_bg1='60;56;54'
+        local gruvbox_bg2='80;73;69'
+        local gruvbox_bg3='102;92;84'
     fi
 
-    local gruvbox_orange=166
-    local gruvbox_blue=66
-    local gruvbox_yellow=172
+    local gruvbox_orange='214;93;14'
+    local gruvbox_blue='69;133;136'
+    local gruvbox_yellow='215;153;33'
 
     # Text colours.
     local STATUS_FG=$gruvbox_fg

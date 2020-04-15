@@ -143,14 +143,12 @@ custom_prompt() {
     local RESET_BG="\[\e[49m\]"
 
     if [[ "$BACKGROUND" == 'light' ]]; then
-        local gruvbox_fg='60;56;54'
         local gruvbox_fg3='102;92;84'
         local gruvbox_gray='124;111;100'
         local gruvbox_bg1='235;219;178'
         local gruvbox_bg2='213;196;161'
         local gruvbox_bg3='189;174;147'
     else
-        local gruvbox_fg='235;219;178'
         local gruvbox_fg3='189;174;147'
         local gruvbox_gray='168;153;132'
         local gruvbox_bg1='60;56;54'
@@ -158,15 +156,16 @@ custom_prompt() {
         local gruvbox_bg3='102;92;84'
     fi
 
+    local gruvbox_white='235;219;178'
     local gruvbox_orange='214;93;14'
     local gruvbox_blue='69;133;136'
     local gruvbox_yellow='215;153;33'
 
     # Text colours.
-    local STATUS_FG=$gruvbox_fg
-    local PYENV_FG=$gruvbox_fg
+    local STATUS_FG=$gruvbox_white
+    local PYENV_FG=$gruvbox_white
     local LOCAL_FG=$gruvbox_fg3
-    local REMOTE_FG=$gruvbox_fg
+    local REMOTE_FG=$gruvbox_white
     local PATH_FG=$gruvbox_gray
     local BRANCH_FG=$gruvbox_gray
 
@@ -229,8 +228,8 @@ custom_prompt() {
     PS1="$PS1$host_arrow$pretty_path$path_arrow$pretty_branch$branch_arrow$RESET "
 
     PS2="\[\e[$FG${gruvbox_gray};$BG${gruvbox_bg1}m\]...\[\e[$FG${gruvbox_bg1}m\]$RESET_BG$ARROW$RESET "
-    PS3="\[\e[$FG${gruvbox_fg};$BG${gruvbox_blue}m\] ${PS3:=Enter a number: }\[\e[$FG${gruvbox_blue}m\]$RESET_BG$ARROW$RESET "
-    PS4="\[\e[$FG${gruvbox_fg};$BG${gruvbox_blue}m\] $0:$LINENO \e[$FG${gruvbox_blue}m\]$RESET_BG$ARROW$RESET "
+    PS3="\[\e[$FG${gruvbox_white};$BG${gruvbox_blue}m\] ${PS3:=Enter a number: }\[\e[$FG${gruvbox_blue}m\]$RESET_BG$ARROW$RESET "
+    PS4="\[\e[$FG${gruvbox_white};$BG${gruvbox_blue}m\] $0:$LINENO \e[$FG${gruvbox_blue}m\]$RESET_BG$ARROW$RESET "
 
     # Set the window title.
     echo -n -e "\033]0;$raw_path\007"

@@ -6,13 +6,15 @@ set completeopt-=preview
 
 let g:echodoc#enable_at_startup = 1
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
 
-let g:deoplete#omni#functions = {}
-let g:deoplete#omni#functions.javascript = ['tern#Complete', 'jspc#omni']
+call deoplete#custom#option('smart_case', v:true)
+call deoplete#custom#option('sources', {
+  \   'javascript.jsx': ['buffer', 'file', 'ternjs']
+  \ })
 
-let g:deoplete#sources = {}
-let g:deoplete#sources['javascript.jsx'] = ['buffer', 'file', 'ternjs']
+call deoplete#custom#source('omni', 'functions', {
+  \   'javascript': ['tern#Complete', 'jspc#omni']
+  \ })
 
 let g:tern#command = ['tern']
 let g:tern#arguments = ['--persistent']

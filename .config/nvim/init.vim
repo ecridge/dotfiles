@@ -203,7 +203,6 @@ source ~/.config/nvim/jsdoc.vim
 
 source ~/.config/nvim/airline.vim
 source ~/.config/nvim/ale.vim
-source ~/.config/nvim/autopairs.vim
 source ~/.config/nvim/deoplete.vim
 source ~/.config/nvim/editorconfig.vim
 source ~/.config/nvim/gitgutter.vim

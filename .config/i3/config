@@ -228,6 +228,6 @@ client.background                 #282828
 # ---------------------  -------  ----------  -------  ---------  ------------
 
 
-#exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
-#exec --no-startup-id gnome-flashback
-exec --no-startup-id "xkbcomp ~/.config/xkb/keymap.xkm $DISPLAY"
+exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id gnome-flashback
+exec --no-startup-id loadkeys

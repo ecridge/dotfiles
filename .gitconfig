@@ -86,3 +86,5 @@
 	templatedir = ~/.git_template
 [includeIf "gitdir:~/Developer/gambit/"]
 	path = ~/.gitconfig_gambit
+[pull]
+	rebase = true

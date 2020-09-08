@@ -4,6 +4,7 @@
 
 " Manually enable linters.
 let g:ale_linters = {
+    \ 'cpp': ['gcc'],
     \ 'css': ['stylelint'],
     \ 'html': ['htmlhint'],
     \ 'markdown': ['mdl'],
@@ -16,6 +17,9 @@ let g:ale_linters = {
     \ 'vim': ['vint'],
     \ 'yaml': ['yamllint'],
 \ }
+
+" " Include headers from project `lib` directory (C++).
+let g:ale_cpp_gcc_options = '-std=c++17 -Wall -Ilib/cutils -Icapnp_output -Ilib/catch2'
 
 " Always keep the gutter open.
 let g:ale_sign_column_always = 1

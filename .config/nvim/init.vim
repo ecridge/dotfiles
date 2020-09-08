@@ -51,6 +51,7 @@ filetype plugin indent on
 
 " Colour scheme.
 set background=dark
+set cursorline
 set termguicolors
 let g:gruvbox_italic = 1
 let g:gruvbox_contrast_dark = 'medium'
@@ -77,9 +78,6 @@ let g:netrw_list_hide= netrw_gitignore#Hide().'.*\.pyc$'
 " Ctrl-E to jump to line end.
 inoremap <C-a> <Esc>I
 inoremap <C-e> <Esc>A
-
-" Ctrl-D to delete line under cursor.
-inoremap <silent> <C-d> <Esc>ddi
 
 " Ctrl-G to move line under cursor up.
 " Ctrl-- to move line under cursor down.
@@ -183,6 +181,7 @@ augroup LanguageSpecific
   autocmd BufNewFile,BufRead *.xkb,*/xkb/*/* set filetype=xkb
   autocmd BufNewFile,BufRead .pg_service.conf set filetype=dosini
   autocmd BufNewFile,BufRead .pgpass set filetype=conf
+  autocmd FileType cpp set shiftwidth=4 tabstop=4 textwidth=120 path+=lib/*
   autocmd FileType html,htmldjango,jst setlocal formatoptions-=t textwidth=100
   autocmd FileType kotlin set commentstring=//%s formatoptions+=r
   autocmd FileType kotlin set shiftwidth=4 tabstop=4 textwidth=120
@@ -203,6 +202,7 @@ source ~/.config/nvim/jsdoc.vim
 
 source ~/.config/nvim/airline.vim
 source ~/.config/nvim/ale.vim
+source ~/.config/nvim/cpp-modern.vim
 source ~/.config/nvim/deoplete.vim
 source ~/.config/nvim/editorconfig.vim
 source ~/.config/nvim/gitgutter.vim

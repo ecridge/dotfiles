@@ -150,3 +150,9 @@
 [submodule "vim/simpyl-fold"]
 	path = .config/nvim/bundle/SimpylFold
 	url = https://github.com/tmhedberg/SimpylFold.git
+[submodule "vim/deoplete-clang"]
+	path = .config/nvim/bundle/deoplete-clang
+	url = https://github.com/deoplete-plugins/deoplete-clang.git
+[submodule "vim/cpp-modern"]
+	path = .config/nvim/bundle/vim-cpp-modern
+	url = https://github.com/bfrg/vim-cpp-modern

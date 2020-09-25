@@ -45,10 +45,12 @@ alias e=nvim
 alias get="curl -sSi -X GET -H 'Accept: application/json'"
 alias grep='grep --color=auto --exclude-dir=.git'
 alias ie='nvim --noplugin'
+alias k=kubectl
 alias l='ls --color=auto'
 alias la='l -A'
 alias ll=$'l -AhFl --time-style=\'+%Y-%m-%d %H:%M\n%a %d %b %H:%M\''
 alias m=man
+alias mk=minikube
 alias mdl='mdl --style ~/.mdstyle'
 alias n=npm
 alias o=open
@@ -57,6 +59,7 @@ alias printenv="printenv | sort | grep -Pe '^[A-Z][A-Z0-9_]*(?==)'"
 alias put="curl -sSi -X PUT -H 'Content-type: application/json' -d"
 alias py='clear && bpython'
 alias py3='clear && bpython3'
+alias sk=skaffold
 alias sudoa='sudo '  # An alias of sudo that expands aliases.
 alias q=exit
 alias t="tree -I \"$gumpf\""
@@ -103,6 +106,10 @@ if ! shopt -oq posix; then
         . /etc/bash_completion
     fi
 fi
+
+
+source <(kubectl completion bash)
+complete -o default -F __start_kubectl k
 
 
 # Set up pyenv and pyenv-virtualenv.

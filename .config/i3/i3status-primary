@@ -5,7 +5,14 @@ general {
     output_format = "i3bar"
 }
 
+order += "volume master"
 order += "time"
+
+volume master {
+    format = "%volume"
+    format_muted = "Mute"
+    device = "pulse"
+}
 
 time {
     format = "%Y-%m-%d %H:%M "

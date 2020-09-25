@@ -231,3 +231,4 @@ client.background                 #282828
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id gnome-flashback
 exec --no-startup-id loadkeys
+exec --no-startup-id amixer -D pulse set Master 1+ on

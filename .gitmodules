@@ -156,3 +156,6 @@
 [submodule "vim/cpp-modern"]
 	path = .config/nvim/bundle/vim-cpp-modern
 	url = https://github.com/bfrg/vim-cpp-modern
+[submodule "vim/gdb"]
+	path = .config/nvim/bundle/nvim-gdb
+	url = https://github.com/sakhnik/nvim-gdb

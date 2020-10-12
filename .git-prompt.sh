@@ -202,9 +202,9 @@ __git_ps1_show_upstream ()
 	if [[ -z "$verbose" ]]; then
 		case "$count" in
 		"") # no upstream
-			p="" ;;
+			p="#" ;;
 		"0	0") # equal to upstream
-			p="=" ;;
+			p="" ;;
 		"0	"*) # ahead of upstream
 			p=">" ;;
 		*"	0") # behind upstream
@@ -304,21 +304,21 @@ __git_sequencer_status ()
 	local todo
 	if test -f "$g/CHERRY_PICK_HEAD"
 	then
-		r="|CHERRY-PICKING"
+		r="CHERRY-PICKING"
 		return 0;
 	elif test -f "$g/REVERT_HEAD"
 	then
-		r="|REVERTING"
+		r="REVERTING"
 		return 0;
 	elif __git_eread "$g/sequencer/todo" todo
 	then
 		case "$todo" in
 		p[\ \	]|pick[\ \	]*)
-			r="|CHERRY-PICKING"
+			r="CHERRY-PICKING"
 			return 0
 		;;
 		revert[\ \	]*)
-			r="|REVERTING"
+			r="REVERTING"
 			return 0
 		;;
 		esac
@@ -434,7 +434,7 @@ __git_ps1 ()
 	if [ -z "${GIT_PS1_COMPRESSSPARSESTATE}" ] &&
 	   [ -z "${GIT_PS1_OMITSPARSESTATE}" ] &&
 	   [ "$(git config --bool core.sparseCheckout)" = "true" ]; then
-		sparse="|SPARSE"
+		sparse="SPARSE"
 	fi
 
 	local r=""
@@ -445,25 +445,25 @@ __git_ps1 ()
 		__git_eread "$g/rebase-merge/head-name" b
 		__git_eread "$g/rebase-merge/msgnum" step
 		__git_eread "$g/rebase-merge/end" total
-		r="|REBASE"
+		r="REBASE"
 	else
 		if [ -d "$g/rebase-apply" ]; then
 			__git_eread "$g/rebase-apply/next" step
 			__git_eread "$g/rebase-apply/last" total
 			if [ -f "$g/rebase-apply/rebasing" ]; then
 				__git_eread "$g/rebase-apply/head-name" b
-				r="|REBASE"
+				r="REBASE"
 			elif [ -f "$g/rebase-apply/applying" ]; then
-				r="|AM"
+				r="AM"
 			else
-				r="|AM/REBASE"
+				r="AM/REBASE"
 			fi
 		elif [ -f "$g/MERGE_HEAD" ]; then
-			r="|MERGING"
+			r="MERGING"
 		elif __git_sequencer_status; then
 			:
 		elif [ -f "$g/BISECT_LOG" ]; then
-			r="|BISECTING"
+			r="BISECTING"
 		fi
 
 		if [ -n "$b" ]; then
@@ -564,8 +564,8 @@ __git_ps1 ()
 		b="\${__git_ps1_branch_name}"
 	fi
 
-	local f="$h$w$i$s$u"
-	local gitstring="$c$b${f:+$z$f}${sparse}$r$p"
+	local f="$h$p$w$i$s$u"
+	local gitstring="$c$b${f:+$z$f}${sparse:+$z$sparse}${r:+$z$r}"
 
 	if [ $pcmode = yes ]; then
 		if [ "${__git_printf_supports_v-}" != yes ]; then

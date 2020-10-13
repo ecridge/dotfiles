@@ -18,8 +18,7 @@ let g:ale_linters = {
     \ 'yaml': ['yamllint'],
 \ }
 
-" " Include headers from project `lib` directory (C++).
-let g:ale_cpp_gcc_options = '-std=c++17 -Wall -Ilib/cutils -Icapnp_output -Ilib/catch2'
+let g:ale_cpp_gcc_options = '-std=c++17 -Wall'
 
 " Always keep the gutter open.
 let g:ale_sign_column_always = 1

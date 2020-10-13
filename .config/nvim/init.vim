@@ -181,7 +181,7 @@ augroup LanguageSpecific
   autocmd BufNewFile,BufRead *.xkb,*/xkb/*/* set filetype=xkb
   autocmd BufNewFile,BufRead .pg_service.conf set filetype=dosini
   autocmd BufNewFile,BufRead .pgpass set filetype=conf
-  autocmd FileType cpp set shiftwidth=4 tabstop=4 textwidth=120 path+=lib/*
+  autocmd FileType cpp set shiftwidth=4 tabstop=4 textwidth=120
   autocmd FileType html,htmldjango,jst setlocal formatoptions-=t textwidth=100
   autocmd FileType kotlin set commentstring=//%s formatoptions+=r
   autocmd FileType kotlin set shiftwidth=4 tabstop=4 textwidth=120

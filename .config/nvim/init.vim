@@ -102,9 +102,6 @@ noremap <Right> <C-w>l
 nnoremap <Tab> <C-w>w
 nnoremap <S-Tab> <C-w>W
 
-" \ to delete line under cursor.
-nnoremap <silent> \ dd
-
 " Ctrl-U to upper-case word under cursor.
 nnoremap <C-u> mzgUiw`z
 

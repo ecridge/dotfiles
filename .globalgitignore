@@ -26,6 +26,9 @@
 *.bak
 *.orig
 
+# C++ completion?
+*.tu
+
 # Emacs >:(
 *.elc
 .\#*

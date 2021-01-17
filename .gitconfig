@@ -85,6 +85,8 @@
 [init]
 	templatedir = ~/.git_template
 [includeIf "gitdir:~/Developer/gambit/"]
-	path = ~/.gitconfig_gambit
+	path = ~/.gitconfig_molly
+[includeIf "gitdir:~/Developer/mollybet/"]
+	path = ~/.gitconfig_molly
 [pull]
 	rebase = true

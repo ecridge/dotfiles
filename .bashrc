@@ -134,10 +134,15 @@ if which fasd &> /dev/null; then eval "$(fasd --init auto)"; fi
 PROMPT_COMMAND='custom_prompt;history -a'
 custom_prompt() {
     local raw_status=$? # Must come first!
+    local raw_context="$(kubectl config current-context)"
     local raw_pyenv="$(pyenv version-name)"
     local raw_host='\u@\h'
     local raw_path=$(pwd | sed -e "s|^${HOME}|~|" -re 's|([^/]{0,2})[^/]*/|\1/|g')
     local raw_branch=$(__git_ps1 '%s')
+
+    if [[ "$raw_context" == "molly" ]]; then
+        raw_context=
+    fi
 
     if [[ "$raw_pyenv" == "$(pyenv global)" ]]; then
         raw_pyenv=
@@ -166,12 +171,14 @@ custom_prompt() {
     fi
 
     local gruvbox_white='235;219;178'
+    local gruvbox_purple='177;98;134'
     local gruvbox_orange='214;93;14'
     local gruvbox_blue='69;133;136'
     local gruvbox_yellow='215;153;33'
 
     # Text colours.
     local STATUS_FG=$gruvbox_white
+    local CONTEXT_FG=$gruvbox_white
     local PYENV_FG=$gruvbox_white
     local LOCAL_FG=$gruvbox_fg3
     local REMOTE_FG=$gruvbox_fg
@@ -180,6 +187,7 @@ custom_prompt() {
 
     # Background colours.
     local STATUS_BG=$gruvbox_orange
+    local CONTEXT_BG=$gruvbox_purple
     local PYENV_BG=$gruvbox_blue
     local LOCAL_BG=$gruvbox_bg3
     local REMOTE_BG=$gruvbox_yellow
@@ -195,15 +203,24 @@ custom_prompt() {
     fi
 
     local pretty_status="\[\e[$FG$STATUS_FG;$BG${STATUS_BG}m\] $raw_status "
+    local pretty_context="\[\e[$FG$CONTEXT_FG;$BG${CONTEXT_BG}m\] $raw_context "
     local pretty_pyenv="\[\e[$FG$PYENV_FG;$BG${PYENV_BG}m\] $raw_pyenv "
     local pretty_host="\[\e[$FG$host_fg;$BG${host_bg}m\] $raw_host "
     local pretty_path="\[\e[$FG$PATH_FG;$BG${PATH_BG}m\] $raw_path "
     local pretty_branch="\[\e[$FG$BRANCH_FG;$BG${BRANCH_BG}m\] $raw_branch "
 
-    if [[ -n $raw_pyenv ]]; then
+    if [[ -n $raw_context ]]; then
+        local status_arrow_bg=$CONTEXT_BG
+    elif [[ -n $raw_pyenv ]]; then
         local status_arrow_bg=$PYENV_BG
     else
         local status_arrow_bg=$host_bg
+    fi
+
+    if [[ -n $raw_pyenv ]]; then
+        local context_arrow_bg=$PYENV_BG
+    else
+        local context_arrow_bg=$host_bg
     fi
 
     if [[ -n $raw_branch ]]; then
@@ -213,10 +230,16 @@ custom_prompt() {
     fi
 
     local status_arrow="\[\e[$FG$STATUS_BG;$BG${status_arrow_bg}m\]$ARROW"
+    local context_arrow="\[\e[$FG$CONTEXT_BG;$BG${context_arrow_bg}m\]$ARROW"
     local pyenv_arrow="\[\e[$FG$PYENV_BG;$BG${host_bg}m\]$ARROW"
     local host_arrow="\[\e[$FG$host_bg;$BG${PATH_BG}m\]$ARROW"
     local path_arrow="\[\e[$FG$PATH_BG;$BG${BRANCH_BG}m\]$ARROW"
     local branch_arrow="\[\e[$FG${branch_arrow_fg}m\]$RESET_BG$ARROW"
+
+    if [[ -z $raw_context ]]; then
+        pretty_context=
+        context_arrow=
+    fi
 
     if [[ -z $raw_pyenv ]]; then
         pretty_pyenv=
@@ -233,8 +256,9 @@ custom_prompt() {
         path_arrow=
     fi
 
-    PS1="$pretty_status$status_arrow$pretty_pyenv$pyenv_arrow$pretty_host"
-    PS1="$PS1$host_arrow$pretty_path$path_arrow$pretty_branch$branch_arrow$RESET "
+    PS1="$pretty_status$status_arrow$pretty_context$context_arrow"
+    PS1="$PS1$pretty_pyenv$pyenv_arrow$pretty_host$host_arrow"
+    PS1="$PS1$pretty_path$path_arrow$pretty_branch$branch_arrow$RESET "
 
     PS2="\[\e[$FG${gruvbox_gray};$BG${gruvbox_bg1}m\]...\[\e[$FG${gruvbox_bg1}m\]$RESET_BG$ARROW$RESET "
     PS3="\[\e[$FG${gruvbox_white};$BG${gruvbox_blue}m\] ${PS3:=Enter a number: }\[\e[$FG${gruvbox_blue}m\]$RESET_BG$ARROW$RESET "

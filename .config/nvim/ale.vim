@@ -10,7 +10,7 @@ let g:ale_linters = {
     \ 'markdown': ['mdl'],
     \ 'javascript': ['standard'],
     \ 'json': ['jsonlint'],
-    \ 'python': ['pylint', 'flake8'],
+    \ 'python': ['pylint', 'flake8', 'mypy'],
     \ 'scss': ['sasslint'],
     \ 'sql': ['sqlint'],
     \ 'typescript': ['tslint'],

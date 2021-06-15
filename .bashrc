@@ -134,7 +134,7 @@ if which fasd &> /dev/null; then eval "$(fasd --init auto)"; fi
 PROMPT_COMMAND='custom_prompt;history -a'
 custom_prompt() {
     local raw_status=$? # Must come first!
-    local raw_context="$(kubectl config current-context)"
+    local raw_context="$(kubectl config current-context 2>/dev/null)"
     local raw_pyenv="$(pyenv version-name)"
     local raw_host='\u@\h'
     local raw_path=$(pwd | sed -e "s|^${HOME}|~|" -re 's|([^/]{0,2})[^/]*/|\1/|g')

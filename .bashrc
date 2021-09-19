@@ -114,7 +114,7 @@ complete -o default -F __start_kubectl k
 
 # Set up pyenv and pyenv-virtualenv.
 if which pyenv &> /dev/null; then
-    eval "$(pyenv init -)"
+    eval "$(pyenv init --path)"
     if [[ -d $(pyenv root)/plugins/pyenv-virtualenv ]]; then
         eval "$(pyenv virtualenv-init -)"
     fi

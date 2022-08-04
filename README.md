@@ -4,13 +4,13 @@ These configuration files are for the GNU toolchain.
 
 ## Install
 
-1.  Clone and unpack:
+1.  Clone and use `stow` to link the relevant config into `$HOME`:
 
     ```bash
-    cd && git clone -n git@github.com:joecridge/dotfiles.git -b linux
-    mv dotfiles/.git . && rmdir dotfiles
-    git reset --hard HEAD  # Caution: existing dotfiles will be overwritten!
-    git submodule update --init --recursive
+    cd && git clone git@github.com:joecridge/dotfiles.git -b linux
+    cd dotfiles
+    stow bash
+    stow i3  # etc...
     ```
 
 2.  Install the dependencies listed on the [wiki][].

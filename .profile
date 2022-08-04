@@ -24,11 +24,6 @@ export RI='--format ansi --width 79'
 export RI_PAGER='less -r'
 export TZ=Europe/London
 
-# Set private environment variables.
-if [ -f "$HOME/private/.secrets" ]; then
-    . "$HOME/private/.secrets"
-fi
-
 # Add Python packages to PATH.
 PATH="$HOME/.pyenv/bin:$PATH"
 

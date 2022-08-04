@@ -1,8 +1,3 @@
-[submodule "private"]
-	path = private
-	url = git@github.com:joecridge/private.git
-
-# Vim
 [submodule "vim/surround"]
 	path = .config/nvim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround

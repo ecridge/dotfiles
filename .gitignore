@@ -6,7 +6,6 @@
 
 # Explicitly track these files.
 !README.md
-!private
 !.agignore
 !.bash_profile
 !.bashrc
@@ -62,8 +61,6 @@ resources/macOS/
 .config/nvim/.netrwhist
 .config/nvim/autoload/pathogen.vim
 .config/nvim/local.vim
-.config/nvim/spell/en.utf-8.spl
-.config/nvim/spell/en.utf-8.sug
 
 
 # Track httpie config.

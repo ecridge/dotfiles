@@ -42,13 +42,6 @@ set wildignorecase wildmode=longest,list
 let g:python_host_prog = '/home/joe/.pyenv/versions/neovim2/bin/python'
 let g:python3_host_prog = '/home/joe/.pyenv/versions/neovim3/bin/python'
 
-" Syntax highlighting.
-let g:javascript_plugin_jsdoc = 1
-let g:javascript_plugin_flow = 1
-execute pathogen#infect()
-syntax on
-filetype plugin indent on
-
 " Colour scheme.
 set background=dark
 set cursorline
@@ -197,6 +190,8 @@ source ~/.config/nvim/jsdoc.vim
 " Plugin configuration
 "------------------------------------------------------------------------------
 
+source ~/.config/nvim/plug.vim
+
 source ~/.config/nvim/airline.vim
 source ~/.config/nvim/ale.vim
 source ~/.config/nvim/cpp-modern.vim
@@ -207,6 +202,11 @@ source ~/.config/nvim/indent-guides.vim
 source ~/.config/nvim/pgsql.vim
 source ~/.config/nvim/python.vim
 source ~/.config/nvim/ultisnips.vim
+
+
+"------------------------------------------------------------------------------
+" Local overrides
+"------------------------------------------------------------------------------
 
 if filereadable(expand('~/.config/nvim/local.vim'))
   source ~/.config/nvim/local.vim

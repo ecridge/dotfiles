@@ -59,7 +59,6 @@ resources/macOS/
 !.config/nvim
 !.config/nvim/**
 .config/nvim/.netrwhist
-.config/nvim/autoload/pathogen.vim
 .config/nvim/local.vim
 
 

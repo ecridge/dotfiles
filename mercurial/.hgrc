@@ -47,5 +47,5 @@ summarylen = 50
 tasktabs = west
 
 [ui]
-ignore = ~/.globalhgignore
+ignore = ~/.hgignore_global
 username = Joe Cridge <joe.cridge@me.com>

@@ -1,75 +1,29 @@
 [user]
 	name = Joe Cridge
 	email = joe.cridge@me.com
-	signingkey = DD659648
 [core]
-	editor = nvim
 	autocrlf = input
 	excludesfile = ~/.gitignore_global
 	abbrev = 8
-[color]
-	ui = true
-[format]
-	pretty = medium
 [alias]
-	aa = add -A
 	ad = add
-	ap = add -p
-	ar = archive
 	br = branch
 	ca = commit --amend
 	can = commit --amend --no-edit
 	ci = commit
 	co = checkout
-	cp = cherry-pick
 	ctags = !.git/hooks/ctags
 	dc = diff --cached
 	df = diff
 	ds = diff --stat
-	dt = difftool
 	lg = log --pretty=format:'%C(yellow)%h %Creset%s' --abbrev-commit --graph
 	lng = log --pretty=format:'%C(yellow)%h %Creset%s%C(bold red)%d%Creset %Cblue(%an, %ar)%Creset' --abbrev-commit --graph
-	mt = mergetool
-	pr = pull --rebase --autostash
-	psuh = push
-	puhs = push
-	qs = ! /usr/local/bin/git-quick-stats
 	rb = rebase
 	rc = rebase --continue
 	ri = rebase --interactive --autostash
-	rh = reset HEAD
-	rv = remote -v
-	sm = submodule
 	st = status
-	stat = shortlog -sne
-[diff]
-	tool = idea
-	indentHeuristic = true
-	submodule = log
-[difftool]
-	prompt = false
-	trustExitCode = true
-[difftool "idea"]
-	cmd = idea diff \"$LOCAL\" \"$REMOTE\"
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-[push]
-	default = simple
 [merge]
-	tool = idea
 	conflictstyle = diff3
-[mergetool "idea"]
-	cmd = idea merge \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
-	trustExitCode = true
-[sendemail]
-	smtpencryption = tls
-	smtpserver = smtp.mail.me.com
-	smtpuser = joe.cridge@me.com
-	smtpserverport = 587
-	confirm = auto
 [pager]
 	log = diff-highlight | less
 	show = diff-highlight | less
@@ -85,8 +39,6 @@
 	diffFilter = diff-highlight
 [init]
 	templatedir = ~/.git_template
-[includeIf "gitdir:~/Developer/gambit/"]
-	path = ~/.gitconfig_molly
 [includeIf "gitdir:~/Developer/mollybet/"]
 	path = ~/.gitconfig_molly
 [pull]

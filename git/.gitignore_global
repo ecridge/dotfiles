@@ -28,18 +28,7 @@
 
 # C++ completion?
 *.tu
-
-# Emacs >:(
-*.elc
-.\#*
-/.emacs.desktop
-/.emacs.desktop.lock
-\#*\#
-auto-save-list
-tramp
-
-# GPG
-secring.*
+*.tu-*
 
 # LibreOffice
 .~lock.*#
@@ -49,24 +38,8 @@ secring.*
 .directory
 .Trash-*
 
-# MATLAB
-*.m~
-*.mex*
-slprj/
-
-# Mercurial
-.hg/
-.hgignore
-.hgsigs
-.hgsub
-.hgsubstate
-.hgtags
-
 # Python
 .python-version
-
-# Tern
-.tern-port
 
 # Vim
 [._]*.s[a-w][a-z]

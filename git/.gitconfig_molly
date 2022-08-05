@@ -1,6 +1,2 @@
 [user]
 	email = joe@mollybet.com
-	signingkey =
-[sendemail]
-	smtpserver = smtp.gmail.com
-	smtpuser = joe@mollybet.com

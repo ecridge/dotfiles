@@ -46,10 +46,6 @@ let g:python3_host_prog = '/home/joe/.pyenv/versions/neovim3/bin/python'
 set background=dark
 set cursorline
 set termguicolors
-let g:gruvbox_italic = 1
-let g:gruvbox_contrast_dark = 'medium'
-let g:gruvbox_contrast_light = 'soft'
-colorscheme gruvbox
 
 " Prefer vertical split for help.
 augroup HelpSplit
@@ -198,6 +194,7 @@ source ~/.config/nvim/cpp-modern.vim
 source ~/.config/nvim/deoplete.vim
 source ~/.config/nvim/editorconfig.vim
 source ~/.config/nvim/gitgutter.vim
+source ~/.config/nvim/gruvbox.vim
 source ~/.config/nvim/indent-guides.vim
 source ~/.config/nvim/pgsql.vim
 source ~/.config/nvim/python.vim

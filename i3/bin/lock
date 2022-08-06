@@ -1,0 +1,120 @@
+#!/bin/bash
+
+# This is a modified version of <https://github.com/guimeira/i3lock-fancy-multimonitor>
+# which removes the text option and adds a spread blur option.
+#
+# Requires these packages: scrot imagemagick i3lock
+
+
+# The MIT License (MIT)
+#
+# Copyright (c) 2015 Gui Meira
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+
+# Defaults
+
+
+DISPLAY_RE="([0-9]+)x([0-9]+)\\+([0-9]+)\\+([0-9]+)"
+IMAGE_RE="([0-9]+)x([0-9]+)"
+FOLDER="$(dirname "$(readlink -f "$0")")"
+LOCK="$HOME/.config/i3/lock.png"
+PARAMS=""
+OUTPUT_IMAGE="/tmp/i3lock-$USER.png"
+PIXELATE=false
+SPREAD=false
+BLURTYPE="1x1"
+
+# Read user input
+POSITIONAL=()
+for i in "$@"
+do
+  case $i in
+  -h|--help)
+    echo "lock: Syntax: lock [-s|--spread] [-p|--pixelate] [-b=VAL|--blur=VAL]"
+    echo "for correct blur values, read: http://www.imagemagick.org/Usage/blur/#blur_args"
+    exit
+    shift
+    ;;
+  -b=*|--blur=*)
+    VAL="${i#*=}"
+    BLURTYPE=(${VAL//=/ }) 
+    shift
+    ;;
+  -p|--pixelate)
+    PIXELATE=true
+    shift # past argument
+    ;;
+  -s|--spread)
+    SPREAD=true
+    shift # past argument
+    ;;
+  *)    # unknown option
+    echo "unknown option: $i"
+    exit
+    POSITIONAL+=("$1") # save it in an array for later
+    shift # past argument
+    ;;
+  esac
+done
+set -- "${POSITIONAL[@]}" # restore positional parameters
+
+#Take screenshot:
+scrot -z $OUTPUT_IMAGE
+
+#Get dimensions of the lock image:
+LOCK_IMAGE_INFO=`identify $LOCK`
+[[ $LOCK_IMAGE_INFO =~ $IMAGE_RE ]]
+IMAGE_WIDTH=${BASH_REMATCH[1]}
+IMAGE_HEIGHT=${BASH_REMATCH[2]}
+
+#Execute xrandr to get information about the monitors:
+while read LINE
+do
+  #If we are reading the line that contains the position information:
+  if [[ $LINE =~ $DISPLAY_RE ]]; then
+    #Extract information and append some parameters to the ones that will be given to ImageMagick:
+    WIDTH=${BASH_REMATCH[1]}
+    HEIGHT=${BASH_REMATCH[2]}
+    X=${BASH_REMATCH[3]}
+    Y=${BASH_REMATCH[4]}
+    POS_X=$(($X+$WIDTH/2-$IMAGE_WIDTH/2))
+    POS_Y=$(($Y+$HEIGHT/2-$IMAGE_HEIGHT/2))
+
+    PARAMS="$PARAMS '$LOCK' '-geometry' '+$POS_X+$POS_Y' '-composite'"
+  fi
+done <<<"`xrandr`"
+
+#Execute ImageMagick:
+if $PIXELATE ; then
+  PARAMS="'$OUTPUT_IMAGE' '-scale' '10%' '-scale' '1000%' $PARAMS '$OUTPUT_IMAGE'"
+elif $SPREAD ; then
+  PARAMS="'$OUTPUT_IMAGE' '-interpolate' 'nearest' '-virtual-pixel' 'mirror' '-spread' '5' $PARAMS '$OUTPUT_IMAGE'"
+else
+  PARAMS="'$OUTPUT_IMAGE' '-level' '0%,100%,0.6' '-blur' '$BLURTYPE' $PARAMS '$OUTPUT_IMAGE'"
+fi
+
+eval convert $PARAMS
+
+#Lock the screen:
+i3lock -i $OUTPUT_IMAGE -t
+
+#Remove the generated image:
+rm $OUTPUT_IMAGE

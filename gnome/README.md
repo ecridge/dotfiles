@@ -10,3 +10,7 @@ Terminal profiles can be loaded into an existing profile slot by UUID
 
 You can `dump` instead of load as you expect, or `list` the parent 'dir'.
 The default profile doesn't exist in dconf until you make a change to it.
+
+---
+
+Default desktop session belongs in `/usr/share/xsessions`.

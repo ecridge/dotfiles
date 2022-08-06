@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-MOD_SYM=cbdefghijklnrtuvCBDEFGHIJKLNRTUV
-HEX_SYM=0123456789abcdef0123456789ABCDEF
-
-tr $MOD_SYM $HEX_SYM

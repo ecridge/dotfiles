@@ -80,7 +80,7 @@ custom_prompt() {
     local raw_chroot=
     local raw_venv=
     local raw_host='\u@\h'
-    local raw_path=$(pwd | sed -e "s|^${HOME}|~|" -re 's|([^/]{0,2})[^/]*/|\1/|g')
+    local raw_path=$(pwd | sed -e "s|^${HOME}|~|" -re 's|([^/]{0,3})[^/]*/|\1/|g')
     local raw_branch=$(__git_ps1 '%s')
 
     if [[ -r /etc/debian_chroot ]]; then

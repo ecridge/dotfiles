@@ -1,22 +1,17 @@
-# Guard against non-interactive shells.
-[[ $- == *i* ]] || return 0
+[[ $- == *i* ]] || return 0  # Interactive shells only.
 
-
-# Set shell options.
-shopt -s checkwinsize
-shopt -s cmdhist
 shopt -s dotglob  # Globs match hidden files.
 shopt -s extglob  # Enable extended globbing, e.g. !(*.html|*.css).
-shopt -s lithist
-shopt -s no_empty_cmd_completion
-#shopt -s nullglob  # Incompatible with the Ubuntu bash-completion package.
 shopt -s globstar  # ** expands to any number of directories.
-shopt -s histappend
 
+shopt -s histappend  # Don't truncate ~/.bash_history.
+shopt -s lithist  # Embed newlines (not `;`) in multi-line history entries.
+
+# If a command in a pipeline fails, set $? based on the [rightmost] failing
+# command, rather than the final one (which might still have succeeded).
 set -o pipefail
 
 
-# List boring files.
 gumpf='*.7z|*.jar|*.rar|*.zip|*.gz|*.bzip|*.bz2|*.xz|*.lzma|*.cab|*.iso|*.tar|'
 gumpf+='*.dmg|*.xpi|*.gem|*.egg|*.deb|*.rpm|*.msi|*.msm|*.msp|secring.*|*.m~|'
 gumpf+='*.mex*|slprj|.hg|.hgignore|.hgsigs|.hgsub|.hgsubstate|.hgtags|*.tmp|'
@@ -27,111 +22,59 @@ gumpf+='Network Trash Folder|Temporary Items|.apdisk|[._]*.s[a-w][a-z]|'
 gumpf+='[._]s[a-w][a-z]|Session.vim|.netrwhist|*~|tags|DerivedData|*.pbxuser|'
 gumpf+='*.mode1v3|*.mode2v3|*.perspectivev3|xcuserdata|*.moved-aside|'
 gumpf+='*.xccheckout|*.xcscmblueprint|.git|node_modules|typings|__pycache__|'
-gumpf+='coverage_report|htmlcov|_site|*.tu'
+gumpf+='coverage_report|htmlcov|_site|*.tu|*.tu-*'
 
-
-# Set aliases.
-alias ag='ag -s'  # Case-sensitive by default.
-alias alert='notify-send --urgency=low -i terminal "Bash: exit $?"'
-alias ascii="ag '[^ -~\\n]'"  # Highlight non-ASCII characters in a file.
-alias aq='ag -Q'  # Match literals instead of regexen.
 alias c=clear
-alias chdom=chmod  # Common typo.
-alias chrome=google-chrome
-alias dc=docker-compose
 alias diff='diff --color=auto'
 alias dr=docker
 alias e=nvim
-alias get="curl -sSi -X GET -H 'Accept: application/json'"
 alias grep='grep --color=auto --exclude-dir=.git'
-alias ie='nvim --noplugin'
 alias k=kubectl
 alias l='ls --color=auto'
 alias la='l -A'
 alias ll=$'l -AhFl --time-style=\'+%Y-%m-%d %H:%M\n%a %d %b %H:%M\''
-alias m=man
 alias mk=minikube
-alias mdl='mdl --style ~/.mdstyle'
-alias n=npm
-alias o=open
-alias post="curl -sSi -X POST -H 'Content-type: application/json' -d"
 alias printenv="printenv | sort | grep -Pe '^[A-Z][A-Z0-9_]*(?==)'"
-alias put="curl -sSi -X PUT -H 'Content-type: application/json' -d"
-alias py='clear && bpython'
-alias py3='clear && bpython3'
-alias sk=skaffold
-alias sudoa='sudo '  # An alias of sudo that expands aliases.
 alias q=exit
-alias t="tree -I \"$gumpf\""
+alias t="tree --gitignore -I \"$gumpf\""
 alias vi=nvim
 alias vim=nvim
 alias vimdiff='nvim -d'
 alias vd=vimdiff
 
+unset gumpf
 
-# Function to make a new directory and change into it.
+
 mkcd() {
     mkdir "$@" && cd "$_"
 }
 
 
-# Function to make a new directory with a memorable name.
-temp() {
-    SRC="$HOME/resources"
-    if [[ -f $SRC/adjectives && -f $SRC/animals ]]; then
-        iAdj=$RANDOM
-        nAdj=$(grep -c "." $SRC/adjectives)
-        (( iAdj %= nAdj ))
-        iAml=$RANDOM
-        nAml=$(grep -c "." $SRC/animals)
-        (( iAml %= nAml ))
-        (( iAdj++, iAml++ ))
-        NAME=$(sed -n "$iAdj p" $SRC/adjectives)
-        NAME=${NAME}-$(sed -n "$iAml p" $SRC/animals)
-        mkdir -vm 700 $NAME
-    else
-        mktemp -dp . temp-XXXX
-    fi
-}
-
-
-# Run login items.
-binsync > /dev/null
-
-# Enable programmable completion.
 if ! shopt -oq posix; then
     if [ -f /usr/share/bash-completion/bash_completion ]; then
         . /usr/share/bash-completion/bash_completion
     elif [ -f /etc/bash_completion ]; then
         . /etc/bash_completion
     fi
-fi
 
-
-source <(kubectl completion bash)
-complete -o default -F __start_kubectl k
-
-
-# Set up pyenv and pyenv-virtualenv.
-if which pyenv &> /dev/null; then
-    eval "$(pyenv init --path)"
-    if [[ -d $(pyenv root)/plugins/pyenv-virtualenv ]]; then
-        eval "$(pyenv virtualenv-init -)"
+    if which kubectl &> /dev/null; then
+        source <(kubectl completion bash)
+        complete -o default -F __start_kubectl k
     fi
 fi
 
 
-# Other things that need loading.
-if which rbenv &> /dev/null; then eval "$(rbenv init -)"; fi
+# Support for paging compressed files (& more).
 [[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
-[[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
-[[ -f $HOME/.bowman.bash ]] && source "$HOME/.bowman.bash"
-if which fasd &> /dev/null; then eval "$(fasd --init auto)"; fi
 
 
-# Customise command prompt.
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWSTASHSTATE=true
+GIT_PS1_SHOWUNTRACKEDFILES=true
+GIT_PS1_SHOWUPSTREAM=auto
+
 [[ -f $HOME/.git-prompt.sh ]] && source "$HOME/.git-prompt.sh"
-PROMPT_COMMAND='custom_prompt;history -a'
+
 custom_prompt() {
     local raw_status=$? # Must come first!
     local raw_context="$(kubectl config current-context 2>/dev/null)"
@@ -268,8 +211,9 @@ custom_prompt() {
     echo -n -e "\033]0;$raw_path\007"
 }
 
+PROMPT_COMMAND='custom_prompt;history -a'
 
-# Load colour profile for ls.
+
 if which dircolors &> /dev/null; then
     if [[ -r ~/.dircolors ]]; then
         eval "$(dircolors -b ~/.dircolors)"
@@ -278,20 +222,13 @@ if which dircolors &> /dev/null; then
     fi
 fi
 
-
-# Gimmicks.
-if which fortune sed par &> /dev/null; then
+if which fortune sed &> /dev/null; then
     echo
-    fortune | sed 's/^/  > /' | par 76
+    fortune | sed 's/^/  > /'
     echo
 fi
 
 
-# Run local config.
-if [[ -f $HOME/.bashrc_local  ]]; then
+if [[ -f $HOME/.bashrc_local ]]; then
     source "$HOME/.bashrc_local"
 fi
-
-
-# Exit cleanly.
-true

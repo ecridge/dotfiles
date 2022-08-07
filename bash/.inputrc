@@ -10,7 +10,7 @@ set show-all-if-ambiguous on
 set completion-ignore-case on
 set menu-complete-display-prefix on
 
-# Colour tab completions like `ls` output.
+# Colour listed tab completions like `ls` output.
 set colored-stats on
 
 
@@ -31,13 +31,10 @@ set keymap vi-command
 
 set keymap vi-insert
 
-# Restore emacs chords.
+# Restore emacs chords (C-U still works).
 "\C-a": "\eI"
 "\C-e": "\eA"
-"\C-k": "\eC"
-
-# Use ‘…’ to enter the arguments from the previous command.
-"…": " !!*\r"
+"\C-k": "\elC"
 
 # Make up and down arrows recall commands that have the same beginning.
 "\e[A": history-search-backward

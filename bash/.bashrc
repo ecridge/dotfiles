@@ -77,14 +77,14 @@ GIT_PS1_SHOWUPSTREAM=auto
 
 custom_prompt() {
     local raw_status=$? # Must come first!
-    local raw_context="$(kubectl config current-context 2>/dev/null)"
+    local raw_chroot=
     local raw_venv=
     local raw_host='\u@\h'
     local raw_path=$(pwd | sed -e "s|^${HOME}|~|" -re 's|([^/]{0,2})[^/]*/|\1/|g')
     local raw_branch=$(__git_ps1 '%s')
 
-    if [[ "$raw_context" == "molly" ]]; then
-        raw_context=
+    if [[ -r /etc/debian_chroot ]]; then
+        raw_chroot=$(cat /etc/debian_chroot)
     fi
 
     if [[ $VIRTUAL_ENV ]]; then
@@ -121,7 +121,7 @@ custom_prompt() {
 
     # Text colours.
     local STATUS_FG=$gruvbox_white
-    local CONTEXT_FG=$gruvbox_white
+    local CHROOT_FG=$gruvbox_white
     local VENV_FG=$gruvbox_white
     local LOCAL_FG=$gruvbox_fg3
     local REMOTE_FG=$gruvbox_fg
@@ -130,7 +130,7 @@ custom_prompt() {
 
     # Background colours.
     local STATUS_BG=$gruvbox_orange
-    local CONTEXT_BG=$gruvbox_purple
+    local CHROOT_BG=$gruvbox_purple
     local VENV_BG=$gruvbox_blue
     local LOCAL_BG=$gruvbox_bg3
     local REMOTE_BG=$gruvbox_yellow
@@ -146,14 +146,14 @@ custom_prompt() {
     fi
 
     local pretty_status="\[\e[$FG$STATUS_FG;$BG${STATUS_BG}m\] $raw_status "
-    local pretty_context="\[\e[$FG$CONTEXT_FG;$BG${CONTEXT_BG}m\] $raw_context "
+    local pretty_chroot="\[\e[$FG$CHROOT_FG;$BG${CHROOT_BG}m\] $raw_chroot "
     local pretty_venv="\[\e[$FG$VENV_FG;$BG${VENV_BG}m\] $raw_venv "
     local pretty_host="\[\e[$FG$host_fg;$BG${host_bg}m\] $raw_host "
     local pretty_path="\[\e[$FG$PATH_FG;$BG${PATH_BG}m\] $raw_path "
     local pretty_branch="\[\e[$FG$BRANCH_FG;$BG${BRANCH_BG}m\] $raw_branch "
 
-    if [[ -n $raw_context ]]; then
-        local status_arrow_bg=$CONTEXT_BG
+    if [[ -n $raw_chroot ]]; then
+        local status_arrow_bg=$CHROOT_BG
     elif [[ -n $raw_venv ]]; then
         local status_arrow_bg=$VENV_BG
     else
@@ -163,7 +163,7 @@ custom_prompt() {
     if [[ -n $raw_venv ]]; then
         local chroot_arrow_bg=$VENV_BG
     else
-        local context_arrow_bg=$host_bg
+        local chroot_arrow_bg=$host_bg
     fi
 
     if [[ -n $raw_branch ]]; then
@@ -173,15 +173,15 @@ custom_prompt() {
     fi
 
     local status_arrow="\[\e[$FG$STATUS_BG;$BG${status_arrow_bg}m\]$ARROW"
-    local context_arrow="\[\e[$FG$CONTEXT_BG;$BG${context_arrow_bg}m\]$ARROW"
+    local chroot_arrow="\[\e[$FG$CHROOT_BG;$BG${chroot_arrow_bg}m\]$ARROW"
     local venv_arrow="\[\e[$FG$VENV_BG;$BG${host_bg}m\]$ARROW"
     local host_arrow="\[\e[$FG$host_bg;$BG${PATH_BG}m\]$ARROW"
     local path_arrow="\[\e[$FG$PATH_BG;$BG${BRANCH_BG}m\]$ARROW"
     local branch_arrow="\[\e[$FG${branch_arrow_fg}m\]$RESET_BG$ARROW"
 
-    if [[ -z $raw_context ]]; then
-        pretty_context=
-        context_arrow=
+    if [[ -z $raw_chroot ]]; then
+        pretty_chroot=
+        chroot_arrow=
     fi
 
     if [[ -z $raw_venv ]]; then
@@ -199,7 +199,7 @@ custom_prompt() {
         path_arrow=
     fi
 
-    PS1="$pretty_status$status_arrow$pretty_context$context_arrow"
+    PS1="$pretty_status$status_arrow$pretty_chroot$chroot_arrow"
     PS1="$PS1$pretty_venv$venv_arrow$pretty_host$host_arrow"
     PS1="$PS1$pretty_path$path_arrow$pretty_branch$branch_arrow$RESET "
 

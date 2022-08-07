@@ -1,3 +1,5 @@
+# Non-login Bash shells start here (only env vars are inherited from parent).
+
 [[ $- == *i* ]] || return 0  # Interactive shells only.
 
 shopt -s dotglob  # Globs match hidden files.

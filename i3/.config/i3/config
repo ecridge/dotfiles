@@ -257,3 +257,5 @@ client.urgent            #d65d0e  #d65d0e     #ebdbb2  #fe8019    #d65d0e
 client.placeholder       #000000  #282828     #a89984  #000000    #1d2021
 client.background                 #282828
 # ---------------------  -------  ----------  -------  ---------  ------------
+
+exec_always --no-startup-id "xrandr --dpi 108"

@@ -204,9 +204,9 @@ __git_ps1_show_upstream ()
 	if [[ -z "$verbose" ]]; then
 		case "$count" in
 		"") # no upstream
-			p="" ;;
+			p="#" ;;
 		"0	0") # equal to upstream
-			p="=" ;;
+			p="" ;;
 		"0	"*) # ahead of upstream
 			p=">" ;;
 		*"	0") # behind upstream
@@ -536,7 +536,7 @@ __git_ps1 ()
 		if [ -n "${GIT_PS1_SHOWSTASHSTATE-}" ] &&
 		   git rev-parse --verify --quiet refs/stash >/dev/null
 		then
-			s="$"
+			s="\\$"
 		fi
 
 		if [ -n "${GIT_PS1_SHOWUNTRACKEDFILES-}" ] &&

@@ -258,4 +258,4 @@ client.placeholder       #000000  #282828     #a89984  #000000    #1d2021
 client.background                 #282828
 # ---------------------  -------  ----------  -------  ---------  ------------
 
-exec_always --no-startup-id "xrandr --dpi 108"
+exec_always --no-startup-id "xrandr --output DP-2 --auto --pos 0x0 --rotate left --output DP-4 --auto --pos 1440x420"

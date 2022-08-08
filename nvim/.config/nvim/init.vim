@@ -39,8 +39,8 @@ set splitbelow splitright
 set wildignorecase wildmode=longest,list
 
 " Python.
-let g:python_host_prog = '/home/joe/.pyenv/versions/neovim2/bin/python'
-let g:python3_host_prog = '/home/joe/.pyenv/versions/neovim3/bin/python'
+let g:python_host_prog = 0
+let g:python3_host_prog = '/usr/bin/python3'
 
 " Colour scheme.
 set background=dark

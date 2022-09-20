@@ -1,6 +1,6 @@
 [user]
-	name = Joe Cridge
-	email = joe.cridge@me.com
+	name = Eden Cridge
+	email = eden.cridge@gmail.com
 [core]
 	autocrlf = input
 	excludesfile = ~/.gitignore_global

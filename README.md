@@ -32,7 +32,7 @@ These configuration files are for the GNU toolchain.
 3.  Clone this repo and use `stow` to link the relevant config into `$HOME`:
 
     ```bash
-    cd && git clone git@github.com:joecridge/dotfiles.git -b linux
+    cd && git clone git@github.com:ecridge/dotfiles.git -b linux
     cd dotfiles
     stow bash
     stow i3  # etc...
@@ -40,7 +40,7 @@ These configuration files are for the GNU toolchain.
 
 4.  Maybe cherry-pick some extra stuff from the [outdated] [wiki][].
 
-[jeo]: https://github.com/joecridge/jeo
+[jeo]: https://github.com/ecridge/jeo
 [universal-ctags]: https://github.com/universal-ctags/ctags
 [vim-plug]: https://github.com/junegunn/vim-plug
-[wiki]: https://github.com/joecridge/dotfiles/wiki
+[wiki]: https://github.com/ecridge/dotfiles/wiki

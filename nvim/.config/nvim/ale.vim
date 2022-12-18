@@ -18,7 +18,7 @@ let g:ale_linters = {
     \ 'yaml': ['yamllint'],
 \ }
 
-let g:ale_cpp_gcc_options = '-std=c++17 -Wall'
+let g:ale_cpp_cc_options = '-std=c++2a -Wall -Wno-switch'
 
 " Always keep the gutter open.
 let g:ale_sign_column_always = 1

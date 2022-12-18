@@ -40,7 +40,7 @@ set wildignorecase wildmode=longest,list
 
 " Python.
 let g:python_host_prog = 0
-let g:python3_host_prog = '/usr/bin/python3'
+let g:python3_host_prog = '~/.envs/neovim/bin/python3'
 
 " Colour scheme.
 set background=dark
@@ -171,7 +171,7 @@ augroup LanguageSpecific
   autocmd FileType html,htmldjango,jst setlocal formatoptions-=t textwidth=100
   autocmd FileType kotlin set commentstring=//%s formatoptions+=r
   autocmd FileType kotlin set shiftwidth=4 tabstop=4 textwidth=120
-  autocmd FileType python set joinspaces
+  autocmd FileType python set joinspaces textwidth=120
   autocmd FileType python normal zR
   autocmd FileType sh,sshconfig,sql set shiftwidth=4 tabstop=4
   autocmd FileType xkb set shiftwidth=4 tabstop=4

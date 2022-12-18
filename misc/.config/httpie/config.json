@@ -1,6 +1,5 @@
 {
     "default_options": [
-        "--style=gruvbox-dark",
-        "--default-scheme=https"
+        "--style=gruvbox-dark"
     ]
 }

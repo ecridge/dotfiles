@@ -56,7 +56,12 @@ bindsym Shift+XF86AudioLowerVolume exec playerctrl prev
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+#
+# `alacritty msg create-window || alacritty` would be more efficient, so that
+# there's only one process (GNOME Terminal manages this itself), but until
+# https://github.com/alacritty/alacritty/issues/2453 is resolved, all the
+# windows freeze from time to time because of a clipboard interaction :(
+bindsym $mod+Return exec --no-startup-id alacritty
 
 # kill focused window
 bindsym $mod+q kill
@@ -259,3 +264,4 @@ client.background                 #282828
 # ---------------------  -------  ----------  -------  ---------  ------------
 
 exec_always --no-startup-id "xrandr --output DP-2 --auto --pos 0x0 --rotate left --output DP-4 --auto --pos 1440x420"
+exec_always --no-startup-id alacritty

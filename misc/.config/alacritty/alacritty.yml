@@ -1,0 +1,19 @@
+font:
+  # Source Code Pro has (Light, Regular, Medium, Semibold, Bold).
+  normal:
+    family: Source Code Pro for Powerline
+    style: Regular
+  bold:
+    family: Source Code Pro for Powerline
+    style: Bold
+  italic:
+    family: Source Code Pro for Powerline
+    style: Italic
+  bold_italic:
+    family: Source Code Pro for Powerline
+    style: Bold Italic
+
+  size: 10.5
+
+  offset:
+   y: 1  # Added line spacing.

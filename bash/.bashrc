@@ -24,13 +24,14 @@ gumpf+='Network Trash Folder|Temporary Items|.apdisk|[._]*.s[a-w][a-z]|'
 gumpf+='[._]s[a-w][a-z]|Session.vim|.netrwhist|*~|tags|DerivedData|*.pbxuser|'
 gumpf+='*.mode1v3|*.mode2v3|*.perspectivev3|xcuserdata|*.moved-aside|'
 gumpf+='*.xccheckout|*.xcscmblueprint|.git|node_modules|typings|__pycache__|'
-gumpf+='coverage_report|htmlcov|_site|*.tu|*.tu-*'
+gumpf+='coverage_report|htmlcov|_site|*.tu|*.tu-*|env|target'
 
 alias c=clear
 alias diff='diff --color=auto'
 alias dr=docker
 alias e=nvim
 alias grep='grep --color=auto --exclude-dir=.git'
+alias jq='jq --indent 4'
 alias k=kubectl
 alias l='ls --color=auto'
 alias la='l -A'

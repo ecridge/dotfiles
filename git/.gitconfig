@@ -23,7 +23,7 @@
 	ri = rebase --interactive --autostash
 	st = status
 [merge]
-	conflictstyle = diff3
+	conflictstyle = zdiff3
 [pager]
 	log = diff-highlight | less
 	show = diff-highlight | less

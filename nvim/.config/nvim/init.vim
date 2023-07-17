@@ -193,8 +193,8 @@ source ~/.config/nvim/ale.vim
 source ~/.config/nvim/cpp-modern.vim
 "source ~/.config/nvim/deoplete.vim
 source ~/.config/nvim/editorconfig.vim
+source ~/.config/nvim/everforest.vim
 source ~/.config/nvim/gitgutter.vim
-source ~/.config/nvim/gruvbox.vim
 source ~/.config/nvim/indent-guides.vim
 source ~/.config/nvim/pgsql.vim
 source ~/.config/nvim/python.vim

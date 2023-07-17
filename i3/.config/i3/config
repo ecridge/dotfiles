@@ -220,13 +220,13 @@ bar {
         # ----------------  -------  ----------  -------
         # Color class       Border   Background  Text
         # ----------------  -------  ----------  -------
-        background                      #3c3836
-        statusline                               #a89984
-        separator                                #928374
-        focused_workspace   #83a598     #458588  #ebdbb2
-        active_workspace    #928374     #504945  #a89984
-        inactive_workspace  #928374     #504945  #a89984
-        urgent_workspace    #fe8019     #d65d0e  #ebdbb2
+        background                      #3d484d
+        statusline                               #9da9a0
+        separator                                #9da9a0
+        focused_workspace   #9da9a0     #7fbbb3  #2d353b
+        active_workspace    #9da9a0     #3d484d  #9da9a0
+        inactive_workspace  #9da9a0     #3d484d  #9da9a0
+        urgent_workspace    #9da9a0     #e69875  #2d353b
         # ----------------  -------  ----------  -------
     }
 }
@@ -240,13 +240,13 @@ bar {
         # ----------------  -------  ----------  -------
         # Color class       Border   Background  Text
         # ----------------  -------  ----------  -------
-        background                      #3c3836
-        statusline                               #a89984
-        separator                                #928374
-        focused_workspace   #83a598     #458588  #ebdbb2
-        active_workspace    #928374     #504945  #a89984
-        inactive_workspace  #928374     #504945  #a89984
-        urgent_workspace    #fe8019     #d65d0e  #ebdbb2
+        background                      #3d484d
+        statusline                               #9da9a0
+        separator                                #9da9a0
+        focused_workspace   #2d353b     #7fbbb3  #2d353b
+        active_workspace    #9da9a0     #3d484d  #9da9a0
+        inactive_workspace  #9da9a0     #3d484d  #9da9a0
+        urgent_workspace    #2d353b     #e69875  #2d353b
         # ----------------  -------  ----------  -------
     }
 }
@@ -255,12 +255,12 @@ bar {
 # ---------------------  -------  ----------  -------  ---------  ------------
 # Colour class           Border   Background  Text     Indicator  Child border
 # ---------------------  -------  ----------  -------  ---------  ------------
-client.focused           #458588  #458588     #ebdbb2  #83a598    #458588
-client.focused_inactive  #1d2021  #282828     #a89984  #1d2021    #282828
-client.unfocused         #1d2021  #282828     #a89984  #1d2021    #282828
-client.urgent            #d65d0e  #d65d0e     #ebdbb2  #fe8019    #d65d0e
-client.placeholder       #000000  #282828     #a89984  #000000    #1d2021
-client.background                 #282828
+client.focused           #7fbbb3  #7fbbb3     #2d353b  #a7c080    #7fbbb3
+client.focused_inactive  #232a2e  #343f44     #9da9a0  #232a2e    #232a2e
+client.unfocused         #232a2e  #343f44     #9da9a0  #232a2e    #232a2e
+client.urgent            #e69875  #e69875     #2d353b  #a7c080    #e69875
+client.placeholder       #232a2e  #343f44     #9da9a0  #232a2e    #232a2e
+client.background                 #343f44
 # ---------------------  -------  ----------  -------  ---------  ------------
 
 exec_always --no-startup-id "xrandr --output DP-2 --auto --pos 0x0 --rotate left --output DP-4 --auto --pos 1440x420"

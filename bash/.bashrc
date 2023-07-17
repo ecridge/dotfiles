@@ -100,44 +100,54 @@ custom_prompt() {
     local RESET_BG="\[\e[49m\]"
 
     if [[ "$BACKGROUND" == 'light' ]]; then
-        local gruvbox_fg='60;56;54'
-        local gruvbox_fg3='102;92;84'
-        local gruvbox_gray='124;111;100'
-        local gruvbox_bg1='235;219;178'
-        local gruvbox_bg2='213;196;161'
-        local gruvbox_bg3='189;174;147'
+        local everforest_bg0='253;246;227'
+        local everforest_bg1='244;240;217'
+        local everforest_bg2='239;235;212'
+        local everforest_bg3='230;226;204'
+        local everforest_red='248;85;82'
+        #local everforest_orange='245;125;38'
+        local everforest_yellow='223;160;0'
+        local everforest_green='141;161;1'
+        #local everforest_aqua='53;167;124'
+        local everforest_blue='58;148;197'
+        #local everforest_purple='223;105;186'
+        local everforest_grey0='166;176;160'
+        local everforest_grey1='147;159;145'
+        local everforest_grey2='130;145;129'
     else
-        local gruvbox_fg='235;219;178'
-        local gruvbox_fg3='189;174;147'
-        local gruvbox_gray='168;153;132'
-        local gruvbox_bg1='60;56;54'
-        local gruvbox_bg2='80;73;69'
-        local gruvbox_bg3='102;92;84'
+        local everforest_bg0='45;53;59'
+        local everforest_bg1='52;63;68'
+        local everforest_bg2='61;72;77'
+        local everforest_bg3='71;82;88'
+        local everforest_red='230;126;128'
+        #local everforest_orange='230;152;117'
+        local everforest_yellow='219;188;127'
+        local everforest_green='167;192;128'
+        #local everforest_aqua='131;192;146'
+        local everforest_blue='127;187;179'
+        #local everforest_purple='214;153;182'
+        local everforest_grey0='122;132;120'
+        local everforest_grey1='133;146;137'
+        local everforest_grey2='157;169;160'
     fi
 
-    local gruvbox_white='235;219;178'
-    local gruvbox_purple='177;98;134'
-    local gruvbox_orange='214;93;14'
-    local gruvbox_blue='69;133;136'
-    local gruvbox_yellow='215;153;33'
-
     # Text colours.
-    local STATUS_FG=$gruvbox_white
-    local CHROOT_FG=$gruvbox_white
-    local VENV_FG=$gruvbox_white
-    local LOCAL_FG=$gruvbox_fg3
-    local REMOTE_FG=$gruvbox_fg
-    local PATH_FG=$gruvbox_gray
-    local BRANCH_FG=$gruvbox_gray
+    local STATUS_FG=$everforest_bg0
+    local CHROOT_FG=$everforest_bg0
+    local VENV_FG=$everforest_bg0
+    local LOCAL_FG=$everforest_grey2
+    local REMOTE_FG=$everforest_bg0
+    local PATH_FG=$everforest_grey1
+    local BRANCH_FG=$everforest_grey0
 
     # Background colours.
-    local STATUS_BG=$gruvbox_orange
-    local CHROOT_BG=$gruvbox_purple
-    local VENV_BG=$gruvbox_blue
-    local LOCAL_BG=$gruvbox_bg3
-    local REMOTE_BG=$gruvbox_yellow
-    local PATH_BG=$gruvbox_bg2
-    local BRANCH_BG=$gruvbox_bg1
+    local STATUS_BG=$everforest_red
+    local CHROOT_BG=$everforest_yellow
+    local VENV_BG=$everforest_blue
+    local LOCAL_BG=$everforest_bg3
+    local REMOTE_BG=$everforest_green
+    local PATH_BG=$everforest_bg2
+    local BRANCH_BG=$everforest_bg1
 
     if [[ -n $SSH_CLIENT ]]; then
         local host_fg=$REMOTE_FG
@@ -205,9 +215,9 @@ custom_prompt() {
     PS1="$PS1$pretty_venv$venv_arrow$pretty_host$host_arrow"
     PS1="$PS1$pretty_path$path_arrow$pretty_branch$branch_arrow$RESET "
 
-    PS2="\[\e[$FG${gruvbox_gray};$BG${gruvbox_bg1}m\]...\[\e[$FG${gruvbox_bg1}m\]$RESET_BG$ARROW$RESET "
-    PS3="\[\e[$FG${gruvbox_white};$BG${gruvbox_blue}m\] ${PS3:=Enter a number: }\[\e[$FG${gruvbox_blue}m\]$RESET_BG$ARROW$RESET "
-    PS4="\[\e[$FG${gruvbox_white};$BG${gruvbox_blue}m\] $0:$LINENO \e[$FG${gruvbox_blue}m\]$RESET_BG$ARROW$RESET "
+    PS2="\[\e[$FG${everforest_grey0};$BG${everforest_bg1}m\]...\[\e[$FG${everforest_bg1}m\]$RESET_BG$ARROW$RESET "
+    PS3="${PS3:=Enter a number: }"  # FIXME
+    PS4="\[\e[$FG${everforest_grey0};$BG${everforest_bg1}m\] $0:$LINENO \e[$FG${everforest_bg1}m\]$RESET_BG$ARROW$RESET "
 
     # Set the window title.
     echo -n -e "\033]0;$raw_path\007"

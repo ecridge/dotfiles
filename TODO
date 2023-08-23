@@ -1,0 +1,32 @@
+* Replace:
+  - i3 (i3lock, imagemagick, playerctl, scrot) -> xmonad? + picom
+  - neovim -> helix
+  - ctags -> nothing?
+  - bin/open -> some file browser?
+  - (tree -> broot or something else??)
+
+* Try Source Code Pro at a lighter weight and smaller size?
+
+  Or try one of the other families from the Powerline repo.  Other candidates:
+  Anonymous, Cousine, DejaVu??, Fira, Hack, Noto, Roboto
+
+* Remove the _already unused_ Ligaturizer fork from my GitHub (from Fira days).
+
+* Remove config files for removed things (and references to those things or
+  files from remaining files).
+
+* Update diff-highlight and git-prompt?
+
+* Remove unused sourcing and aliases from bash config.
+
+* Change default repo branch to `main` on GitHub.
+
+* Eliminate need for unstashed local changes!!
+
+* Use 120 as line width, 4 as tabstop for everything by default.
+
+* Maybe have another run-through to see if I can simplify remaining configs
+  in general (and generally update to 120 chars etc?).
+
+* Remove loadkeys/fixdisplays committed stuff, and put them as example
+  commands in the README instead.

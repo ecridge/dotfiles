@@ -12,6 +12,8 @@
        git \
        helix \
        httpie \
+       libghc-xmonad-contrib-dev \
+       libghc-xmonad-dev \
        jq \
        pipx \
        python3-ipython \

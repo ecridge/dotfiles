@@ -13,7 +13,7 @@ font:
     family: Source Code Pro for Powerline
     style: Bold Italic
 
-  size: 6.5  # 9
+  size: 9
 
   offset:
    y: 1  # Added line spacing.

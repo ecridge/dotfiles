@@ -1,1 +1,4 @@
 theme = "everforest_dark_medium"
+
+[editor.statusline]
+right = ["diagnostics", "selections", "position-percentage", "file-encoding"]

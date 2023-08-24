@@ -13,8 +13,8 @@
        helix \
        httpie \
        jq \
+       pipx \
        python3-ipython \
-       python3-pipx \
        ripgrep \
        stow \
        suckless-tools \

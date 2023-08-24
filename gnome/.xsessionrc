@@ -16,10 +16,14 @@
 
 
 # Arrange displays.
-xrandr \
-    --output eDP-1 --auto --pos 0x1360 \
-    --output HDMI-1-0 --auto --pos 1920x0 --rotate left \
-    --output DP-1-0 --auto --pos 3360x420
+if [[ -x ~/bin/fixdisplays ]]; then
+    ~/bin/fixdisplays
+fi
+
+# Restore previously set background, from e.g. `feh --bg-fill /usr/share/backgrounds/Some_Included_Image.png`.
+if [[ -x ~/.fehbg ]]; then
+    ~/.fehbg
+fi
 
 
 # Put Jeo on Kinesis.
@@ -28,10 +32,6 @@ xinput --list \
     | grep -Ev 'Control|pointer' \
     | grep -Po '(?<=id=)[0-9]+'  \
     | xargs -I device_id xkbcomp -i device_id ~/.config/xkb/keymap.xkm $DISPLAY
-
-
-# Restore previously set background, from e.g. `feh --bg-fill /usr/share/backgrounds/Some_Included_Image.png`.
-~/.fehbg
 
 
 exec xmonad

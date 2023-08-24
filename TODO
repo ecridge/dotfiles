@@ -30,3 +30,8 @@
 
 * Remove loadkeys/fixdisplays committed stuff, and put them as example
   commands in the README instead.
+
+* Replace `~/bin/` with `~/.local/bin/`, and remove the code that adds the former to PATH?
+  (And the code that hides `~/bin/` from Nautilus.)
+
+* Dispense with the `gnome/` folder -- split into ?`ubuntu` and `resources`?

@@ -41,4 +41,14 @@
 5. Clone [jeo](https://github.com/ecridge/jeo), compile a Kinesis keymap, and copy or link it into
    `~/.config/xkb/keymap.xkm`.
 
-6. Set a wallpaper (will be reloaded thereafter), e.g. `feh --bg-fill /usr/share/backgrounds/Some_Included_Image.png`.
+6. Make a suitable `xrandr` command and put it as a Bash executable in `~/bin/fixdisplays`, e.g.
+
+   ```bash
+   #!/bin/bash
+   xrandr \
+       --output eDP-1 --auto --pos 0x1360 \
+       --output HDMI-1-0 --auto --pos 1920x0 --rotate left \
+       --output DP-1-0 --auto --pos 3360x420
+   ```
+
+7. Set a wallpaper (will be reloaded thereafter), e.g. `feh --bg-fill /usr/share/backgrounds/Some_Included_Image.png`.

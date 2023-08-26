@@ -1,0 +1,7 @@
+#!/bin/bash
+
+xinput --list \
+    | grep Kinesis \
+    | grep -Ev 'Control|pointer' \
+    | grep -Po '(?<=id=)[0-9]+'  \
+    | xargs -I device_id xkbcomp -i device_id ~/.config/xkb/keymap.xkm "$DISPLAY"

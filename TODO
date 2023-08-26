@@ -8,9 +8,6 @@
 
 * Remove the _already unused_ Ligaturizer fork from my GitHub (from Fira days).
 
-* Remove config files for removed things (and references to those things or
-  files from remaining files).
-
 * Update diff-highlight and git-prompt?
 
 * Remove unused sourcing and aliases from bash config.

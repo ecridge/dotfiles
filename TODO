@@ -1,14 +1,12 @@
 * Replace:
-  - i3 (i3lock, imagemagick, playerctl, scrot) -> xmonad? + picom
   - neovim -> helix
   - ctags -> nothing?
   - bin/open -> some file browser?
   - (tree -> broot or something else??)
 
+* Install some file browser; playerctl?; set up picom?
 
 * Remove the _already unused_ Ligaturizer fork from my GitHub (from Fira days).
-
-* Update diff-highlight and git-prompt?
 
 * Remove unused sourcing and aliases from bash config.
 

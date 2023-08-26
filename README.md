@@ -18,6 +18,7 @@
        pipx \
        python3-ipython \
        ripgrep \
+       scrot \
        stow \
        suckless-tools \
        tree \

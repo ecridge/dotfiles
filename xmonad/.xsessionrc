@@ -16,13 +16,19 @@
 
 
 # Arrange displays.
-if [[ -x ~/bin/fixdisplays ]]; then
-    ~/bin/fixdisplays
+if which fixdisplays &> /dev/null; then
+    fixdisplays
 fi
 
 # Restore previously set background, from e.g. `feh --bg-fill /usr/share/backgrounds/Some_Included_Image.png`.
 if [[ -x ~/.fehbg ]]; then
     ~/.fehbg
+fi
+
+# Hook locker up to MIT screen saver extension and systemd's login manager.
+# Ensures locking happens before suspension (on request or due to inactivity).
+if which xss-lock &> /dev/null; then
+    xss-lock --transfer-sleep-lock -- i3lock-fuzzy &
 fi
 
 
@@ -31,7 +37,7 @@ xinput --list \
     | grep Kinesis \
     | grep -Ev 'Control|pointer' \
     | grep -Po '(?<=id=)[0-9]+'  \
-    | xargs -I device_id xkbcomp -i device_id ~/.config/xkb/keymap.xkm $DISPLAY
+    | xargs -I device_id xkbcomp -i device_id ~/.config/xkb/keymap.xkm "$DISPLAY"
 
 
 exec xmonad

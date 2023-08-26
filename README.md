@@ -12,9 +12,11 @@
        git \
        helix \
        httpie \
+       i3lock \
+       imagemagick \
+       jq \
        libghc-xmonad-contrib-dev \
        libghc-xmonad-dev \
-       jq \
        pipx \
        python3-ipython \
        ripgrep \

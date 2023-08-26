@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Lock screen with a fuzzy screenshot.
+# Requires these packages: scrot imagemagick i3lock
+
+set -e
+
+IMG="/tmp/i3lock-$USER.png"
+
+scrot --silent "$IMG"
+convert "$IMG" -interpolate nearest -virtual-pixel mirror -spread 5 "$IMG"
+i3lock --nofork --image "$IMG" --tiling --no-unlock-indicator
+rm "$IMG"

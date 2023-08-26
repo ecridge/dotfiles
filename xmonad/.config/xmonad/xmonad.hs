@@ -11,4 +11,5 @@ main = xmonad $ def
     }
     `additionalKeysP`
     [ ("M-s", unGrab *> spawn "scrot -s -F ~/Downloads/'Screen Shot %Y-%m-%d at %H.%M.%S.png'")
+    , ("M-x", spawn "xset s activate")  -- Start screen saver (which is configured to lock screen)
     ]

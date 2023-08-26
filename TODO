@@ -5,10 +5,6 @@
   - bin/open -> some file browser?
   - (tree -> broot or something else??)
 
-* Try Source Code Pro at a lighter weight and smaller size?
-
-  Or try one of the other families from the Powerline repo.  Other candidates:
-  Anonymous, Cousine, DejaVu??, Fira, Hack, Noto, Roboto
 
 * Remove the _already unused_ Ligaturizer fork from my GitHub (from Fira days).
 
@@ -29,5 +25,3 @@
   in general (and generally update to 120 chars etc?).
 
 * Stop using `~/bin/` entirely?  (i.e. remove the code that adds it to PATH?)
-
-* Dispense with the `gnome/` folder -- split into ?`ubuntu` and `resources`?

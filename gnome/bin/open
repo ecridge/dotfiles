@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-# Open a directory in Nautilus file browser, or a file in the preferred app
-# Usage: $ open /path/to/dir
-# Note: this overrides /bin/open
-
-xdg-open $1 &> /dev/null &
-exit 0

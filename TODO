@@ -28,10 +28,6 @@
 * Maybe have another run-through to see if I can simplify remaining configs
   in general (and generally update to 120 chars etc?).
 
-* Remove loadkeys/fixdisplays committed stuff, and put them as example
-  commands in the README instead.
-
-* Replace `~/bin/` with `~/.local/bin/`, and remove the code that adds the former to PATH?
-  (And the code that hides `~/bin/` from Nautilus.)
+* Stop using `~/bin/` entirely?  (i.e. remove the code that adds it to PATH?)
 
 * Dispense with the `gnome/` folder -- split into ?`ubuntu` and `resources`?

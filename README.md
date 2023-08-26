@@ -46,7 +46,7 @@
 5. Clone [jeo](https://github.com/ecridge/jeo), compile a Kinesis keymap, and copy or link it into
    `~/.config/xkb/keymap.xkm`.
 
-6. Make a suitable `xrandr` command and put it as a Bash executable in `~/bin/fixdisplays`, e.g.
+6. Make a suitable `xrandr` command and put it as a Bash executable in `~/.local/bin/fixdisplays`, e.g.
 
    ```bash
    #!/bin/bash

@@ -2,8 +2,8 @@
 
 # FIXME: Some of this should be in `~/.xsession`, but that doesn't seem to work on Ubuntu 23.04.
 #
-#   `~/.xsessionrc` is a Debian extension -- see `man 5 Xsession` Ubuntu's start up procedure.
-#   The former is intended to provide a place to inject environment variables that should be
+#   `~/.xsessionrc` is a Debian extension -- see `man 5 Xsession` on Ubuntu's start up procedure.
+#   This file is intended to provide a place to inject environment variables that should be
 #   available to all graphical sessions, though it can also be used to run things like `xrandr`
 #   or start daemons that are desired to happen before all graphical sessions.
 #
@@ -37,5 +37,9 @@ if which loadkeys &> /dev/null; then
     loadkeys
 fi
 
+
+if which xmobar &> /dev/null; then
+    xmobar &
+fi
 
 exec xmonad

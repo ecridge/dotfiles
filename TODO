@@ -20,3 +20,6 @@
   in general (and generally update to 120 chars etc?).
 
 * Stop using `~/bin/` entirely?  (i.e. remove the code that adds it to PATH?)
+
+* Remove bash completion for `k` kubectl alias; add completion for other
+  aliases in `.bashrc_local` instead.

@@ -32,6 +32,14 @@ if which xss-lock &> /dev/null; then
 fi
 
 
+# FIXME: Just setting the cursor name gets DMZ-White @ 64 for the root window,
+#   which is consistent with what is being used by the other windows (and which
+#   this command does not change).  Probably it's desirable to fix the DPI used
+#   and select a different cursor theme separately.
+#xsetroot -xcf /usr/share/icons/DMZ-Black/cursors/left_ptr 16
+xsetroot -cursor_name left_ptr
+
+
 # Put Jeo on Kinesis.
 if which loadkeys &> /dev/null; then
     loadkeys

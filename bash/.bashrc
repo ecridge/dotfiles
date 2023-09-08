@@ -221,6 +221,7 @@ custom_prompt() {
     PS4="\[\e[$FG${everforest_grey0};$BG${everforest_bg1}m\] $0:$LINENO \e[$FG${everforest_bg1}m\]$RESET_BG$ARROW$RESET "
 
     # Set the window title.
+    # FIXME: Remove this once no longer showing window title in xmobar.
     echo -n -e "\033]0;$raw_path\007"
 }
 

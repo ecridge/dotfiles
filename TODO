@@ -10,8 +10,6 @@
 
 * Remove unused sourcing and aliases from bash config.
 
-* Change default repo branch to `main` on GitHub.
-
 * Eliminate need for unstashed local changes!!
 
 * Use 120 as line width, 4 as tabstop for everything by default.

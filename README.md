@@ -68,4 +68,6 @@
        --output DP-1-0 --auto --pos 3360x420
    ```
 
-8. Set a wallpaper (will be reloaded thereafter), e.g. `feh --bg-fill /usr/share/backgrounds/Some_Included_Image.png`.
+8. Set the DPI (e.g. `Xft.dpi: 108` for 27" QHD) in `~/.Xresources`.
+
+9. Set a wallpaper (will be reloaded thereafter), e.g. `feh --bg-fill /usr/share/backgrounds/Some_Included_Image.png`.

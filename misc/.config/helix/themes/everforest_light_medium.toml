@@ -73,7 +73,7 @@
 "ui.menu.selected" = { fg = "bg0", bg = "green" }
 "ui.virtual.whitespace" = { fg = "bg4" }
 "ui.virtual.indent-guide" = { fg = "bg4" }
-"ui.virtual.ruler" = { bg = "bg3" }
+"ui.virtual.ruler" = { bg = "bg1" }
 
 "hint" = "blue"
 "info" = "aqua"

@@ -21,7 +21,6 @@
        libghc-xmonad-contrib-dev \
        libghc-xmonad-dev \
        pipx \
-       python3-ipython \
        ripgrep \
        scrot \
        stow \
@@ -30,6 +29,9 @@
        xmobar \
        xmonad \
        xsel
+   pipx install \
+       cmake-language-server \
+       ipython
    ```
 
 2. Install [Rust](https://rustup.rs/), then use Cargo to install the latest release of

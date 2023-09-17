@@ -1,5 +1,6 @@
 These are the built themes from <https://github.com/CptPotato/helix-themes>,
-commit `0ebf77d`, with `ui.selection{,.primary}` changed.  License:
+commit `0ebf77d`, with `ui.selection{,.primary}` and `ui.virtual.ruler` changed.
+License:
 
 MIT License
 

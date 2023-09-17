@@ -1,4 +1,21 @@
 theme = "everforest_dark_medium"
 
+[editor]
+mouse = false
+rulers = [121]
+
 [editor.statusline]
-right = ["diagnostics", "selections", "position-percentage", "file-encoding"]
+right = ["diagnostics", "selections", "primary-selection-length", "position", "spacer", "position-percentage", "file-encoding"]
+
+[editor.indent-guides]
+render = true
+
+[keys.normal]
+left = "jump_view_left"
+right = "jump_view_right"
+up = "jump_view_up"
+down = "jump_view_down"
+"S-left" = "swap_view_left"
+"S-right" = "swap_view_right"
+"S-up" = "swap_view_up"
+"S-down" = "swap_view_down"

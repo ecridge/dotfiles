@@ -30,6 +30,9 @@
 *.tu
 *.tu-*
 
+# CMake
+compile_commands.json
+
 # LibreOffice
 .~lock.*#
 

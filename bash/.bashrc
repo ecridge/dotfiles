@@ -32,7 +32,7 @@ gumpf+='CTestTestfile.cmake|_deps'
 alias c=clear
 alias diff='diff --color=auto'
 alias dr=docker
-alias e=nvim
+alias e=hx
 alias grep='grep --color=auto --exclude-dir=.git'
 alias jq='jq --indent 4'
 alias k=kubectl

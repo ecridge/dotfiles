@@ -41,6 +41,11 @@ if which loadkeys &> /dev/null; then
 fi
 
 
+if which picom &> /dev/null; then
+    picom &
+fi
+
+
 if which xmobar &> /dev/null; then
     xmobar &
 fi

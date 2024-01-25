@@ -4,8 +4,9 @@ Config { overrideRedirect = False
                            ]
        , bgColor  = "#343f44"
        , fgColor  = "#859289"
+	   , alpha = 216
        -- , position = BottomW L 90
-       , position = Bottom
+       , position = BottomH 23
        , commands = [ Run Weather "EGWU"
                         [ "--template", "<weather> <fn=1><fc=#d3c6aa><tempC>°C</fc></fn>"
                         ] 9000

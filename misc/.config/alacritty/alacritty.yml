@@ -68,3 +68,9 @@ schemes:
       white:   '#e0dcc7'
 
 colors: *everforest_dark_medium
+
+window:
+  opacity: 0.7
+  padding:
+    x: 5
+    y: 5

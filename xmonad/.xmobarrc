@@ -1,6 +1,6 @@
 Config { overrideRedirect = False
-       , font     = "Source Code Pro for Powerline Medium 10"
-       , additionalFonts = [ "Source Code Pro for Powerline Semibold 10"
+       , font     = "SauceCodePro Nerd Font Medium 10"
+       , additionalFonts = [ "SauceCodePro NerdFont SemiBold 10"
                            ]
        , bgColor  = "#343f44"
        , fgColor  = "#859289"

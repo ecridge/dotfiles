@@ -1,22 +1,22 @@
 font:
-  # Source Code Pro has (Light, Regular, Medium, Semibold, Bold).
+  # Use `fc-list | grep -i sauce` to find variants.
   normal:
-    family: Source Code Pro for Powerline
+    family: SauceCodePro Nerd Font
     style: Regular
   bold:
-    family: Source Code Pro for Powerline
+    family: SauceCodePro Nerd Font
     style: Bold
   italic:
-    family: Source Code Pro for Powerline
+    family: SauceCodePro Nerd Font
     style: Italic
   bold_italic:
-    family: Source Code Pro for Powerline
+    family: SauceCodePro Nerd Font
     style: Bold Italic
 
   size: 9
 
   offset:
-   y: 1  # Added line spacing.
+   y: 0  # Added line spacing.
 
 schemes:
   # https://gist.github.com/sainnhe/6432f83181c4520ea87b5211fed27950

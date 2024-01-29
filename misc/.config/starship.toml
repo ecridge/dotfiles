@@ -4,6 +4,19 @@ disabled = true
 [cmake]
 disabled = true
 
+[cmd_duration]
+format = '[\($duration\)]($style) '
+style = 'italic'
+
+[directory]
+style = 'bold'
+
+[git_branch]
+format = '[$symbol$branch(:$remote_branch)]($style) '
+symbol = ''
+style = 'italic'
+ignore_branches = ['master', 'main']
+
 [git_status]
 conflicted = '!'
 ahead = '>'
@@ -11,6 +24,11 @@ behind = '<'
 diverged = '<>'
 untracked = '%'
 modified = '*'
+style = 'bold'
 
 [python]
-symbol = ' '
+format = '[${symbol}${pyenv_prefix}\(($virtualenv @ )(${version})\) ]($style)'
+version_format = '${raw}'
+symbol = ''
+style = 'bold blue'
+detect_extensions = []

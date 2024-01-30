@@ -33,6 +33,7 @@
    pipx install \
        cmake-language-server \
        ipython
+   curl -sS https://starship.rs/install.sh | sh
    ```
 
 2. Install [Rust](https://rustup.rs/), then use Cargo to install the latest release of
@@ -57,6 +58,8 @@
    stow bash
    stow git  # etc...
    ```
+
+   Run `fc-cache -f ~/.local/share/fonts` after stowing fonts.
 
 6. Clone [jeo](https://github.com/ecridge/jeo), compile a Kinesis keymap, and copy or link it into
    `~/.config/xkb/keymap.xkm`.

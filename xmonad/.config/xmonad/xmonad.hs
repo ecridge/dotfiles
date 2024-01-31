@@ -10,6 +10,8 @@ import XMonad.Layout.Spacing
 import XMonad.Util.EZConfig
 import XMonad.Util.Ungrab
 
+import System.Exit
+
 
 
 main :: IO ()
@@ -27,6 +29,10 @@ myConfig = def
     `additionalKeysP`
     [ ("M-s", unGrab *> spawn "scrot -s -F ~/Downloads/'Screen Shot %Y-%m-%d at %H.%M.%S.png'")
     , ("M-x", spawn "xset s activate")  -- Start screen saver (which is configured to lock screen)
+    , ("M-A-S-q", io exitSuccess)
+    ]
+    `removeKeysP`
+    [  "M-S-q"
     ]
 
 myLayout = tiled ||| Mirror tiled ||| Full

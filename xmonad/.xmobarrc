@@ -2,9 +2,9 @@ Config { overrideRedirect = False
        , font     = "SauceCodePro Nerd Font Medium 10"
        , additionalFonts = [ "SauceCodePro NerdFont SemiBold 10"
                            ]
-       , bgColor  = "#343f44"
+       , bgColor  = "#3a515d"
        , fgColor  = "#859289"
-	   , alpha = 216
+       , alpha = 72
        -- , position = BottomW L 90
        , position = BottomH 23
        , commands = [ Run Weather "EGWU"

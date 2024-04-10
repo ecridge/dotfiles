@@ -1,0 +1,42 @@
+# On Ubuntu, the `/etc/X11/Xsession` script *sources* all the files under `/etc/X11/Xsession.d/` in lexical order.
+# The final file there ultimately *execs* whatever command was specified under `Exec` in the desktop entry that
+# was selected upon login.  For xmonad, the desktop entry is `/usr/share/xsessions/xmonad.desktop`, and the command
+# ultimately runs `/usr/bin/xmonad-session`.  This is a script which execs xmonad itself, but before it does that,
+# it sources this file -- if it exists.
+
+
+# Arrange displays.
+if which fixdisplays &> /dev/null; then
+    fixdisplays
+fi
+
+# Restore previously set background, from e.g. `feh --bg-fill /usr/share/backgrounds/Some_Included_Image.png`.
+if [[ -x ~/.fehbg ]]; then
+    ~/.fehbg
+fi
+
+# Hook locker up to MIT screen saver extension and systemd's login manager.
+# Ensures locking happens before suspension (on request or due to inactivity).
+if which xss-lock &> /dev/null; then
+    xss-lock --transfer-sleep-lock -- i3lock-fuzzy &
+fi
+
+# Use arrow instead of cross outside of client windows.
+xsetroot -cursor_name left_ptr
+
+if which picom &> /dev/null; then
+    picom &
+fi
+
+if which xmobar &> /dev/null; then
+    xmobar &
+fi
+
+
+# Put Jeo on Kinesis.
+if which loadkeys &> /dev/null; then
+    loadkeys
+fi
+
+
+# vim: set ft=sh tw=120 :

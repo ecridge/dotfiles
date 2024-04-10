@@ -20,6 +20,7 @@
        jq \
        libghc-xmonad-contrib-dev \
        libghc-xmonad-dev \
+       nemo \
        picom \
        pipx \
        ripgrep \

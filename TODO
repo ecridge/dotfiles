@@ -1,3 +1,6 @@
+* Try using a hybrid Gnome Flashback + Xmonad session: see explanation from
+  https://github.com/Gekkio/gnome-session-xmonad README (pretty straghtforward).
+
 * playerctl?
 
 * Remove the _already unused_ Ligaturizer fork from my GitHub (from Fira days).

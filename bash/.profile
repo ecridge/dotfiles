@@ -28,8 +28,6 @@ fi
 
 export PATH
 
-eval `ssh-agent` > /dev/null
-
 if [ -f "$HOME/.profile_local" ]; then
     . "$HOME/.profile_local"
 fi

@@ -2,6 +2,7 @@ import XMonad
 
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.EwmhDesktops
+import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.StatusBar
 import XMonad.Hooks.StatusBar.PP
 
@@ -25,6 +26,7 @@ myConfig = def
     , focusFollowsMouse = False
     , clickJustFocuses = False
     , layoutHook = smartSpacingWithEdge 4 $ myLayout
+    , manageHook = myManageHook
     }
     `additionalKeysP`
     [ ("M-s", unGrab *> spawn "scrot -s -F ~/Downloads/'Screen Shot %Y-%m-%d at %H.%M.%S.png'")
@@ -48,3 +50,9 @@ myLayout = tiled ||| Mirror tiled ||| Full
 
      -- Percent of screen to increment by when resizing panes
      delta   = 3/100
+
+myManageHook :: ManageHook
+myManageHook = composeAll
+    [ className =? "Protonvpn-app" --> doFloat
+    , isDialog --> doFloat
+    ]

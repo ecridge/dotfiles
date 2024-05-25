@@ -11,12 +11,14 @@
        curl \
        feh \
        fortunes \
+       gdu \
        git \
        helix \
        htop \
        httpie \
        i3lock \
        imagemagick \
+       iotop \
        jq \
        libghc-xmonad-contrib-dev \
        libghc-xmonad-dev \

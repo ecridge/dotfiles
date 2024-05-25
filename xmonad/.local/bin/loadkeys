@@ -1,6 +1,12 @@
 #!/bin/bash
 
 xinput --list \
+    | grep 'Cooler Master' \
+    | grep -Ev 'Control|Keyboard' \
+    | grep -Po '(?<=id=)[0-9]+'  \
+    | xargs -I device_id setxkbmap -device device_id us
+
+xinput --list \
     | grep Kinesis \
     | grep -Ev 'Control|pointer' \
     | grep -Po '(?<=id=)[0-9]+'  \

@@ -23,7 +23,9 @@ background = "#2d353b"
 foreground = "#d3c6aa"
 
 [font]
-size = 9
+ size =  9   # xmonad (external)
+#size = 10   # unity  (external)
+#size = 13   # unity  (built-in)
 
 [font.bold]
 family = "SauceCodePro Nerd Font"
@@ -45,7 +47,12 @@ style = "Regular"
 y = 0
 
 [window]
-opacity = 0.7
+ opacity = 0.7  # xmonad
+#opacity = 1.0  # unity
+
+[window.dimensions]
+columns = 120
+lines = 36
 
 [window.padding]
 x = 5

@@ -71,8 +71,8 @@
    #!/bin/bash
    xrandr \
        --output eDP-1 --auto --pos 0x1360 \
-       --output HDMI-1-0 --auto --pos 1920x0 --rotate left \
-       --output DP-1-0 --auto --pos 3360x420
+       --output HDMI-1-0 --auto --pos 2560x0 --rotate left \
+       --output DP-1-1 --auto --pos 4000x440
    ```
 
 8. Set a wallpaper (will be reloaded thereafter), e.g. `feh --bg-fill /usr/share/backgrounds/Some_Included_Image.png`.

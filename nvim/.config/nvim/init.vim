@@ -30,10 +30,10 @@ nnoremap <Return> <Nop>
 set formatoptions+=n1
 set list listchars=extends:$,nbsp:+,precedes:$,tab:>\ ,trail:-
 set matchtime=2 showmatch
-set nojoinspaces
 set number
-set colorcolumn=+1 sidescroll=1 sidescrolloff=1 textwidth=79 nowrap
-set shiftround shiftwidth=2 softtabstop=-1 tabstop=2 expandtab
+set colorcolumn=+1 sidescroll=1 sidescrolloff=1 textwidth=120 nowrap
+set mouse=
+set shiftround shiftwidth=4 softtabstop=-1 tabstop=4 expandtab
 set spell spelllang=en_gb spellfile=~/.config/nvim/spell/en.utf-8.add
 set splitbelow splitright
 set wildignorecase wildmode=longest,list
@@ -54,10 +54,6 @@ augroup HelpSplit
   autocmd FileType help vertical resize 82
 augroup END
 
-" Don't show boring files in netrw.
-let g:netrw_hide = 1
-let g:netrw_list_hide= netrw_gitignore#Hide().'.*\.pyc$'
-
 
 "------------------------------------------------------------------------------
 " Insert mode
@@ -67,11 +63,6 @@ let g:netrw_list_hide= netrw_gitignore#Hide().'.*\.pyc$'
 " Ctrl-E to jump to line end.
 inoremap <C-a> <Esc>I
 inoremap <C-e> <Esc>A
-
-" Ctrl-G to move line under cursor up.
-" Ctrl-- to move line under cursor down.
-inoremap <silent> <C-g> <Esc>:m .-2<CR>==gi
-inoremap <silent> <C-_> <Esc>:m .+1<CR>==gi
 
 " Ctrl-U to upper-case word under cursor.
 inoremap <silent> <C-u> _<Esc>mza<C-Right><Esc>bgUiw`zi<Del>
@@ -99,9 +90,6 @@ nnoremap <C-u> mzgUiw`z
 " Leader commands
 "------------------------------------------------------------------------------
 
-" ‘Check out’ a file.
-noremap <silent> <Leader>co :<C-u>e!<CR>
-
 " Edit and source `init.vim`.
 noremap <silent> <Leader>ev :<C-u>tabedit $MYVIMRC<CR>G
 noremap <silent> <Leader>sv :<C-u>source $MYVIMRC<CR>
@@ -109,17 +97,8 @@ noremap <silent> <Leader>sv :<C-u>source $MYVIMRC<CR>
 " Hide search matches.
 noremap <silent> <Leader>nh :<C-u>nohlsearch<CR>
 
-" Toggle background.
-map <silent> <Leader>bg <F5>
-
 " Set working directory based on current file.
 noremap <Leader>. :<C-u>cd %:h<CR>:<C-u>pwd<CR>
-
-" Save and quit.
-noremap <Leader>q :<C-u>wq<CR>
-
-" Edit snippets.
-noremap <Leader>u :<C-u>UltiSnipsEdit<CR>
 
 
 "------------------------------------------------------------------------------
@@ -143,12 +122,6 @@ vnoremap <C-]> <C-W>v<C-]>
 " General autocommands
 "------------------------------------------------------------------------------
 
-" Disable comment continuation (when opening lines).
-augroup CommentContinuation
-  autocmd!
-  autocmd BufEnter * setlocal formatoptions-=o
-augroup END
-
 " Add custom task tags (BUG, HACK, and merge conflict delimiters).
 augroup CustomTaskTags
   autocmd!
@@ -163,24 +136,10 @@ augroup END
 
 augroup LanguageSpecific
   autocmd!
-  autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
   autocmd BufNewFile,BufRead *.xkb,*/xkb/*/* set filetype=xkb
   autocmd BufNewFile,BufRead .pg_service.conf set filetype=dosini
   autocmd BufNewFile,BufRead .pgpass set filetype=conf
-  autocmd FileType cpp set shiftwidth=4 tabstop=4 textwidth=120
-  autocmd FileType html,htmldjango,jst setlocal formatoptions-=t textwidth=100
-  autocmd FileType kotlin set commentstring=//%s formatoptions+=r
-  autocmd FileType kotlin set shiftwidth=4 tabstop=4 textwidth=120
-  autocmd FileType haskell set shiftwidth=4 tabstop=4 textwidth=120
-  autocmd FileType python set joinspaces textwidth=120
-  autocmd FileType python normal zR
-  autocmd FileType sh,sshconfig,sql set shiftwidth=4 tabstop=4
-  autocmd FileType xkb set shiftwidth=4 tabstop=4
-  autocmd FileType xml set shiftwidth=4 tabstop=4 formatoptions-=t
 augroup END
-
-source ~/.config/nvim/go.vim
-source ~/.config/nvim/jsdoc.vim
 
 
 "------------------------------------------------------------------------------
@@ -190,16 +149,12 @@ source ~/.config/nvim/jsdoc.vim
 source ~/.config/nvim/plug.vim
 
 source ~/.config/nvim/airline.vim
-source ~/.config/nvim/ale.vim
 source ~/.config/nvim/cpp-modern.vim
 "source ~/.config/nvim/deoplete.vim
-source ~/.config/nvim/editorconfig.vim
 source ~/.config/nvim/everforest.vim
 source ~/.config/nvim/gitgutter.vim
 source ~/.config/nvim/indent-guides.vim
 source ~/.config/nvim/pgsql.vim
-source ~/.config/nvim/python.vim
-source ~/.config/nvim/ultisnips.vim
 
 
 "------------------------------------------------------------------------------

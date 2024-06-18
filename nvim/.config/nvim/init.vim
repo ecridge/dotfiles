@@ -150,7 +150,7 @@ source ~/.config/nvim/plug.vim
 
 source ~/.config/nvim/airline.vim
 source ~/.config/nvim/cpp-modern.vim
-"source ~/.config/nvim/deoplete.vim
+source ~/.config/nvim/deoplete.vim
 source ~/.config/nvim/everforest.vim
 source ~/.config/nvim/gitgutter.vim
 source ~/.config/nvim/indent-guides.vim

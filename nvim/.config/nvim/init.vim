@@ -34,6 +34,7 @@ set number
 set colorcolumn=+1 sidescroll=1 sidescrolloff=1 textwidth=120 nowrap
 set mouse=
 set shiftround shiftwidth=4 softtabstop=-1 tabstop=4 expandtab
+set shortmess=A
 set spell spelllang=en_gb spellfile=~/.config/nvim/spell/en.utf-8.add
 set splitbelow splitright
 set wildignorecase wildmode=longest,list
@@ -121,6 +122,12 @@ vnoremap <C-]> <C-W>v<C-]>
 "------------------------------------------------------------------------------
 " General autocommands
 "------------------------------------------------------------------------------
+
+" Disable comment continuation (when opening lines).
+augroup CommentContinuation
+  autocmd!
+  autocmd BufEnter * setlocal formatoptions-=o
+augroup END
 
 " Add custom task tags (BUG, HACK, and merge conflict delimiters).
 augroup CustomTaskTags

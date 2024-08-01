@@ -50,5 +50,7 @@ if which loadkeys &> /dev/null; then
     loadkeys
 fi
 
+export GTK_THEME=Yaru-sage:dark
+
 
 # vim: set ft=sh tw=120 :

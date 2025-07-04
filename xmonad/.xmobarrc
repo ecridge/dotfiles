@@ -8,27 +8,24 @@ Config { overrideRedirect = False
        -- , position = BottomW L 90
        , position = BottomH 23
        , commands = [ Run Weather "EGWU"
-                        [ "--template", "<tempC>°C"
+                        [ "--template", "<weather> <fn=1><fc=#5c6a72><tempC>°C</fc></fn>"
                         ] 9000
                     , Run Cpu [ "--template", "Cpu <total>%"
                               , "--ppad", "2"
-                              ] 30
-                    , Run ThermalZone 2 [ "--template", "<fn=1><fc=#5c6a72><temp>°C</fc></fn>"
-                                        , "--ppad", "2"
-                                        ] 30
-                    -- , Run Alsa "default" "Master"
-                    --     [ "--template", "Vol <volumestatus>"
-                    --     , "--suffix"  , "True"
-                    --     , "--"
-                    --     , "--on", ""
-                    --     ]
+                              ] 10
+                    , Run Alsa "default" "Master"
+                        [ "--template", "<fn=1><fc=#5c6a72><volumestatus></fc></fn>"
+                        , "--suffix"  , "True"
+                        , "--"
+                        , "--on", ""
+                        ]
                     , Run Memory [ "--template", "Mem <usedratio>%"
                                  , "--ppad", "2"
-                                 ] 30
+                                 ] 10
                     , Run Date "%a %Y-%m-%d <fn=1><fc=#5c6a72>%H:%M</fc></fn>" "date" 10
                     , Run XMonadLog
                     ]
-       , template = "%XMonadLog% }{ %memory% | %cpu% | %thermal2% / %EGWU% | %date% "
+       , template = "%XMonadLog% }{ %alsa:default:Master% | %cpu% | %memory% | %EGWU% | %date% "
        , pickBroadest = True
        }
 

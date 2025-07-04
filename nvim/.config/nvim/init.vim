@@ -44,7 +44,7 @@ let g:python_host_prog = 0
 let g:python3_host_prog = '~/.envs/neovim/bin/python3'
 
 " Colour scheme.
-set background=light
+set background=dark
 set cursorline
 set termguicolors
 

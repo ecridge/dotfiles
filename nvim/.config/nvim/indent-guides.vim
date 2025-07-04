@@ -8,6 +8,6 @@ let g:indent_guides_auto_colors = 0
 
 augroup ColorIndentGuides
   autocmd!
-  autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg='#efebd4' ctermbg=none
-  autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg='#efebd4' ctermbg=none
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg='#313a40' ctermbg=none
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg='#313a40' ctermbg=237
 augroup END

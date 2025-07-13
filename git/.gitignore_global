@@ -36,6 +36,11 @@ compile_commands.json
 # clangd
 .cache
 
+# Emacs
+*~
+\#*\#
+.\#*
+
 # LibreOffice
 .~lock.*#
 

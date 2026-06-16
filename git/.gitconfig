@@ -1,6 +1,6 @@
 [user]
 	name = Eden Cridge
-	email = ecridge@ecridge.com
+	email = eden@edencridge.com
 [core]
 	autocrlf = input
 	excludesfile = ~/.gitignore_global
@@ -40,7 +40,5 @@
 [init]
 	templatedir = ~/.git_template
 	defaultBranch = main
-[includeIf "gitdir:~/Developer/mollybet/"]
-	path = ~/.gitconfig_molly
 [pull]
 	rebase = true
